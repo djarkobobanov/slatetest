@@ -11,6 +11,7 @@ toc_footers:
 search: true
 ---
 
+<!-- Start Introduction -->
 <h1 id="introduction">Introduction</h1>
 
 <blockquote>
@@ -35,6 +36,8 @@ search: true
 
 <p>Specific details relating to the endpoints will be provided upon account creation.</p>
 
+<!-- End Introduction -->
+
 <h1 id="transaction-states">Transaction states</h1>
 
 <blockquote>
@@ -43,7 +46,7 @@ search: true
 
 <p>During the course of a transfer, a transaction will undergo various status changes as illustrated.</p>
 
-<p>Conditions marked as &ldquo;Upon request to customer care team&rdquo; pertains to reversal and/or cancellation, which must be requested through and performed by Thunes’ customer care team.</p>
+<p>Conditions marked as &ldquo;Upon request to customer care team&rdquo; pertains to reversal and/or cancellation, which must be requested through and performed by Thunesâ€™ customer care team.</p>
 
 <p>As changes in transaction status occur, updates will be sent in real-time when a callback URL is provided. In conjunction, transaction status can be queried through one of two means: via the returned <code>id</code> or a provided <code>external_id</code>.</p>
 
@@ -470,3 +473,465 @@ search: true
 </tr>
 </tbody>
 </table>
+
+<h1 id="connectivity">Connectivity</h1>
+
+<h2 id="ping">Ping</h2>
+<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">/ping</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+   <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;up&#34;</span>
+<span class="p">}</span></code></pre></div>
+<p><api><code>GET /ping</code></api></p>
+
+<p>Query API status.</p>
+
+<h4 id="output">Output</h4>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td>String</td>
+<td>API status</td>
+</tr>
+</tbody>
+</table>
+
+<p>Expected value of <code>status</code> should be &ldquo;up&rdquo;.</p>
+
+<h1 id="discovery">Discovery</h1>
+
+<h2 id="services">Services</h2>
+<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">/v1/money-transfer/services</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="n">X-Total</span><span class="o">:</span> <span class="l">1</span>
+<span class="n">X-Total-Pages</span><span class="o">:</span> <span class="l">1</span>
+<span class="n">X-Per-Page</span><span class="o">:</span> <span class="l">50</span>
+<span class="n">X-Page</span><span class="o">:</span> <span class="l">1</span>
+<span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">[</span>
+   <span class="p">{</span>
+      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet&#34;</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;BankAccount&#34;</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;CashPickup&#34;</span>
+   <span class="p">}</span>
+<span class="p">]</span></code></pre></div>
+<p><api><code>GET /v1/money-transfer/services</code></api></p>
+
+<p>Retrieve list of all available services.</p>
+
+<h4 id="input">Input</h4>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>No</td>
+<td>Integer</td>
+<td>Page number</td>
+</tr>
+
+<tr>
+<td><code>per_page</code></td>
+<td>No</td>
+<td>Integer</td>
+<td>Number of results per page (default 50, max 100)</td>
+</tr>
+
+<tr>
+<td><code>country_iso_code</code></td>
+<td>No</td>
+<td>String</td>
+<td>Country code in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a> format</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="output-1">Output</h4>
+
+<p>Array of <a href="#service">service</a> objects in a <a href="#pagination">paginated</a> fashion.</p>
+
+<h2 id="payers">Payers</h2>
+<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">/v1/money-transfer/payers</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="n">X-Total</span><span class="o">:</span> <span class="l">1</span>
+<span class="n">X-Total-Pages</span><span class="o">:</span> <span class="l">1</span>
+<span class="n">X-Per-Page</span><span class="o">:</span> <span class="l">50</span>
+<span class="n">X-Page</span><span class="o">:</span> <span class="l">1</span>
+<span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">[</span>
+   <span class="p">{</span>
+      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet Payer&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;precision&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="nt">&#34;increment&#34;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
+      <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;USD&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;USA&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;minimum_transaction_amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&#34;maximum_transaction_amount&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&#34;service&#34;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet&#34;</span>
+      <span class="p">},</span>
+      <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">[</span>
+            <span class="s2">&#34;msisdn&#34;</span>
+         <span class="p">]</span>
+      <span class="p">],</span>
+      <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">[</span>
+            <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;lastname&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;date_of_birth&#34;</span>
+         <span class="p">]</span>
+      <span class="p">],</span>
+      <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">[</span>
+            <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;lastname&#34;</span>
+         <span class="p">]</span>
+      <span class="p">],</span>
+      <span class="nt">&#34;credit_party_information&#34;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">[]</span>
+         <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="nt">&#34;credit_party_verification&#34;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">[]</span>
+         <span class="p">],</span>
+         <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">[]</span>
+         <span class="p">]</span>
+      <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#3#34;CashPickup Payer&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;precision&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="nt">&#34;increment&#34;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
+      <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;PHP&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;PHL&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;minimum_transaction_amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&#34;maximum_transaction_amount&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&#34;service&#34;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;CashPickup&#34;</span><span class="p">,</span>
+         <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">3</span>
+      <span class="p">},</span>
+      <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">[</span>
+            <span class="s2">&#34;msisdn&#34;</span>
+         <span class="p">]</span>
+      <span class="p">],</span>
+      <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">[</span>
+            <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;lastname&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;date_of_birth&#34;</span>
+         <span class="p">]</span>
+      <span class="p">],</span>
+      <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">[</span>
+            <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;lastname&#34;</span>
+         <span class="p">]</span>
+      <span class="p">],</span>
+      <span class="nt">&#34;credit_party_information&#34;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">[]</span>
+         <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="nt">&#34;credit_party_verification&#34;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">[]</span>
+         <span class="p">],</span>
+         <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">[]</span>
+         <span class="p">]</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">]</span></code></pre></div>
+<p><api><code>GET /v1/money-transfer/payers</code></api></p>
+
+<p>Retrieve information for all payers available for a given account, optionally filtered based on specified parameters.</p>
+
+<h4 id="input-1">Input</h4>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>No</td>
+<td>Integer</td>
+<td>Page number</td>
+</tr>
+
+<tr>
+<td><code>per_page</code></td>
+<td>No</td>
+<td>Integer</td>
+<td>Number of results per page (default 50, max 100)</td>
+</tr>
+
+<tr>
+<td><code>service_id</code></td>
+<td>No</td>
+<td>Integer</td>
+<td><a href="#service">Service ID</a></td>
+</tr>
+
+<tr>
+<td><code>country_iso_code</code></td>
+<td>No</td>
+<td>String</td>
+<td>Country code in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a> format</td>
+</tr>
+
+<tr>
+<td><code>currency</code></td>
+<td>No</td>
+<td>String</td>
+<td>Currency in <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> format</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="output-2">Output</h4>
+
+<p>Array of <a href="#payer">payer</a> objects in a <a href="#pagination">paginated</a> fashion.</p>
+
+<p>&ndash;</p>
+<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">/v1/money-transfer/payers/3</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Sample Payer&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;precision&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&#34;increment&#34;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
+    <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;IDR&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;IDN&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;minimum_transaction_amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&#34;maximum_transaction_amount&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&#34;service&#34;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet&#34;</span>
+    <span class="p">},</span>
+    <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">[</span>
+                <span class="s2">&#34;msisdn&#34;</span>
+         <span class="p">]</span>
+    <span class="p">],</span>
+    <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">[</span>
+                <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
+                <span class="s2">&#34;date_of_birth&#34;</span><span class="p">,</span>
+                <span class="s2">&#34;lastname&#34;</span>
+         <span class="p">]</span>
+    <span class="p">],</span>
+    <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">[</span>
+                <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
+                <span class="s2">&#34;lastname&#34;</span>
+         <span class="p">]</span>
+    <span class="p">],</span>
+    <span class="nt">&#34;credit_party_information&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">[]</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&#34;credit_party_verification&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">[]</span>
+        <span class="p">],</span>
+        <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">[]</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<p><api><code>GET /v1/money-transfer/payers/{id}</code></api></p>
+
+<p>Retrieve information for a given <a href="#payer">payer</a>.</p>
+
+<h4 id="output-3">Output</h4>
+
+<p><a href="#payer">Payer</a> object.</p>
+
+<h2 id="payer-rates">Payer Rates</h2>
+<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">/v1/money-transfer/payers/362/rates</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;destination_currency&#34;</span><span class="p">:</span> <span class="s2">&#34;CUC&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;rates&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;EUR&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&#34;source_amount_min&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&#34;source_amount_max&#34;</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span>
+                <span class="nt">&#34;wholesale_fx_rate&#34;</span><span class="p">:</span> <span class="mf">1.10847692409526</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&#34;source_amount_min&#34;</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span>
+                <span class="nt">&#34;source_amount_max&#34;</span><span class="p">:</span> <span class="mi">8800</span><span class="p">,</span>
+                <span class="nt">&#34;wholesale_fx_rate&#34;</span><span class="p">:</span> <span class="mf">1.10847692409526</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<p><api><code>GET /v1/money-transfer/payers/{id}/rates</code></api></p>
+
+<p>Retrieve <a href="#rates">rates</a> under a given <a href="#payer">payer</a>.</p>
+
+<h4 id="output-4">Output</h4>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>destination_currency</code></td>
+<td>String</td>
+<td>Currency in <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> format</td>
+</tr>
+
+<tr>
+<td><code>rates</code></td>
+<td>Object</td>
+<td><a href="#rates">Rates</a> information</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="countries">Countries</h2>
+<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">/v1/money-transfer/countries</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="n">X-Total</span><span class="o">:</span> <span class="l">1</span>
+<span class="n">X-Total-Pages</span><span class="o">:</span> <span class="l">1</span>
+<span class="n">X-Per-Page</span><span class="o">:</span> <span class="l">50</span>
+<span class="n">X-Page</span><span class="o">:</span> <span class="l">1</span>
+<span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&#34;iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;KEN&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Kenya&#34;</span>
+    <span class="p">}</span>
+<span class="p">]</span></code></pre></div>
+<p><api><code>GET /v1/money-transfer/countries</code></api></p>
+
+<p>Retrieve list of <a href="#country">countries</a> for all money transfer <a href="#services">services</a> available for a given account.</p>
+
+<h4 id="input-2">Input</h4>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>No</td>
+<td>Integer</td>
+<td>Page number</td>
+</tr>
+
+<tr>
+<td><code>per_page</code></td>
+<td>No</td>
+<td>Integer</td>
+<td>Number of results per page (default 50, max 100)</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="output-5">Output</h4>
+
+<p>Array of <a href="#country">country</a> objects in a paginated fashion.</p>
+
+<h1 id="account">Account</h1>
+
+<h2 id="balances">Balances</h2>
+<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">/v1/money-transfer/balances</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="n">X-Total</span><span class="o">:</span> <span class="l">1</span>
+<span class="n">X-Total-Pages</span><span class="o">:</span> <span class="l">1</span>
+<span class="n">X-Per-Page</span><span class="o">:</span> <span class="l">50</span>
+<span class="n">X-Page</span><span class="o">:</span> <span class="l">1</span>
+<span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;balance&#34;</span><span class="p">:</span> <span class="mi">10000000</span><span class="p">,</span>
+        <span class="nt">&#34;available_balance&#34;</span><span class="p">:</span> <span class="mi">10000000</span><span class="p">,</span>
+        <span class="nt">&#34;credit_facility&#34;</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="p">}</span>
+<span class="p">]</span></code></pre></div>
+<p><api><code>GET /v1/money-transfer/balances</code></api></p>
+
+<p>Retrieve information for all account balances per currency.</p>
+
+<h4 id="input-13">Input</h4>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>No</td>
+<td>Integer</td>
+<td>Page number</td>
+</tr>
+
+<tr>
+<td><code>per_page</code></td>
+<td>No</td>
+<td>Integer</td>
+<td>Number of results per page (default 50, max 100)</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="output-20">Output</h4>
+
+<p>Array of <a href="#balance">balance</a> objects.</p>
