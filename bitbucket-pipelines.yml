@@ -5,7 +5,8 @@ pipelines:
       - step:
           deployment: production
           script:
-            - ruby -v
+            - gem update --system
             - gem install bundler -v 2.0.2
+            - bundler update --bundler
             - bundle install
             - bundle exec middleman build
