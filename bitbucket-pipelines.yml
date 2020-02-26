@@ -3,7 +3,7 @@ pipelines:
   branches:
     master:
       - step:
-        deployment: production
-        script:
-          - gem install bundler -v 2.0.2
-          - bundle install
+          deployment: production
+          script:
+            - gem install bundler -v 1.17.3
+            - bundle install
