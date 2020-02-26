@@ -7,5 +7,6 @@ pipelines:
           script:
             - gem update --system
             - gem install bundler -v 2.0.2
+            - gem install therubyracer
             - bundle install
             - bundle exec middleman build
