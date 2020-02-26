@@ -1,11 +1,10 @@
-image: ruby:2.4.0
+image: ruby:2.6.5
 pipelines:
   branches:
     master:
       - step:
           deployment: production
           script:
-            - gem uninstall bundler
             - gem install bundler -v 2.0.2
             - bundle install
             - bundle exec middleman build
