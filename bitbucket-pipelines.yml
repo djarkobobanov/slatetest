@@ -1,4 +1,4 @@
-image: ruby:2.6.5
+image: starefossen/ruby-node:latest
 pipelines:
   branches:
     master:
