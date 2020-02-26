@@ -3,6 +3,6 @@ pipelines:
   branches:
     master:
       - step:
-        deployment: production
-        script:
-          - bundle install
+          deployment: production
+          script:
+            - bundle install
