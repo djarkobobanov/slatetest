@@ -5,5 +5,5 @@ pipelines:
       - step:
           deployment: production
           script:
-            - gem install bundler -v 1.17.3
+            - gem install bundler -v 2.0.2
             - bundle install
