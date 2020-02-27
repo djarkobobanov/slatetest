@@ -6,8 +6,7 @@ pipelines:
           deployment: production
           script:
             - apt-get update
-            - apt-get install curl software-properties-common
-            - curl -sL https://deb.nodesource.com/setup_13.x | sudo bash -
+            - curl -sL https://deb.nodesource.com/setup_13.x | bash -
             - apt-get install nodejs
             - node -v
             - gem install bundler -v 2.0.2
