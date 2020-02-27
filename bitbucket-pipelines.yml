@@ -16,7 +16,7 @@ pipelines:
               variables:
                 SSH_USER: "deploy"
                 SERVER: "54.169.199.215"
-                COMMAND: "/var/www/html/build && rm -rf *"
+                COMMAND: "cd /var/www/html/build && rm -rf *"
             - pipe: atlassian/scp-deploy:0.3.3
               variables:
                 USER: "deploy"
