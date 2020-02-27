@@ -1,10 +1,12 @@
-image: ruby:2.6.5
+image: starefossen/ruby-node
 pipelines:
   branches:
     master:
       - step:
           deployment: production
           script:
+            - ruby -v
+            - node -v
             - gem install bundler -v 2.0.2
             - bundle install
             - bundle exec middleman build
