@@ -1,0 +1,25 @@
+image: ruby:2.6.5
+pipelines:
+  branches:
+    master:
+      - step:
+          deployment: production
+          script:
+            - apt-get update
+            - curl -sL https://deb.nodesource.com/setup_13.x | bash -
+            - apt-get install nodejs
+            - node -v
+            - gem install bundler -v 2.0.2
+            - bundle install
+            - bundle exec middleman build
+            - pipe: atlassian/ssh-run:0.1.4
+              variables:
+                SSH_USER: "deploy"
+                SERVER: "54.169.199.215"
+                COMMAND: "cd /var/www/html/build && rm -rf *"
+            - pipe: atlassian/scp-deploy:0.3.3
+              variables:
+                USER: "deploy"
+                SERVER: "54.169.199.215"
+                REMOTE_PATH: "/var/www/html/"
+                LOCAL_PATH: "build"
