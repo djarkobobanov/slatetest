@@ -2,7 +2,7 @@
 
 <h2 id="balances">Balances</h2>
 
-<p><api><code>GET /v1/money-transfer/balances</code></api></p>
+<p><api><code>GET api/v1/balances</code></api></p>
 
 <p>Retrieve information for all account balances per currency.</p>
 
@@ -32,6 +32,34 @@
 <td>Integer</td>
 <td>Number of results per page (default 50, max 100)</td>
 </tr>
+
+<tr>
+<td><code>currency</code></td>
+<td>No</td>
+<td>Integer</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>balance</code></td>
+<td>No</td>
+<td>Integer</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>available_balance</code></td>
+<td>No</td>
+<td>Integer</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>is_active</code></td>
+<td>No</td>
+<td>Integer</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -43,7 +71,7 @@
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <h3 class="n">Balances</h3>
-<span class="nf">GET</span> <span class="nn">/v1/money-transfer/balances</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="nf">GET</span> <span class="nn">api/v1/balances</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="n">X-Total</span><span class="o">:</span> <span class="l">1</span>
 <span class="n">X-Total-Pages</span><span class="o">:</span> <span class="l">1</span>
 <span class="n">X-Per-Page</span><span class="o">:</span> <span class="l">50</span>

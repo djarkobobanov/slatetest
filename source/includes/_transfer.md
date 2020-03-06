@@ -1,96 +1,10 @@
 <h1 id="transfers">Transfers</h1>
 
-<!-- Quotations -->
-
-<h2 id="quotations">Quotations</h2>
-
-<p><api><code>POST /v1/money-transfer/quotations</code></api></p>
-
-<p>Creates a new quotation for a given source or destination value.</p>
-
-<h4 id="input-16">Input</h4>
-
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Required</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>external_id</code></td>
-<td>Yes</td>
-<td>String</td>
-<td>External reference ID</td>
-</tr>
-
-<tr>
-<td><code>payer_id</code></td>
-<td>Yes</td>
-<td>Integer</td>
-<td>Payer ID</td>
-</tr>
-
-<tr>
-<td><code>mode</code></td>
-<td>Yes</td>
-<td>String</td>
-<td><a href="#quotation-mode">Quotation mode</a></td>
-</tr>
-
-<tr>
-<td><code>source</code></td>
-<td>Yes</td>
-<td>Object</td>
-<td><a href="#source">Source</a> information</td>
-</tr>
-
-<tr>
-<td><code>destination</code></td>
-<td>Yes</td>
-<td>Object</td>
-<td><a href="#destination">Destination</a> information</td>
-</tr>
-</tbody>
-</table>
-
-<p>Depending on the <a href="#quotation-mode"><code>mode</code></a>, amount is optional in either <a href="#source">Source</a> or <a href="#destination">Destination</a> object.</p>
-
-<h4 id="output-23">Output</h4>
-
-<p><a href="#quotation">Quotation</a> object.</p>
-
-<p>&ndash;</p>
-
-<p><api><code>GET /v1/money-transfer/quotations/{id}</code></api></p>
-
-<p>Retrieve information for a given quotation.</p>
-
-<h4 id="output-24">Output</h4>
-
-<p><a href="#quotation">Quotation</a> object.</p>
-
-<p>&ndash;</p>
-
-<p><api><code>GET /v1/money-transfer/quotations/ext-{external_id}</code></api></p>
-
-<p>Retrieve information for a given quotation through an external reference ID.</p>
-
-<h4 id="output-25">Output</h4>
-
-<p><a href="#quotation">Quotation</a> object.</p>
-
-<!-- End Quotations -->
-
 <!-- Transactions -->
 
 <h2 id="transactions">Transactions</h2>
 
-<p><api><code>POST /v1/money-transfer/quotations/{id}/transactions</code></api></p>
+<p><api><code>POST api/v1/transactions/create</code></api></p>
 
 <p>Create a new transaction with transfer values specified from a given <a href="#quotation">quotation</a>.</p>
 
@@ -108,94 +22,45 @@
 
 <tbody>
 <tr>
-<td><code>credit_party_identifier</code></td>
+<td><code>reference_id</code></td>
 <td>Yes</td>
+<td>Integer</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>payer_id</code></td>
+<td>No</td>
+<td>Integer</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>source</code></td>
+<td>No</td>
+<td>Integer</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>destination</code></td>
+<td>No</td>
+<td>Integer</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>beneficiars</code></td>
+<td>No</td>
 <td>Object</td>
-<td><a href="#credit-party-identifier">Credit party identifier</a></td>
+<td></td>
 </tr>
 
 <tr>
-<td><code>retail_rate</code></td>
+<td><code>compliance</code></td>
 <td>No</td>
-<td>Number</td>
-<td>Retail rate</td>
-</tr>
-
-<tr>
-<td><code>retail_fee</code></td>
-<td>No</td>
-<td>Number</td>
-<td>Retail fee</td>
-</tr>
-
-<tr>
-<td><code>retail_fee_currency</code></td>
-<td>No</td>
-<td>String</td>
-<td>Retail fee currency in <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> format</td>
-</tr>
-
-<tr>
-<td><code>sender</code></td>
-<td>Yes</td>
-<td>Object</td>
-<td><a href="#sender">Sender information</a></td>
-</tr>
-
-<tr>
-<td><code>beneficiary</code></td>
-<td>Yes</td>
-<td>Object</td>
-<td><a href="#beneficiary">Beneficiary information</a></td>
-</tr>
-
-<tr>
-<td><code>external_id</code></td>
-<td>Yes</td>
-<td>String</td>
-<td>External ID</td>
-</tr>
-
-<tr>
-<td><code>external_code</code></td>
-<td>No</td>
-<td>String</td>
-<td>External reference code</td>
-</tr>
-
-<tr>
-<td><code>callback_url</code></td>
-<td>No</td>
-<td>String</td>
-<td><a href="#callback">Callback URL</a></td>
-</tr>
-
-<tr>
-<td><code>purpose_of_remittance</code></td>
-<td>No</td>
-<td>String</td>
-<td><a href="#purpose-of-remittance">Purpose of the remittance</a></td>
-</tr>
-
-<tr>
-<td><code>additional_information_1</code></td>
-<td>No</td>
-<td>String</td>
-<td>Additional information</td>
-</tr>
-
-<tr>
-<td><code>additional_information_2</code></td>
-<td>No</td>
-<td>String</td>
-<td>Additional information</td>
-</tr>
-
-<tr>
-<td><code>additional_information_3</code></td>
-<td>No</td>
-<td>String</td>
-<td>Additional information</td>
+<td>Integer</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -362,244 +227,12 @@
 
 <!-- End Transaction -->
 
-<!-- Quotasions code -->
-
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
-<h3 class="n">Quotations</h3>
-
-<span class="nf">POST</span> <span class="nn">/v1/money-transfer/quotations</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="err">201</span> <span class="l">Created</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-<span class="nt">&#34;external_id&#34;</span><span class="p">:</span> <span class="s2">&#34;1481184321405&#34;</span><span class="p">,</span>
-<span class="nt">&#34;payer_id&#34;</span><span class="p">:</span> <span class="s2">&#34;1&#34;</span><span class="p">,</span>
-<span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="s2">&#34;SOURCE_AMOUNT&#34;</span><span class="p">,</span>
-<span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="p">{</span>
-<span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="s2">&#34;10&#34;</span><span class="p">,</span>
-<span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
-<span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span>
-<span class="p">},</span>
-<span class="nt">&#34;destination&#34;</span><span class="p">:</span> <span class="p">{</span>
-<span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-<span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;USD&#34;</span>
-<span class="p">}</span>
-<span class="p">}</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-<span class="nt">&#34;external_id&#34;</span><span class="p">:</span> <span class="s2">&#34;1481184321405&#34;</span><span class="p">,</span>
-<span class="nt">&#34;payer&#34;</span><span class="p">:</span> <span class="p">{</span>
-<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-<span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Sample Payer&#34;</span><span class="p">,</span>
-<span class="nt">&#34;precision&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-<span class="nt">&#34;increment&#34;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
-<span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;USD&#34;</span><span class="p">,</span>
-<span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;ZWE&#34;</span><span class="p">,</span>
-<span class="nt">&#34;minimum_transaction_amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-<span class="nt">&#34;maximum_transaction_amount&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-<span class="nt">&#34;service&#34;</span><span class="p">:</span> <span class="p">{</span>
-<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-<span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet&#34;</span>
-<span class="p">},</span>
-<span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-<span class="p">[</span>
-<span class="s2">&#34;msisdn&#34;</span>
-<span class="p">]</span>
-<span class="p">],</span>
-<span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-<span class="p">[</span>
-<span class="s2">&#34;lastname&#34;</span><span class="p">,</span>
-<span class="s2">&#34;firstname&#34;</span>
-<span class="p">]</span>
-<span class="p">],</span>
-<span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-<span class="p">[</span>
-<span class="s2">&#34;lastname&#34;</span><span class="p">,</span>
-<span class="s2">&#34;firstname&#34;</span>
-<span class="p">]</span>
-<span class="p">],</span>
-<span class="nt">&#34;credit_party_information&#34;</span><span class="p">:</span> <span class="p">{</span>
-<span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-<span class="p">[]</span>
-<span class="p">]</span>
-<span class="p">},</span>
-<span class="nt">&#34;credit_party_verification&#34;</span><span class="p">:</span> <span class="p">{</span>
-<span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-<span class="p">[]</span>
-<span class="p">],</span>
-<span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-<span class="p">[]</span>
-<span class="p">]</span>
-<span class="p">}</span>
-<span class="p">},</span>
-<span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="s2">&#34;SOURCE_AMOUNT&#34;</span><span class="p">,</span>
-<span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="p">{</span>
-<span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-<span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
-<span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">10</span>
-<span class="p">},</span>
-<span class="nt">&#34;destination&#34;</span><span class="p">:</span> <span class="p">{</span>
-<span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;USD&#34;</span><span class="p">,</span>
-<span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mf">10.69</span>
-<span class="p">},</span>
-<span class="nt">&#34;sent_amount&#34;</span><span class="p">:</span> <span class="p">{</span>
-<span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
-<span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">10</span>
-<span class="p">},</span>
-<span class="nt">&#34;wholesale_fx_rate&#34;</span><span class="p">:</span> <span class="mf">1.06891969534071</span><span class="p">,</span>
-<span class="nt">&#34;fee&#34;</span><span class="p">:</span> <span class="p">{</span>
-<span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
-<span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mf">1.88</span>
-<span class="p">},</span>
-<span class="nt">&#34;creation_date&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-11-02T09:07:44&#34;</span><span class="p">,</span>
-<span class="nt">&#34;expiration_date&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-11-03T09:07:44&#34;</span>
-<span class="p">}</span></code></pre></div>
-
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">/v1/money-transfer/quotations/1</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&#34;external_id&#34;</span><span class="p">:</span> <span class="s2">&#34;1481184321405&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;payer&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Sample Payer&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;precision&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="nt">&#34;increment&#34;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
-        <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;USD&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;ZWE&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;minimum_transaction_amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="nt">&#34;maximum_transaction_amount&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&#34;service&#34;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet&#34;</span>
-        <span class="p">},</span>
-        <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[</span>
-                <span class="s2">&#34;msisdn&#34;</span>
-            <span class="p">]</span>
-        <span class="p">],</span>
-        <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[</span>
-                <span class="s2">&#34;lastname&#34;</span><span class="p">,</span>
-                <span class="s2">&#34;firstname&#34;</span>
-            <span class="p">]</span>
-        <span class="p">],</span>
-        <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[</span>
-                <span class="s2">&#34;lastname&#34;</span><span class="p">,</span>
-                <span class="s2">&#34;firstname&#34;</span>
-            <span class="p">]</span>
-        <span class="p">],</span>
-        <span class="nt">&#34;credit_party_information&#34;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">[]</span>
-            <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="nt">&#34;credit_party_verification&#34;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">[]</span>
-            <span class="p">],</span>
-            <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">[]</span>
-            <span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="s2">&#34;SOURCE_AMOUNT&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">10</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;destination&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;USD&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mf">10.69</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;sent_amount&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">10</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;wholesale_fx_rate&#34;</span><span class="p">:</span> <span class="mf">1.06891969534071</span><span class="p">,</span>
-    <span class="nt">&#34;fee&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mf">1.88</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;creation_date&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-11-02T09:07:44&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;expiration_date&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-11-03T09:07:44&#34;</span>
-<span class="p">}</span></code></pre></div>
-
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">/v1/money-transfer/quotations/ext-1481184321405</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&#34;external_id&#34;</span><span class="p">:</span> <span class="s2">&#34;1481184321405&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;payer&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Sample Payer&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;precision&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="nt">&#34;increment&#34;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
-        <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;USD&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;ZWE&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;minimum_transaction_amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="nt">&#34;maximum_transaction_amount&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&#34;service&#34;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet&#34;</span>
-        <span class="p">},</span>
-        <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[</span>
-                <span class="s2">&#34;msisdn&#34;</span>
-            <span class="p">]</span>
-        <span class="p">],</span>
-        <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[</span>
-                <span class="s2">&#34;lastname&#34;</span><span class="p">,</span>
-                <span class="s2">&#34;firstname&#34;</span>
-            <span class="p">]</span>
-        <span class="p">],</span>
-        <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[</span>
-                <span class="s2">&#34;lastname&#34;</span><span class="p">,</span>
-                <span class="s2">&#34;firstname&#34;</span>
-            <span class="p">]</span>
-        <span class="p">],</span>
-        <span class="nt">&#34;credit_party_information&#34;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">[]</span>
-            <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="nt">&#34;credit_party_verification&#34;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">[]</span>
-            <span class="p">],</span>
-            <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">[]</span>
-            <span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="s2">&#34;SOURCE_AMOUNT&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">10</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;destination&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;USD&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mf">10.69</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;sent_amount&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">10</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;wholesale_fx_rate&#34;</span><span class="p">:</span> <span class="mf">1.06891969534071</span><span class="p">,</span>
-    <span class="nt">&#34;fee&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mf">1.88</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;creation_date&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-11-02T09:07:44&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;expiration_date&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-11-03T09:07:44&#34;</span>
-<span class="p">}</span></code></pre></div>
-
-<!-- End Quotations code -->
-
 <!-- Transaction code -->
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <h3 class="n">Transfer</h3>
-<span class="nf">POST</span> <span class="nn">/v1/money-transfer/quotations/ext-1481184321405/transactions</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="nf">POST</span> <span class="nn">api/v1/transactions/create/ext-1481184321405</span>
+<span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="err">201</span> <span class="l">Created</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;credit_party_identifier&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;msisdn&#34;</span><span class="p">:</span> <span class="s2">&#34;+263775892100&#34;</span><span class="p">,</span>

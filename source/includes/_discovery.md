@@ -4,7 +4,7 @@
 
 <h2 id="services">Services</h2>
 
-<p><api><code>GET /v1/money-transfer/services</code></api></p>
+<p><api><code>GET api/v1/services</code></api></p>
 
 <p>Retrieve list of all available services.</p>
 
@@ -36,10 +36,17 @@
 </tr>
 
 <tr>
-<td><code>country_iso_code</code></td>
+<td><code>name</code></td>
 <td>No</td>
 <td>String</td>
-<td>Country code in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a> format</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>is_active</code></td>
+<td>No</td>
+<td>String</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -54,7 +61,7 @@
 
 <h2 id="payers">Payers</h2>
 
-<p><api><code>GET /v1/money-transfer/payers</code></api></p>
+<p><api><code>GET api/v1/payers</code></api></p>
 
 <p>Retrieve information for all payers available for a given account, optionally filtered based on specified parameters.</p>
 
@@ -86,6 +93,20 @@
 </tr>
 
 <tr>
+<td><code>name</code></td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>precision</code></td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+
+<tr>
 <td><code>service_id</code></td>
 <td>No</td>
 <td>Integer</td>
@@ -105,6 +126,41 @@
 <td>String</td>
 <td>Currency in <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> format</td>
 </tr>
+
+<tr>
+<td><code>minimum_amount</code></td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>maximum_amount</code></td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>required_sender_fields</code></td>
+<td>No</td>
+<td>Text</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>required_beneficiary_fields</code></td>
+<td>No</td>
+<td>Array</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>destination_info</code></td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -114,7 +170,7 @@
 
 <p>&ndash;</p>
 
-<p><api><code>GET /v1/money-transfer/payers/{id}</code></api></p>
+<p><api><code>GET api/v1/payers/{id}</code></api></p>
 
 <p>Retrieve information for a given <a href="#payer">payer</a>.</p>
 
@@ -126,9 +182,9 @@
 
 <!-- Payes Rates -->
 
-<h2 id="payer-rates">Payer Rates</h2>
+<h2 id="payer-rates">Rates</h2>
 
-<p><api><code>GET /v1/money-transfer/payers/{id}/rates</code></api></p>
+<p><api><code>GET api/v1/rates/{id}</code></api></p>
 
 <p>Retrieve <a href="#rates">rates</a> under a given <a href="#payer">payer</a>.</p>
 
@@ -151,8 +207,14 @@
 </tr>
 
 <tr>
+<td><code>source_currency</code></td>
+<td>String</td>
+<td></td>
+</tr>
+
+<tr>
 <td><code>rates</code></td>
-<td>Object</td>
+<td>Array</td>
 <td><a href="#rates">Rates</a> information</td>
 </tr>
 </tbody>
@@ -163,18 +225,8 @@
 <!-- Countries-->
 
 <h2 id="countries">Countries</h2>
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">/v1/money-transfer/countries</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="n">X-Total</span><span class="o">:</span> <span class="l">1</span>
-<span class="n">X-Total-Pages</span><span class="o">:</span> <span class="l">1</span>
-<span class="n">X-Per-Page</span><span class="o">:</span> <span class="l">50</span>
-<span class="n">X-Page</span><span class="o">:</span> <span class="l">1</span>
-<span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">[</span>
-    <span class="p">{</span>
-        <span class="nt">&#34;iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;KEN&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Kenya&#34;</span>
-    <span class="p">}</span>
-<span class="p">]</span></code></pre></div>
-<p><api><code>GET /v1/money-transfer/countries</code></api></p>
+
+<p><api><code>GET api/v1/countries</code></api></p>
 
 <p>Retrieve list of <a href="#country">countries</a> for all money transfer <a href="#services">services</a> available for a given account.</p>
 
@@ -204,6 +256,48 @@
 <td>Integer</td>
 <td>Number of results per page (default 50, max 100)</td>
 </tr>
+
+<tr>
+<td><code>iso</code></td>
+<td>No</td>
+<td>Integer</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>name</code></td>
+<td>No</td>
+<td>Integer</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>iso_3</code></td>
+<td>No</td>
+<td>Integer</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>iso_name</code></td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>numcod_</code></td>
+<td>No</td>
+<td>Integer</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>currency</code></td>
+<td>No</td>
+<td>Integer</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -214,7 +308,7 @@
 <!-- Code Services -->
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <h3 class="n">Services</h3>
-<span class="nf">GET</span> <span class="nn">/v1/money-transfer/services</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="nf">GET</span> <span class="nn">api/v1/services</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="n">X-Total</span><span class="o">:</span> <span class="l">1</span>
 <span class="n">X-Total-Pages</span><span class="o">:</span> <span class="l">1</span>
 <span class="n">X-Per-Page</span><span class="o">:</span> <span class="l">50</span>
@@ -240,7 +334,7 @@
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <h3 class="n">Payers</h3>
-<span class="nf">GET</span> <span class="nn">/v1/money-transfer/payers</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="nf">GET</span> <span class="nn">api/v1/payers</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="n">X-Total</span><span class="o">:</span> <span class="l">1</span>
 <span class="n">X-Total-Pages</span><span class="o">:</span> <span class="l">1</span>
 <span class="n">X-Per-Page</span><span class="o">:</span> <span class="l">50</span>
@@ -259,11 +353,6 @@
          <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
          <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet&#34;</span>
       <span class="p">},</span>
-      <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-         <span class="p">[</span>
-            <span class="s2">&#34;msisdn&#34;</span>
-         <span class="p">]</span>
-      <span class="p">],</span>
       <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
          <span class="p">[</span>
             <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
@@ -277,21 +366,6 @@
             <span class="s2">&#34;lastname&#34;</span>
          <span class="p">]</span>
       <span class="p">],</span>
-      <span class="nt">&#34;credit_party_information&#34;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[]</span>
-         <span class="p">]</span>
-      <span class="p">},</span>
-      <span class="nt">&#34;credit_party_verification&#34;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[]</span>
-         <span class="p">],</span>
-         <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[]</span>
-         <span class="p">]</span>
-      <span class="p">}</span>
-   <span class="p">},</span>
-   <span class="p">{</span>
       <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#3#34;CashPickup Payer&#34;</span><span class="p">,</span>
       <span class="nt">&#34;precision&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -304,11 +378,6 @@
          <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;CashPickup&#34;</span><span class="p">,</span>
          <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">3</span>
       <span class="p">},</span>
-      <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-         <span class="p">[</span>
-            <span class="s2">&#34;msisdn&#34;</span>
-         <span class="p">]</span>
-      <span class="p">],</span>
       <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
          <span class="p">[</span>
             <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
@@ -322,23 +391,9 @@
             <span class="s2">&#34;lastname&#34;</span>
          <span class="p">]</span>
       <span class="p">],</span>
-      <span class="nt">&#34;credit_party_information&#34;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[]</span>
-         <span class="p">]</span>
-      <span class="p">},</span>
-      <span class="nt">&#34;credit_party_verification&#34;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[]</span>
-         <span class="p">],</span>
-         <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[]</span>
-         <span class="p">]</span>
-      <span class="p">}</span>
-   <span class="p">}</span>
 <span class="p">]</span></code></pre></div>
 
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">/v1/money-transfer/payers/3</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">api/v1/payers/3</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
     <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Sample Payer&#34;</span><span class="p">,</span>
@@ -390,8 +445,8 @@
 <!-- Payers rate code -->
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
-<h3 class="n">Payers Rate</h3>
-<span class="nf">GET</span> <span class="nn">/v1/money-transfer/payers/362/rates</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<h3 class="n">Rates</h3>
+<span class="nf">GET</span> <span class="nn">api/v1/payers/362/rates</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;destination_currency&#34;</span><span class="p">:</span> <span class="s2">&#34;CUC&#34;</span><span class="p">,</span>
     <span class="nt">&#34;rates&#34;</span><span class="p">:</span> <span class="p">{</span>
@@ -416,7 +471,7 @@
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <h3 class="n">Countries</h3>
-<span class="nf">GET</span> <span class="nn">/v1/money-transfer/countries</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="nf">GET</span> <span class="nn">api/v1/countries</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="n">X-Total</span><span class="o">:</span> <span class="l">1</span>
 <span class="n">X-Total-Pages</span><span class="o">:</span> <span class="l">1</span>
 <span class="n">X-Per-Page</span><span class="o">:</span> <span class="l">50</span>

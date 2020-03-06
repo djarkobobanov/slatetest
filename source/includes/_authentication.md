@@ -2,11 +2,12 @@
 
 <h1 id="authentication">Authentication</h1>
 
+<p><api><code>POST /api/v1/authenticate</code></api></p>
+
 <p>Access to all endpoints of the API requires authentication, through one of the following means:</p>
 
 <ol>
 <li><a href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Auth</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Digest_access_authentication">Digest Auth</a> (<a href="https://en.wikipedia.org/wiki/Hash-based_message_authentication_code">HMAC</a>)</li>
 </ol>
 
 <!-- End Authentication -->
@@ -26,12 +27,12 @@
 
 <tbody>
 <tr>
-<td>username</td>
+<td>Email</td>
 <td>API key</td>
 </tr>
 
 <tr>
-<td>password</td>
+<td>Password</td>
 <td>API secret</td>
 </tr>
 </tbody>

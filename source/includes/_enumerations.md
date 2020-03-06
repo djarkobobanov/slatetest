@@ -343,8 +343,8 @@
 </tr>
 </tbody>
 </table>
-
-<h2 id="account-status">Account Status</h2>
+ 
+<!--<h2 id="account-status">Account Status</h2>
 
 <table>
 <thead>
@@ -370,7 +370,7 @@
 <td>Credit party account is not available and will not receive a transfer</td>
 </tr>
 </tbody>
-</table>
+</table> -->
 
 <h2 id="beneficiary-relationship">Beneficiary Relationship</h2>
 

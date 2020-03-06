@@ -1,7 +1,37 @@
 <h1 id="credit-parties">Credit Parties</h1>
 
 <h2 id="information">Information</h2>
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">POST</span> <span class="nn">/v1/money-transfer/payers/1/credit-party-information</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+
+<p><api><code>POST api/v1/payers/{id}/credit-party-information</code></api></p>
+
+<p>Retrieve <a href="#beneficiary">beneficiary</a> information based on account details under a given <a href="#payer">payer</a>.</p>
+
+<h4 id="input-14">Input</h4>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>credit_party_identifier</code></td>
+<td>Yes</td>
+<td>Object</td>
+<td><a href="#credit-party-identifier">Credit party identifier</a> information</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="output-21">Output</h4>
+<p><a href="#beneficiary">Beneficiary</a> object.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">POST</span> <span class="nn">api/v1/payers/1/credit-party-information</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;credit_party_identifier&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;msisdn&#34;</span><span class="p">:</span> <span class="s2">&#34;263775892364&#34;</span>
@@ -32,31 +62,3 @@
     <span class="nt">&#34;bank_account_holder_name&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
     <span class="nt">&#34;province_state&#34;</span><span class="p">:</span> <span class="kc">null</span>
 <span class="p">}</span></code></pre></div>
-<p><api><code>POST /v1/money-transfer/payers/{id}/credit-party-information</code></api></p>
-
-<p>Retrieve <a href="#beneficiary">beneficiary</a> information based on account details under a given <a href="#payer">payer</a>.</p>
-
-<h4 id="input-14">Input</h4>
-
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Required</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>credit_party_identifier</code></td>
-<td>Yes</td>
-<td>Object</td>
-<td><a href="#credit-party-identifier">Credit party identifier</a> information</td>
-</tr>
-</tbody>
-</table>
-
-<h4 id="output-21">Output</h4>
-<p><a href="#beneficiary">Beneficiary</a> object.</p>
