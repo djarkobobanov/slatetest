@@ -15,8 +15,8 @@
 <!-- Basic Auth -->
 
 <h2 id="basic-auth">Basic Auth</h2>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">curl https://api.mm.thunes.com/ping <span class="se">\
-</span><span class="se"></span>  -u <span class="s2">&#34;</span><span class="si">${</span><span class="nv">API_KEY</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">API_SECRET</span><span class="si">}</span><span class="s2">&#34;</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">curl https://api/v1/ping <span class="se">\
+</span><span class="se"></span>  -u <span class="s2">&#34;</span><span class="si">${</span><span class="nv">Email</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">Password</span><span class="si">}</span><span class="s2">&#34;</span></code></pre></div>
 <table>
 <thead>
 <tr>

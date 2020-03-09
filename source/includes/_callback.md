@@ -12,7 +12,7 @@
 <pre class="chroma">
 <code class="language-http" data-lang="http">
 <h3 class="n">Callback</h3>
-<span class="nf">POST</span> <span class="nn">/callback</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="nf">POST</span> <span class="nn">api/v1/callback</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="n">Date</span><span class="o">:</span> <span class="l">Wed, 02 Nov 2016 09:17:54 GMT</span>
 <span class="n">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="n">X-TransferTo-Apikey</span><span class="o">:</span> <span class="l">00000000-0000-0000-0000-000000000000</span>

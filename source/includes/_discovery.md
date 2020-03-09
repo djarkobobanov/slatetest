@@ -446,7 +446,7 @@
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <h3 class="n">Rates</h3>
-<span class="nf">GET</span> <span class="nn">api/v1/payers/362/rates</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="nf">GET</span> <span class="nn">api/v1/rates</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;destination_currency&#34;</span><span class="p">:</span> <span class="s2">&#34;CUC&#34;</span><span class="p">,</span>
     <span class="nt">&#34;rates&#34;</span><span class="p">:</span> <span class="p">{</span>

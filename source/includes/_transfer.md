@@ -71,7 +71,7 @@
 
 <p>&ndash;</p>
 
-<p><api><code>POST /v1/money-transfer/quotations/ext-{external_id}/transactions</code></api></p>
+<p><api><code>POST api/v1/quotations/ext-{external_id}/transactions</code></api></p>
 
 <p>Create a new transaction with transfer values specified from a given <a href="#quotation">quotation</a> based on the external ID.</p>
 
@@ -187,7 +187,7 @@
 
 <p>&ndash;</p>
 \
-<p><api><code>POST /v1/money-transfer/transactions/{id}/confirm</code></api></p>
+<p><api><code>POST api/v1/transactions/{id}/confirm</code></api></p>
 
 <p>Confirm a previously-created <a href="#transaction">transaction</a> to initiate processing.</p>
 
@@ -197,7 +197,7 @@
 
 <p>&ndash;</p>
 
-<p><api><code>POST /v1/money-transfer/transactions/ext-{external_id}/confirm</code></api></p>
+<p><api><code>POST api/v1/transactions/ext-{external_id}/confirm</code></api></p>
 
 <p>Confirm a previously-created <a href="#transaction">transaction</a>, through an external ID, to initiate processing.</p>
 
@@ -207,7 +207,7 @@
 
 <p>&ndash;</p>
 
-<p><api><code>GET /v1/money-transfer/transactions/{id}</code></api></p>
+<p><api><code>GET api/v1/transactions/{id}</code></api></p>
 
 <p>Retrieve information for a given <a href="#transaction">transaction</a>.</p>
 
@@ -217,7 +217,7 @@
 
 <p>&ndash;</p>
 
-<p><api><code>GET /v1/money-transfer/transactions/ext-{external_id}</code></api></p>
+<p><api><code>GET api/v1/transactions/ext-{external_id}</code></api></p>
 
 <p>Retrieve information for a given <a href="#transaction">transaction</a> from an external ID.</p>
 
@@ -425,7 +425,7 @@
      <span class="nt">&#34;additional_information_3&#34;</span><span class="p">:</span> <span class="kc">null</span>
 <span class="p">}</span></code></pre></div>
 
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">POST</span> <span class="nn">/v1/money-transfer/transactions/1/confirm</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">POST</span> <span class="nn">api/v1/transactions/1/confirm</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
      <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="mi">20000</span><span class="p">,</span>
@@ -571,7 +571,7 @@
      <span class="nt">&#34;additional_information_3&#34;</span><span class="p">:</span> <span class="kc">null</span>
 <span class="p">}</span></code></pre></div>
 
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">POST</span> <span class="nn">/v1/money-transfer/transactions/ext-1478078339357/confirm</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">POST</span> <span class="nn">api/v1/transactions/ext-1478078339357/confirm</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
      <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="mi">20000</span><span class="p">,</span>
@@ -717,7 +717,7 @@
      <span class="nt">&#34;additional_information_3&#34;</span><span class="p">:</span> <span class="kc">null</span>
 <span class="p">}</span></code></pre></div>
 
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">/v1/money-transfer/transactions/1</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">api/v1/transactions/1</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
      <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
@@ -863,7 +863,7 @@
      <span class="nt">&#34;additional_information_3&#34;</span><span class="p">:</span> <span class="kc">null</span>
 <span class="p">}</span></code></pre></div>
 
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">/v1/money-transfer/transactions/ext-1478078339357</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">api/v1/transactions/ext-1478078339357</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
      <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
