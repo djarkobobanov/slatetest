@@ -184,7 +184,7 @@
 
 <h2 id="payer-rates">Rates</h2>
 
-<p><api><code>GET api/v1/rates/{id}</code></api></p>
+<p><api><code>GET api/v1/rates/{source}/{destination}</code></api></p>
 
 <p>Retrieve <a href="#rates">rates</a> under a given <a href="#payer">payer</a>.</p>
 

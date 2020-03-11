@@ -67,6 +67,87 @@
 
 <p>Array of <a href="#balance">balance</a> objects.</p>
 
+<h2 id="balances">Balance History</h2>
+
+<p><api><code>GET api/v1/balances</code></api></p>
+
+<p>Retrieve information for all account balances per currency.</p>
+
+<h4 id="input-13">Input</h4>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>No</td>
+<td>Integer</td>
+<td>Page number</td>
+</tr>
+
+<tr>
+<td><code>per_page</code></td>
+<td>No</td>
+<td>Integer</td>
+<td>Number of results per page (default 50, max 100)</td>
+</tr>
+
+<tr>
+<td><code>credit</code></td>
+<td>No</td>
+<td>Integer</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>debit</code></td>
+<td>No</td>
+<td>integer</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>originator</code></td>
+<td>No</td>
+<td>Polymorph</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>notes</code></td>
+<td>No</td>
+<td>Text</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>description</code></td>
+<td>No</td>
+<td>Text</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>balance_id</code></td>
+<td>No</td>
+<td>Integer</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="output-20">Output</h4>
+
+<p>Array of <a href="#balance">balance</a> objects.</p>
+
 <!-- Balances code -->
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
