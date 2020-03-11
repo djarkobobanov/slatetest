@@ -110,7 +110,7 @@
 <tr>
 <td><code>debit</code></td>
 <td>No</td>
-<td>integer</td>
+<td>Integer</td>
 <td></td>
 </tr>
 
