@@ -45,7 +45,7 @@
 <tr>
 <td><code>is_active</code></td>
 <td>No</td>
-<td>String</td>
+<td>Boolean</td>
 <td></td>
 </tr>
 </tbody>
@@ -130,21 +130,21 @@
 <tr>
 <td><code>minimum_amount</code></td>
 <td>No</td>
-<td>String</td>
+<td>Float</td>
 <td></td>
 </tr>
 
 <tr>
 <td><code>maximum_amount</code></td>
 <td>No</td>
-<td>String</td>
+<td>Float</td>
 <td></td>
 </tr>
 
 <tr>
 <td><code>required_sender_fields</code></td>
 <td>No</td>
-<td>Text</td>
+<td>Array</td>
 <td></td>
 </tr>
 
@@ -158,7 +158,7 @@
 <tr>
 <td><code>destination_info</code></td>
 <td>No</td>
-<td>String</td>
+<td>Array</td>
 <td></td>
 </tr>
 </tbody>
@@ -260,21 +260,21 @@
 <tr>
 <td><code>iso</code></td>
 <td>No</td>
-<td>Integer</td>
+<td>String</td>
 <td></td>
 </tr>
 
 <tr>
 <td><code>name</code></td>
 <td>No</td>
-<td>Integer</td>
+<td>String</td>
 <td></td>
 </tr>
 
 <tr>
 <td><code>iso_3</code></td>
 <td>No</td>
-<td>Integer</td>
+<td>String</td>
 <td></td>
 </tr>
 
@@ -286,7 +286,7 @@
 </tr>
 
 <tr>
-<td><code>numcod_</code></td>
+<td><code>numcode</code></td>
 <td>No</td>
 <td>Integer</td>
 <td></td>
@@ -295,7 +295,7 @@
 <tr>
 <td><code>currency</code></td>
 <td>No</td>
-<td>Integer</td>
+<td>String</td>
 <td></td>
 </tr>
 </tbody>
@@ -349,10 +349,6 @@
       <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;USA&#34;</span><span class="p">,</span>
       <span class="nt">&#34;minimum_transaction_amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="nt">&#34;maximum_transaction_amount&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="nt">&#34;service&#34;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-         <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet&#34;</span>
-      <span class="p">},</span>
       <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
          <span class="p">[</span>
             <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
@@ -365,6 +361,7 @@
             <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
             <span class="s2">&#34;lastname&#34;</span>
          <span class="p">]</span>
+      <span class="nt">&#34;destination_info&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="p">],</span>
       <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#3#34;CashPickup Payer&#34;</span><span class="p">,</span>
@@ -374,10 +371,6 @@
       <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;PHL&#34;</span><span class="p">,</span>
       <span class="nt">&#34;minimum_transaction_amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="nt">&#34;maximum_transaction_amount&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="nt">&#34;service&#34;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;CashPickup&#34;</span><span class="p">,</span>
-         <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">3</span>
-      <span class="p">},</span>
       <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
          <span class="p">[</span>
             <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
@@ -391,54 +384,9 @@
             <span class="s2">&#34;lastname&#34;</span>
          <span class="p">]</span>
       <span class="p">],</span>
-<span class="p">]</span></code></pre></div>
+      <span class="nt">&#34;destination_info&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
 
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">api/v1/payers/3</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Sample Payer&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;precision&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="nt">&#34;increment&#34;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
-    <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;IDR&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;IDN&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;minimum_transaction_amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="nt">&#34;maximum_transaction_amount&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="nt">&#34;service&#34;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-         <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet&#34;</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-         <span class="p">[</span>
-                <span class="s2">&#34;msisdn&#34;</span>
-         <span class="p">]</span>
-    <span class="p">],</span>
-    <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-         <span class="p">[</span>
-                <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
-                <span class="s2">&#34;date_of_birth&#34;</span><span class="p">,</span>
-                <span class="s2">&#34;lastname&#34;</span>
-         <span class="p">]</span>
-    <span class="p">],</span>
-    <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-         <span class="p">[</span>
-                <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
-                <span class="s2">&#34;lastname&#34;</span>
-         <span class="p">]</span>
-    <span class="p">],</span>
-    <span class="nt">&#34;credit_party_information&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[]</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;credit_party_verification&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[]</span>
-        <span class="p">],</span>
-        <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[]</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">]</span></code></pre></div>
 
 <!-- End Pyaers code -->
 

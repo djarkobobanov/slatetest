@@ -36,28 +36,28 @@
 <tr>
 <td><code>currency</code></td>
 <td>No</td>
-<td>Integer</td>
+<td>String</td>
 <td></td>
 </tr>
 
 <tr>
 <td><code>balance</code></td>
 <td>No</td>
-<td>Integer</td>
+<td>Decimal</td>
 <td></td>
 </tr>
 
 <tr>
 <td><code>available_balance</code></td>
 <td>No</td>
-<td>Integer</td>
+<td>Decimal</td>
 <td></td>
 </tr>
 
 <tr>
 <td><code>is_active</code></td>
 <td>No</td>
-<td>Integer</td>
+<td>Boolean</td>
 <td></td>
 </tr>
 </tbody>
@@ -82,7 +82,7 @@
         <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
         <span class="nt">&#34;balance&#34;</span><span class="p">:</span> <span class="mi">10000000</span><span class="p">,</span>
         <span class="nt">&#34;available_balance&#34;</span><span class="p">:</span> <span class="mi">10000000</span><span class="p">,</span>
-        <span class="nt">&#34;credit_facility&#34;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="nt">&#34;is_active&#34;</span><span class="p">:</span> <span class="mi">1</span>
     <span class="p">}</span>
 <span class="p">]</span></code></pre></div>
 
