@@ -349,6 +349,10 @@
       <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;USA&#34;</span><span class="p">,</span>
       <span class="nt">&#34;minimum_transaction_amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="nt">&#34;maximum_transaction_amount&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&#34;service&#34;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet&#34;</span>
+      <span class="p">},</span>
       <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
          <span class="p">[</span>
             <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
@@ -371,6 +375,10 @@
       <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;PHL&#34;</span><span class="p">,</span>
       <span class="nt">&#34;minimum_transaction_amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="nt">&#34;maximum_transaction_amount&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+       <span class="nt">&#34;service&#34;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet&#34;</span>
+      <span class="p">},</span>
       <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
          <span class="p">[</span>
             <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
