@@ -434,8 +434,12 @@
 <span class="n">X-Page</span><span class="o">:</span> <span class="l">1</span>
 <span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">[</span>
     <span class="p">{</span>
-        <span class="nt">&#34;iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;KEN&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;iso&#34;</span><span class="p">:</span> <span class="s2">&#34;KEN&#34;</span><span class="p">,</span>
         <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Kenya&#34;</span>
+        <span class="nt">&#34;iso_3&#34;</span><span class="p">:</span> <span class="s2"></span>
+        <span class="nt">&#34;iso_name&#34;</span><span class="p">:</span> <span class="s2"></span>
+        <span class="nt">&#34;numcode&#34;</span><span class="p">:</span> <span class="s2"></span>
+        <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2"></span>
     <span class="p">}</span>
 <span class="p">]</span></code></pre></div>
 
