@@ -28,6 +28,13 @@
 </tr>
 
 <tr>
+<td><code>callback_url</code></td>
+<td>Yes</td>
+<td>String</td>
+<td></td>
+</tr>
+
+<tr>
 <td><code>payer_id</code></td>
 <td>No</td>
 <td>Integer</td>
@@ -35,16 +42,23 @@
 </tr>
 
 <tr>
+<td><code>mode</code></td>
+<td>No</td>
+<td>String</td>
+<td>Source/Destination Amount</a></td>
+</tr>
+
+<tr>
 <td><code>source</code></td>
 <td>No</td>
-<td>Integer</td>
+<td>Object</td>
 <td><a href="#source">Source</a> information</td>
 </tr>
 
 <tr>
 <td><code>destination</code></td>
 <td>No</td>
-<td>Integer</td>
+<td>Object</td>
 <td><a href="#destination">Destination</a> information</td>
 </tr>
 
@@ -58,7 +72,7 @@
 <tr>
 <td><code>compliance</code></td>
 <td>No</td>
-<td>Integer</td>
+<td>Object</td>
 <td><a href="#compliance">Compliance</a> information</td>
 </tr>
 </tbody>
@@ -70,122 +84,7 @@
 
 <p>&ndash;</p>
 
-<p><api><code>POST api/v1/quotations/ext-{external_id}/transactions</code></api></p>
 
-<p>Create a new transaction with transfer values specified from a given <a href="#quotation">quotation</a> based on the external ID.</p>
-
-<h4 id="input-18">Input</h4>
-
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Required</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>credit_party_identifier</code></td>
-<td>Yes</td>
-<td>Object</td>
-<td><a href="#credit-party-identifier">Credit party identifier</a></td>
-</tr>
-
-<tr>
-<td><code>retail_rate</code></td>
-<td>No</td>
-<td>Number</td>
-<td>Retail rate</td>
-</tr>
-
-<tr>
-<td><code>retail_fee</code></td>
-<td>No</td>
-<td>Number</td>
-<td>Retail fee</td>
-</tr>
-
-<tr>
-<td><code>retail_fee_currency</code></td>
-<td>No</td>
-<td>String</td>
-<td>Retail fee currency in <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> format</td>
-</tr>
-
-<tr>
-<td><code>sender</code></td>
-<td>Yes</td>
-<td>Object</td>
-<td><a href="#sender">Sender information</a></td>
-</tr>
-
-<tr>
-<td><code>beneficiary</code></td>
-<td>Yes</td>
-<td>Object</td>
-<td><a href="#beneficiary">Beneficiary information</a></td>
-</tr>
-
-<tr>
-<td><code>external_id</code></td>
-<td>Yes</td>
-<td>String</td>
-<td>External ID</td>
-</tr>
-
-<tr>
-<td><code>external_code</code></td>
-<td>No</td>
-<td>String</td>
-<td>External reference code</td>
-</tr>
-
-<tr>
-<td><code>callback_url</code></td>
-<td>No</td>
-<td>String</td>
-<td><a href="#callback">Callback URL</a></td>
-</tr>
-
-<tr>
-<td><code>purpose_of_remittance</code></td>
-<td>No</td>
-<td>String</td>
-<td><a href="#purpose-of-remittance">Purpose of the remittance</a></td>
-</tr>
-
-<tr>
-<td><code>additional_information_1</code></td>
-<td>No</td>
-<td>String</td>
-<td>Additional information</td>
-</tr>
-
-<tr>
-<td><code>additional_information_2</code></td>
-<td>No</td>
-<td>String</td>
-<td>Additional information</td>
-</tr>
-
-<tr>
-<td><code>additional_information_3</code></td>
-<td>No</td>
-<td>String</td>
-<td>Additional information</td>
-</tr>
-</tbody>
-</table>
-
-<h4 id="output-27">Output</h4>
-
-<p><a href="#transaction">Transaction</a> object.</p>
-
-<p>&ndash;</p>
-\
 <p><api><code>POST api/v1/transactions/{id}/confirm</code></api></p>
 
 <p>Confirm a previously-created <a href="#transaction">transaction</a> to initiate processing.</p>
