@@ -1,7 +1,6 @@
 <h1 id="transfers">Transfers</h1>
 
 <!-- Transactions -->
-
 <h2 id="transactions">Transactions</h2>
 
 <p><api><code>POST api/v1/transactions/create</code></api></p>
@@ -25,42 +24,42 @@
 <td><code>reference_id</code></td>
 <td>Yes</td>
 <td>Integer</td>
-<td></td>
+<td><a href="#reference">Reference</a> information</td>
 </tr>
 
 <tr>
 <td><code>payer_id</code></td>
 <td>No</td>
 <td>Integer</td>
-<td></td>
+<td><a href="#payer">Payer</a> information</td>
 </tr>
 
 <tr>
 <td><code>source</code></td>
 <td>No</td>
 <td>Integer</td>
-<td></td>
+<td><a href="#source">Source</a> information</td>
 </tr>
 
 <tr>
 <td><code>destination</code></td>
 <td>No</td>
 <td>Integer</td>
-<td></td>
+<td><a href="#destination">Destination</a> information</td>
 </tr>
 
 <tr>
-<td><code>beneficiars</code></td>
+<td><code>beneficiary</code></td>
 <td>No</td>
 <td>Object</td>
-<td></td>
+<td><a href="#beneficiary">Beneficiary</a> information</td>
 </tr>
 
 <tr>
 <td><code>compliance</code></td>
 <td>No</td>
 <td>Integer</td>
-<td></td>
+<td><a href="#compliance">Compliance</a> information</td>
 </tr>
 </tbody>
 </table>

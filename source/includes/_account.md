@@ -37,7 +37,7 @@
 <td><code>currency</code></td>
 <td>No</td>
 <td>String</td>
-<td></td>
+<td>Currency in <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> format</td>
 </tr>
 
 <tr>
@@ -139,7 +139,7 @@
 <td><code>balance_id</code></td>
 <td>No</td>
 <td>Integer</td>
-<td></td>
+<td> <a href="#balance">Balance</a> information </td>
 </tr>
 </tbody>
 </table>

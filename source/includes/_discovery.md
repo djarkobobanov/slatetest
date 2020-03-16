@@ -2,7 +2,7 @@
 
 <!-- Services -->
 
-<h2 id="services">Services</h2>
+<h2 href="#service">Services</h2>
 
 <p><api><code>GET api/v1/services</code></api></p>
 
@@ -53,7 +53,7 @@
 
 <h4 id="output-1">Output</h4>
 
-<p>Array of <a href="#service">service</a> objects in a <a href="#pagination">paginated</a> fashion.</p>
+<p>Array of <a href="service">service</a> objects in a <a href="#pagination">paginated</a> fashion.</p>
 
 <!-- End Services -->
 
@@ -296,7 +296,7 @@
 <td><code>currency</code></td>
 <td>No</td>
 <td>String</td>
-<td></td>
+<td>Currency in <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> format</td>
 </tr>
 </tbody>
 </table>
