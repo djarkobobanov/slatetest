@@ -3,7 +3,7 @@
 <!-- Transactions -->
 <h2 id="transactions">Transactions</h2>
 
-<p><api><code>POST api/v1/transactions/create</code></api></p>
+<p><api><code>POST api/v1/transactions/</code></api></p>
 
 <p>Create a new transaction with transfer values specified from a given <a href="#quotation">quotation</a>.</p>
 
@@ -126,81 +126,23 @@
 <!-- End Transaction -->
 
 <!-- Transaction code -->
-
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <h3 class="n">Transfer</h3>
-<span class="nf">POST</span> <span class="nn">api/v1/transactions/create/ext-1481184321405</span>
+<span class="nf">POST</span> <span class="nn">api/v1/transactions</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="err">201</span> <span class="l">Created</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;credit_party_identifier&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;msisdn&#34;</span><span class="p">:</span> <span class="s2">&#34;+263775892100&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;bank_account_number&#34;</span><span class="p">:</span> <span class="s2">&#34;0123456789&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;swift_bic_code&#34;</span><span class="p">:</span> <span class="s2">&#34;ABCDEFGH&#34;</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;sender&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;John&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;nationality_country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;date_of_birth&#34;</span><span class="p">:</span> <span class="s2">&#34;1970-01-01&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;country_of_birth_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;MALE&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;address&#34;</span><span class="p">:</span> <span class="s2">&#34;42 Rue des fleurs&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;postal_code&#34;</span><span class="p">:</span> <span class="s2">&#34;75000&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="s2">&#34;Paris&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;msisdn&#34;</span><span class="p">:</span> <span class="s2">&#34;33712345678&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;john.doe@mail.com&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;id_type&#34;</span><span class="p">:</span> <span class="s2">&#34;SOCIAL_SECURITY&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;id_number&#34;</span><span class="p">:</span> <span class="s2">&#34;502-42-0158&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;id_delivery_date&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-01-01&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;occupation&#34;</span><span class="p">:</span> <span class="s2">&#34;Residential Advisor&#34;</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;beneficiary&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Jane&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;nationality_country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;date_of_birth&#34;</span><span class="p">:</span> <span class="s2">&#34;1971-01-01&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;country_of_birth_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;ZWE&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;MALE&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;address&#34;</span><span class="p">:</span> <span class="s2">&#34;3 Norfolk Road&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;postal_code&#34;</span><span class="p">:</span> <span class="s2">&#34;4581&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="s2">&#34;Harare&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;ZWE&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;msisdn&#34;</span><span class="p">:</span> <span class="s2">&#34;263775892364&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;jane.doe@mail.com&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;id_type&#34;</span><span class="p">:</span> <span class="s2">&#34;SOCIAL_SECURITY&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;id_country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;ZWE&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;id_number&#34;</span><span class="p">:</span> <span class="s2">&#34;178027317681327&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;occupation&#34;</span><span class="p">:</span> <span class="s2">&#34;Sales Executive&#34;</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;external_id&#34;</span><span class="p">:</span> <span class="s2">&#34;1478078339357&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;retail_fee&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&#34;retail_fee_currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;purpose_of_remittance&#34;</span><span class="p">:</span> <span class="s2">&#34;FAMILY_SUPPORT&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="s2">&#34;{URL_PLACEHOLDER}&#34;</span>
-<span class="p">}</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
      <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>
      <span class="nt">&#34;status_message&#34;</span><span class="p">:</span> <span class="s2">&#34;CREATED&#34;</span><span class="p">,</span>
      <span class="nt">&#34;status_class&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-     <span class="nt">&#34;status_class_message&#34;</span><span class="p">:</span> <span class="s2">&#34;CREATED&#34;</span><span class="p">,</span>
-     <span class="nt">&#34;external_id&#34;</span><span class="p">:</span> <span class="s2">&#34;1478078339357&#34;</span><span class="p">,</span>
-     <span class="nt">&#34;external_code&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&#34;payer_transaction_reference&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&#34;payer_transaction_code&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
      <span class="nt">&#34;creation_date&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-11-02T09:19:15&#34;</span><span class="p">,</span>
-     <span class="nt">&#34;expiration_date&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-11-03T09:07:44&#34;</span><span class="p">,</span>
-     <span class="nt">&#34;credit_party_identifier&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;msisdn&#34;</span><span class="p">:</span> <span class="s2">&#34;+263775892100&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;bank_account_number&#34;</span><span class="p">:</span> <span class="s2">&#34;0123456789&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;swift_bic_code&#34;</span><span class="p">:</span> <span class="s2">&#34;ABCDEFGH&#34;</span>
-     <span class="p">},</span>
      <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
         <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
         <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">10</span>
      <span class="p">},</span>
      <span class="nt">&#34;destination&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
         <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;USD&#34;</span><span class="p">,</span>
         <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mf">10.69</span>
      <span class="p">},</span>
@@ -208,7 +150,6 @@
         <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Sample Payer&#34;</span><span class="p">,</span>
         <span class="nt">&#34;precision&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="nt">&#34;increment&#34;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
         <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;USD&#34;</span><span class="p">,</span>
         <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;ZWE&#34;</span><span class="p">,</span>
         <span class="nt">&#34;minimum_transaction_amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -217,11 +158,6 @@
             <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
             <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet&#34;</span>
         <span class="p">},</span>
-        <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[</span>
-                <span class="s2">&#34;msisdn&#34;</span>
-            <span class="p">]</span>
-        <span class="p">],</span>
         <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">[</span>
                 <span class="s2">&#34;lastname&#34;</span><span class="p">,</span>
@@ -233,94 +169,48 @@
                 <span class="s2">&#34;lastname&#34;</span><span class="p">,</span>
                 <span class="s2">&#34;firstname&#34;</span>
             <span class="p">]</span>
-        <span class="p">],</span>
-        <span class="nt">&#34;credit_party_information&#34;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">[]</span>
-            <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="nt">&#34;credit_party_verification&#34;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&#34;credit_party_identifiers_accepted&#34;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">[]</span>
-            <span class="p">],</span>
-            <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">[]</span>
-            <span class="p">]</span>
-        <span class="p">}</span>
+        <span class="p">},</span>  
      <span class="p">},</span>
      <span class="nt">&#34;sender&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;lastname2&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&#34;middlename&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
         <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;John&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;nativename&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&#34;nationality_country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;nationality&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
         <span class="nt">&#34;date_of_birth&#34;</span><span class="p">:</span> <span class="s2">&#34;1970-01-01&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;country_of_birth_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;country_of_birth&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
         <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;MALE&#34;</span><span class="p">,</span>
         <span class="nt">&#34;address&#34;</span><span class="p">:</span> <span class="s2">&#34;42 Rue des fleurs&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;postal_code&#34;</span><span class="p">:</span> <span class="s2">&#34;75000&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;zip_code&#34;</span><span class="p">:</span> <span class="s2">&#34;75000&#34;</span><span class="p">,</span>
         <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="s2">&#34;Paris&#34;</span><span class="p">,</span>
         <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;msisdn&#34;</span><span class="p">:</span> <span class="s2">&#34;33712345678&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;country_iso&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
         <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;john.doe@mail.com&#34;</span><span class="p">,</span>
         <span class="nt">&#34;id_type&#34;</span><span class="p">:</span> <span class="s2">&#34;SOCIAL_SECURITY&#34;</span><span class="p">,</span>
         <span class="nt">&#34;id_country_iso_code&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
         <span class="nt">&#34;id_number&#34;</span><span class="p">:</span> <span class="s2">&#34;502-42-0158&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;id_delivery_date&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-01-01&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;id_expiration_date&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&#34;occupation&#34;</span><span class="p">:</span> <span class="s2">&#34;Residential Advisor&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;bank&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&#34;bank_account&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&#34;card&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&#34;province_state&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&#34;beneficiary_relationship&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&#34;source_of_funds&#34;</span><span class="p">:</span> <span class="kc">null</span>
      <span class="p">},</span>
      <span class="nt">&#34;beneficiary&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;lastname2&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&#34;middlename&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
         <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Jane&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;nativename&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&#34;nationality_country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;nationality&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
         <span class="nt">&#34;date_of_birth&#34;</span><span class="p">:</span> <span class="s2">&#34;1971-01-01&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;country_of_birth_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;ZWE&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;country_of_birth&#34;</span><span class="p">:</span> <span class="s2">&#34;ZWE&#34;</span><span class="p">,</span>
         <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;MALE&#34;</span><span class="p">,</span>
         <span class="nt">&#34;address&#34;</span><span class="p">:</span> <span class="s2">&#34;3 Norfolk Road&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;postal_code&#34;</span><span class="p">:</span> <span class="s2">&#34;4581&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;zip_code&#34;</span><span class="p">:</span> <span class="s2">&#34;4581&#34;</span><span class="p">,</span>
         <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="s2">&#34;Harare&#34;</span><span class="p">,</span>
         <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;ZWE&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;msisdn&#34;</span><span class="p">:</span> <span class="s2">&#34;263775892364&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;country_iso&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
         <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;jane.doe@mail.com&#34;</span><span class="p">,</span>
         <span class="nt">&#34;id_type&#34;</span><span class="p">:</span> <span class="s2">&#34;SOCIAL_SECURITY&#34;</span><span class="p">,</span>
         <span class="nt">&#34;id_country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;ZWE&#34;</span><span class="p">,</span>
         <span class="nt">&#34;id_number&#34;</span><span class="p">:</span> <span class="s2">&#34;178027317681327&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;id_delivery_date&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&#34;id_expiration_date&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&#34;occupation&#34;</span><span class="p">:</span> <span class="s2">&#34;Sales Executive&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;bank_account_holder_name&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&#34;province_state&#34;</span><span class="p">:</span> <span class="kc">null</span>
+     <span class="p">},</span>
+     <span class="nt">&#34;compliance&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;purpose_of_remittance&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;source_of_funds&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;beneficiary_relationship&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
      <span class="p">},</span>
      <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="s2">&#34;{URL_PLACEHOLDER}&#34;</span><span class="p">,</span>
-     <span class="nt">&#34;sent_amount&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">10</span>
-     <span class="p">},</span>
-     <span class="nt">&#34;wholesale_fx_rate&#34;</span><span class="p">:</span> <span class="mf">1.06891969534071</span><span class="p">,</span>
-     <span class="nt">&#34;retail_rate&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&#34;retail_fee&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-     <span class="nt">&#34;retail_fee_currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
-     <span class="nt">&#34;fee&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mf">1.88</span>
-     <span class="p">},</span>
-     <span class="nt">&#34;purpose_of_remittance&#34;</span><span class="p">:</span> <span class="s2">&#34;FAMILY_SUPPORT&#34;</span><span class="p">,</span>
-     <span class="nt">&#34;additional_information_1&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&#34;additional_information_2&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&#34;additional_information_3&#34;</span><span class="p">:</span> <span class="kc">null</span>
 <span class="p">}</span></code></pre></div>
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">POST</span> <span class="nn">api/v1/transactions/1/confirm</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>

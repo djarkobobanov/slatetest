@@ -130,14 +130,14 @@
 <tr>
 <td><code>minimum_amount</code></td>
 <td>No</td>
-<td>Float</td>
+<td>Decimal</td>
 <td></td>
 </tr>
 
 <tr>
 <td><code>maximum_amount</code></td>
 <td>No</td>
-<td>Float</td>
+<td>Decimal</td>
 <td></td>
 </tr>
 
@@ -317,14 +317,17 @@
    <span class="p">{</span>
       <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet&#34;</span>
+      <span class="nt">&#34;is_active&#34;</span><span class="p">:</span> <span class="s2">&#34;true&#34;</span>
    <span class="p">},</span>
    <span class="p">{</span>
       <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;BankAccount&#34;</span>
+      <span class="nt">&#34;is_active&#34;</span><span class="p">:</span> <span class="s2">&#34;true&#34;</span>
    <span class="p">},</span>
    <span class="p">{</span>
       <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;CashPickup&#34;</span>
+      <span class="nt">&#34;is_active&#34;</span><span class="p">:</span> <span class="s2">&#34;true&#34;</span>
    <span class="p">}</span>
 <span class="p">]</span></code></pre></div>
 
@@ -344,7 +347,6 @@
       <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet Payer&#34;</span><span class="p">,</span>
       <span class="nt">&#34;precision&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="nt">&#34;increment&#34;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
       <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;USD&#34;</span><span class="p">,</span>
       <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;USA&#34;</span><span class="p">,</span>
       <span class="nt">&#34;minimum_transaction_amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -367,10 +369,11 @@
          <span class="p">]</span>
       <span class="nt">&#34;destination_info&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="p">],</span>
-      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+
+
+   <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#3#34;CashPickup Payer&#34;</span><span class="p">,</span>
       <span class="nt">&#34;precision&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="nt">&#34;increment&#34;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
       <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;PHP&#34;</span><span class="p">,</span>
       <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;PHL&#34;</span><span class="p">,</span>
       <span class="nt">&#34;minimum_transaction_amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -405,17 +408,16 @@
 <span class="nf">GET</span> <span class="nn">api/v1/rates</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;destination_currency&#34;</span><span class="p">:</span> <span class="s2">&#34;CUC&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;source_currency&#34;</span><span class="p">:</span> <span class="s2">&#34;CUC&#34;</span><span class="p">,</span>
     <span class="nt">&#34;rates&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;EUR&#34;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
                 <span class="nt">&#34;source_amount_min&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
                 <span class="nt">&#34;source_amount_max&#34;</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span>
-                <span class="nt">&#34;wholesale_fx_rate&#34;</span><span class="p">:</span> <span class="mf">1.10847692409526</span>
             <span class="p">},</span>
             <span class="p">{</span>
                 <span class="nt">&#34;source_amount_min&#34;</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span>
                 <span class="nt">&#34;source_amount_max&#34;</span><span class="p">:</span> <span class="mi">8800</span><span class="p">,</span>
-                <span class="nt">&#34;wholesale_fx_rate&#34;</span><span class="p">:</span> <span class="mf">1.10847692409526</span>
             <span class="p">}</span>
         <span class="p">]</span>
     <span class="p">}</span>
