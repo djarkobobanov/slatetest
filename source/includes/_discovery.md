@@ -337,67 +337,187 @@
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <h3 class="n">Payers</h3>
-<span class="nf">GET</span> <span class="nn">api/v1/payers</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="n">X-Total</span><span class="o">:</span> <span class="l">1</span>
-<span class="n">X-Total-Pages</span><span class="o">:</span> <span class="l">1</span>
-<span class="n">X-Per-Page</span><span class="o">:</span> <span class="l">50</span>
-<span class="n">X-Page</span><span class="o">:</span> <span class="l">1</span>
-<span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">[</span>
+<p class="n">All Payers</p>
+<span class="nf">GET</span> <span class="nn">videl.rubyh.co/api/v1/payers?page=1&per_page=25&q[country_i
+so_code_eq]=&q[currency_eq]=IDR&q[name_cont]=</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+
+<span class="p">{</>
+      <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
+      <span class="err">data</span> <span class="p">:</span> <span class="p">{</>
    <span class="p">{</span>
-      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet Payer&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;precision&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;USD&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;USA&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;minimum_transaction_amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&#34;maximum_transaction_amount&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="nt">&#34;service&#34;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-         <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet&#34;</span>
-      <span class="p">},</span>
-      <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-         <span class="p">[</span>
+         <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+         <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;cimb&#34;</span><span class="p">,</span>
+         <span class="nt">&#34;precision&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+         <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;IDR&#34;</span><span class="p">,</span>
+         <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;IDN&#34;</span><span class="p">,</span>
+         <span class="nt">&#34;minimum_amount&#34;</span><span class="p">:</span> <span class="mi">100000.0</span><span class="p">,</span>
+         <span class="nt">&#34;maximum_amount&#34;</span><span class="p">:</span> <span class="mi">2000000000.0</span><span class="p">,</span>
+         <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
             <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
             <span class="s2">&#34;lastname&#34;</span><span class="p">,</span>
-            <span class="s2">&#34;date_of_birth&#34;</span>
-         <span class="p">]</span>
+            <span class="s2">&#34;nationality&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;date_of_birth&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_of_birth&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;gender&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;address&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;zipcode&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;city&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_iso_code&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_iso&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;email&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_type&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_country_iso_code&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_number&#34;</span>
       <span class="p">],</span>
       <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
          <span class="p">[</span>
             <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
-            <span class="s2">&#34;lastname&#34;</span>
-         <span class="p">]</span>
-      <span class="nt">&#34;destination_info&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="p">],</span>
-
-
-   <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#3#34;CashPickup Payer&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;precision&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;PHP&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;PHL&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;minimum_transaction_amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&#34;maximum_transaction_amount&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-       <span class="nt">&#34;service&#34;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-         <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet&#34;</span>
-      <span class="p">},</span>
-      <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-         <span class="p">[</span>
+            <span class="s2">&#34;lastname&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;nationality&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;date_of_birth&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_of_birth&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;gender&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;address&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;zipcode&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;city&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_iso_code&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_iso&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;email&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_type&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_country_iso_code&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_number&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;bank&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;account&#34;</span>
+         <span class="p">],</span>
+      <span class="nt">&#34;destination_info&#34;</span><span class="p">:</span> <span class="p">[]</span><span class="p">,</span>
+      <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-10T03:54:32.636Z</span><span class="p">,</span>
+      <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-10T03:54:32.636Z</span><span class="p">,</span>
+      <span class="nt">&#34;user_id&#34;</span><span class="p">:</span> <span class="mi">null</span><span class="p">,</span>
+      <span class="nt">&#34;service_id&#34;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">Bank Account</span><span class="p">,</span>
+            <span class="nt">&#34;is_active&#34;</span><span class="p">:</span> <span class="mi">true</span><span class="p">,</span>
+            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">2020-03-04T15:50:38.848Z</span><span class="p">,</span>
+            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-03-04T15:50:38.848Z</span><span class="p">,</span>
+   <span class="p">}</span>
+<span class="p">},</span>
+<span class="p">{</span>
+         <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+         <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;bca&#34;</span><span class="p">,</span>
+         <span class="nt">&#34;precision&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+         <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;IDR&#34;</span><span class="p">,</span>
+         <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;IDN&#34;</span><span class="p">,</span>
+         <span class="nt">&#34;minimum_amount&#34;</span><span class="p">:</span> <span class="mi">100000.0</span><span class="p">,</span>
+         <span class="nt">&#34;maximum_amount&#34;</span><span class="p">:</span> <span class="mi">2000000000.0</span><span class="p">,</span>
+         <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
             <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
             <span class="s2">&#34;lastname&#34;</span><span class="p">,</span>
-            <span class="s2">&#34;date_of_birth&#34;</span>
-         <span class="p">]</span>
+            <span class="s2">&#34;nationality&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;date_of_birth&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_of_birth&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;gender&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;address&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;zipcode&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;city&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_iso_code&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_iso&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;email&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_type&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_country_iso_code&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_number&#34;</span>
       <span class="p">],</span>
       <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
          <span class="p">[</span>
             <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
-            <span class="s2">&#34;lastname&#34;</span>
-         <span class="p">]</span>
-      <span class="p">],</span>
-      <span class="nt">&#34;destination_info&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="s2">&#34;lastname&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;nationality&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;date_of_birth&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_of_birth&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;gender&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;address&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;zipcode&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;city&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_iso_code&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_iso&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;email&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_type&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_country_iso_code&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_number&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;bank&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;account&#34;</span>
+         <span class="p">],</span>
+      <span class="nt">&#34;destination_info&#34;</span><span class="p">:</span> <span class="p">[]</span><span class="p">,</span>
+      <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-10T03:54:32.636Z</span><span class="p">,</span>
+      <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-10T03:54:32.636Z</span><span class="p">,</span>
+      <span class="nt">&#34;user_id&#34;</span><span class="p">:</span> <span class="mi">null</span><span class="p">,</span>
+      <span class="nt">&#34;service_id&#34;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">Bank Account</span><span class="p">,</span>
+            <span class="nt">&#34;is_active&#34;</span><span class="p">:</span> <span class="mi">true</span><span class="p">,</span>
+            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">2020-03-04T15:50:38.848Z</span><span class="p">,</span>
+            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-03-04T15:50:38.848Z</span><span class="p">,</span>
+   <span class="p">}</span>
+<span class="p">}</span>
 
-<span class="p">]</span></code></pre></div>
+<p class="n">Get Payers</p>
+<span class="nf">GET</span> <span class="nn">videl.rubyh.co/api/v1/payers/1'</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+
+<span class="p">{</>
+      <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
+      <span class="err">data</span> <span class="p">:</span> <span class="p">{</>
+   <span class="p">{</span>
+         <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;btpn&#34;</span><span class="p">,</span>
+         <span class="nt">&#34;precision&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+         <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;IDR&#34;</span><span class="p">,</span>
+         <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;IDN&#34;</span><span class="p">,</span>
+         <span class="nt">&#34;minimum_amount&#34;</span><span class="p">:</span> <span class="mi">100000.0</span><span class="p">,</span>
+         <span class="nt">&#34;maximum_amount&#34;</span><span class="p">:</span> <span class="mi">2000000000.0</span><span class="p">,</span>
+         <span class="nt">&#34;required_sender_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;lastname&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;nationality&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;date_of_birth&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_of_birth&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;gender&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;address&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;zipcode&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;city&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_iso_code&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_iso&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;email&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_type&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_country_iso_code&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_number&#34;</span>
+      <span class="p">],</span>
+      <span class="nt">&#34;required_beneficiary_fields&#34;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">[</span>
+            <span class="s2">&#34;firstname&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;lastname&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;nationality&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;date_of_birth&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_of_birth&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;gender&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;address&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;zipcode&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;city&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_iso_code&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;country_iso&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;email&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_type&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_country_iso_code&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;id_number&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;bank&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;account&#34;</span>
+         <span class="p">],</span>
+      <span class="nt">&#34;destination_info&#34;</span><span class="p">:</span> <span class="p">[]</span><span class="p">,</span>
+      <span class="nt">&#34;service_id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&#34;user_id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <!-- End Pyaers code -->
 
@@ -405,22 +525,25 @@
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <h3 class="n">Rates</h3>
-<span class="nf">GET</span> <span class="nn">api/v1/rates</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;destination_currency&#34;</span><span class="p">:</span> <span class="s2">&#34;CUC&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;source_currency&#34;</span><span class="p">:</span> <span class="s2">&#34;CUC&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;rates&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;EUR&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="nt">&#34;source_amount_min&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&#34;source_amount_max&#34;</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="nt">&#34;source_amount_min&#34;</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span>
-                <span class="nt">&#34;source_amount_max&#34;</span><span class="p">:</span> <span class="mi">8800</span><span class="p">,</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
+<span class="nf">GET</span> <span class="nn">videl.rubyh.co/api/v1/rates/CNY/IDR
+</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+   <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
+   <span class="err">data</span> <span class="p">:</span> <span class="p">{</span>
+         <span class="err">obj_rate</span> <span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">&#34;1&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;destination_currency&#34;</span><span class="p">:</span> <span class="s2">&#34;IDR&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;source_currency&#34;</span><span class="p">:</span> <span class="s2">&#34;CNY&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;kurs&#34;</span><span class="p">:</span> <span class="mi">&#34;2200.0&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;minimum_amount&#34;</span><span class="p">:</span> <span class="mi">&#34;0.0&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;maximum_amount&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="s2">&#34;CNY&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="s2">&#34;CNY&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;minimum_amount_source&#34;</span><span class="p">:</span> <span class="mi">&#34;0&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;maximum_amount_source&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
+         <span class="p">},</span>
+      <span class="nt">&#34;rate&#34;</span><span class="p">:</span> <span class="mi">&#34;2200.0&#34;</span>
+   <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
 
 <!-- End Payers rate code -->

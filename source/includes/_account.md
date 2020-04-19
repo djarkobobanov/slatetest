@@ -152,19 +152,28 @@
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <h3 class="n">Balances</h3>
-<span class="nf">GET</span> <span class="nn">api/v1/balances</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="n">X-Total</span><span class="o">:</span> <span class="l">1</span>
-<span class="n">X-Total-Pages</span><span class="o">:</span> <span class="l">1</span>
-<span class="n">X-Per-Page</span><span class="o">:</span> <span class="l">50</span>
-<span class="n">X-Page</span><span class="o">:</span> <span class="l">1</span>
-<span class="err">200</span> <span class="l">OK</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">[</span>
-    <span class="p">{</span>
-        <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;balance&#34;</span><span class="p">:</span> <span class="mi">10000000</span><span class="p">,</span>
-        <span class="nt">&#34;available_balance&#34;</span><span class="p">:</span> <span class="mi">10000000</span><span class="p">,</span>
-        <span class="nt">&#34;is_active&#34;</span><span class="p">:</span> <span class="mi">1</span>
-    <span class="p">}</span>
-<span class="p">]</span></code></pre></div>
+<span class="nf">GET</span> <span class="nn">videl.rubyh.co/api/v1/my_balances</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+
+<span class="p">{</span>
+    <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
+    <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;total&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&#34;balances&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;IDR&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;balance&#34;</span><span class="p">:</span> <span class="mi">69900000</span><span class="p">,</span>
+                <span class="nt">&#34;available_balance&#34;</span><span class="p">:</span> <span class="s2">null</span><span class="p">,</span>
+                <span class="nt">&#34;is_active&#34;</span><span class="p">:</span> <span class="s2">true</span><span class="p">,</span>
+                <span class="nt">&#34;user_id&#34;</span><span class="p">:</span> <span class="mi">1</
+                span><span class="p">,</span>
+                <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-09T09:36:45.277Z</span><span class="p">,</span>
+                <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-09T11:27:45.691Z</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span><span class="p">,</span>
+    <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">Succesfully get my balances</span>
+<span class="p">}
+    </code></pre></div>
 
 <!-- End Balances code -->
