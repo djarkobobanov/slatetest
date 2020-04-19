@@ -152,7 +152,7 @@
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <h3 class="n">Balances</h3>
-<span class="nf">GET</span> <span class="nn">videl.rubyh.co/api/v1/my_balances</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="nf">GET</span> <span class="nn">api/v1/my_balances</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 
 <span class="p">{</span>
     <span class="err">status</span> <span class="err">200</span><span class="p">,</span>

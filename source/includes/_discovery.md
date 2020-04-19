@@ -338,8 +338,7 @@
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <h3 class="n">Payers</h3>
 <p class="n">All Payers</p>
-<span class="nf">GET</span> <span class="nn">videl.rubyh.co/api/v1/payers?page=1&per_page=25&q[country_i
-so_code_eq]=&q[currency_eq]=IDR&q[name_cont]=</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="nf">GET</span> <span class="nn">/api/v1/payers</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 
 <span class="p">{</>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
@@ -460,7 +459,7 @@ so_code_eq]=&q[currency_eq]=IDR&q[name_cont]=</span> <span class="kr">HTTP</span
 <span class="p">}</span>
 
 <p class="n">Get Payers</p>
-<span class="nf">GET</span> <span class="nn">videl.rubyh.co/api/v1/payers/1'</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="nf">GET</span> <span class="nn">api/v1/payers/{<span class="s2">ID</span>}'</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 
 <span class="p">{</>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
@@ -525,7 +524,7 @@ so_code_eq]=&q[currency_eq]=IDR&q[name_cont]=</span> <span class="kr">HTTP</span
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <h3 class="n">Rates</h3>
-<span class="nf">GET</span> <span class="nn">videl.rubyh.co/api/v1/rates/CNY/IDR
+<span class="nf">GET</span> <span class="nn">api/v1/rates/{<span class="s2">source_currency</span>}/{<span class="s2">destination_currency</span>}
 </span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
    <span class="err">status</span> <span class="err">200</span><span class="p">,</span>

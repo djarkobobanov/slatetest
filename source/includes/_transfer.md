@@ -129,18 +129,17 @@
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <h3 class="n">Transfer</h3>
 <p class="n">All Transaction</p>
-<span class="nf">GET</span> <span class="nn">videl.rubyh.co/api/v1/transactions?page=1&per_page=25&q[id_eq]
-=&q[reference_id_eq]=</span>
+<span class="nf">GET</span> <span class="nn">api/v1/transactions</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
       <span class="err">total</span> <span class="p">:</span> <span class="err">2</span><span class="p">,</span>
       <span class="err">data</span> <span class="p">:</span> <span class="p">[</span>
         <span class="p">{</>
-            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
             <span class="nt">&#34;reference_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX124&#34;</span><span class="p">,</span>
             <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">https://sawtooth.rubyh.co/callback_transfez</span><span class="p">,</span>
-            <span class="nt">&#34;payer_id&#34;</span><span class="p">:</span> <span class="mi">&#34;1&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;payer_id&#34;</span><span class="p">:</span> <span class="mi">&#34;{id}&#34;</span><span class="p">,</span>
             <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="s2">&#34;DESTINATION&#34;</span><span class="p">,</span>
             <span class="nt">&#34;sender&#34;</span><span class="p">:</span> <span class="p">{</span>
                 <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Tiara Italyana&#34;</span><span class="p">,</span>
@@ -154,7 +153,7 @@
                 <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="s2">&#34;Paris&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;country_iso&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;joen.doe@mail.com&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;{email}&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;id_type&#34;</span><span class="p">:</span> <span class="s2">&#34;SOCIAL_SECURITY&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;id_country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;null&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;id_number&#34;</span><span class="p">:</span> <span class="mi">&#34;502-42-0158&#34;</span>
@@ -180,7 +179,7 @@
                 <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="s2">&#34;Harare&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;ZWE&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;country_iso&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;jane.doe@mail.com&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;{email}&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;id_type&#34;</span><span class="p">:</span> <span class="s2">&#34;SOCIAL_SECURITY&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;id_country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;ZWE&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;id_number&#34;</span><span class="p">:</span> <span class="mi">&#34;178027317681327&#34;</span><span class="p">,</span>
@@ -278,8 +277,7 @@
 <!-- End Transaction code -->
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <p class="n">Get Transaction</p>
-<span class="nf">GET</span> <span class="nn">videl.rubyh.co/api/v1/transactions?page=1&per_page=25&q[id_eq]
-=&q[reference_id_eq]=</span>
+<span class="nf">GET</span> <span class="nn">api/v1/transactions/{<span class="s2">ID</span>}</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
@@ -358,7 +356,7 @@
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <p class="n">Create Transaction</p>
-<span class="nf">POST</span> <span class="nn">videl.rubyh.co/api/v1/transactions</span>
+<span class="nf">POST</span> <span class="nn">api/v1/transactions</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>

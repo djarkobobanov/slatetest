@@ -16,11 +16,11 @@
 <!-- Basic Auth -->
 
 <h2 id="basic-auth">Basic Auth</h2>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">curl --location --request POST 'videl.rubyh.co/api/v1/authenticate' \
---header 'Content-Type: application/json' \
---data-raw '{
-	"email": "tiara@rubyh.co", 
-	"password": "rubyh2225"
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="s2">curl --location</span> <span class="s2">--request POST 'api/v1/authenticate'</span>
+<span class="s2">--header 'Content-Type: application/json' \
+<span class="s2">--data-raw '{
+	<span class="mi">"email": "{email}"</span>, 
+	<span class="mi">"password": "{password}"</span>
 }'</code></pre></div>
 <table>
 <thead>
