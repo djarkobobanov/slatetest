@@ -13,7 +13,7 @@
 
 <!-- End Authentication -->
 
-<!-- Basic Auth -->
+<!-- Basic Auth --> 
 
 <h2 id="basic-auth">Basic Auth</h2>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="s2">curl --location</span> <span class="s2">--request POST 'api/v1/authenticate'</span>

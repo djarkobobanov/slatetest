@@ -520,7 +520,7 @@
 
 <!-- End Pyaers code -->
 
-<!-- Payers rate code -->
+<!-- Payers rate code --> 
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <h3 class="n">Rates</h3>

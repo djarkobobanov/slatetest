@@ -300,7 +300,7 @@
                 <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="s2">&#34;Paris&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;country_iso&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;joen.doe@mail.com&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;{email}&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;id_type&#34;</span><span class="p">:</span> <span class="s2">&#34;SOCIAL_SECURITY&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;id_country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;null&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;id_number&#34;</span><span class="p">:</span> <span class="mi">&#34;502-42-0158&#34;</span>
@@ -430,4 +430,4 @@
                 <span class="nt">&#34;fee&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p">,</span>
             <span class="p">}
         <span class="p">}</span>
-        </code></pre></div>
+        </code></pre></div> 
