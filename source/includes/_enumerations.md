@@ -499,6 +499,7 @@
 <p class="n">Get Beneficiary Relationship</p>
 <span class="nf">GET</span> <span class="nn">videl.rubyh.co/api/v1/beneficiary_relationships</span> 
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
 
 <span class="p">{</>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
@@ -613,6 +614,7 @@
 <span class="nf">GET</span> <span class="nn">videl.rubyh.co/api/v1/source_of_funds
 </span> 
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
 
 <span class="p">{</>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
@@ -949,6 +951,7 @@
 <span class="nf">GET</span> <span class="nn">videl.rubyh.co/api/v1/purpose_of_remittances
 </span> 
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
 
 <span class="p">{</>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>

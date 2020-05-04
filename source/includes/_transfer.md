@@ -131,6 +131,8 @@
 <p class="n">All Transaction</p>
 <span class="nf">GET</span> <span class="nn">api/v1/transactions</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
+
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
       <span class="err">total</span> <span class="p">:</span> <span class="err">2</span><span class="p">,</span>
@@ -279,6 +281,8 @@
 <p class="n">Get Transaction</p>
 <span class="nf">GET</span> <span class="nn">api/v1/transactions/{<span class="s2">ID</span>}</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
+
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
       <span class="err">data</span> <span class="p">:</span> <span class="p">[</span>
@@ -358,6 +362,7 @@
 <p class="n">Create Transaction</p>
 <span class="nf">POST</span> <span class="nn">api/v1/transactions</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
       <span class="err">data</span> <span class="p">:</span> <span class="p">[</span>

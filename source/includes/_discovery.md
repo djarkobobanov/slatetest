@@ -79,20 +79,6 @@
 
 <tbody>
 <tr>
-<td><code>page</code></td>
-<td>No</td>
-<td>Integer</td>
-<td>Page number</td>
-</tr>
-
-<tr>
-<td><code>per_page</code></td>
-<td>No</td>
-<td>Integer</td>
-<td>Number of results per page (default 50, max 100)</td>
-</tr>
-
-<tr>
 <td><code>name</code></td>
 <td>No</td>
 <td>String</td>
@@ -339,6 +325,7 @@
 <h3 class="n">Payers</h3>
 <p class="n">All Payers</p>
 <span class="nf">GET</span> <span class="nn">/api/v1/payers</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
 
 <span class="p">{</>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
@@ -460,6 +447,8 @@
 
 <p class="n">Get Payers</p>
 <span class="nf">GET</span> <span class="nn">api/v1/payers/{<span class="s2">ID</span>}'</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
+
 
 <span class="p">{</>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
@@ -524,8 +513,10 @@
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <h3 class="n">Rates</h3>
+<p class="n">Check Rates</p>
 <span class="nf">GET</span> <span class="nn">api/v1/rates/{<span class="s2">source_currency</span>}/{<span class="s2">destination_currency</span>}
-</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
    <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
    <span class="err">data</span> <span class="p">:</span> <span class="p">{</span>
