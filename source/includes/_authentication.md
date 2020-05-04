@@ -2,7 +2,8 @@
 
 <h1 id="authentication">Authentication</h1>
 
-<p><api><code>POST /api/v1/authenticate</code></api></p>
+<p><api><code>POST videl.rubyh.co/api/v1/authenticate
+</code></api></p>
 
 <p>Access to all endpoints of the API requires authentication, through one of the following means:</p>
 
@@ -11,12 +12,16 @@
 </ol>
 
 <!-- End Authentication -->
- 
+
 <!-- Basic Auth -->
 
 <h2 id="basic-auth">Basic Auth</h2>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">curl https://api/v1/ping <span class="se">\
-</span><span class="se"></span>  -u <span class="s2">&#34;</span><span class="si">${</span><span class="nv">Email</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">Password</span><span class="si">}</span><span class="s2">&#34;</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="s2">curl --location</span> <span class="s2">--request POST 'api/v1/authenticate'</span>
+<span class="s2">--header 'Content-Type: application/json' \
+<span class="s2">--data-raw '{
+	<span class="mi">"email": "{email}"</span>, 
+	<span class="mi">"password": "{password}"</span>
+}'</code></pre></div>
 <table>
 <thead>
 <tr>
