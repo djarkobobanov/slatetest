@@ -2,7 +2,7 @@
 
 <h2 id="balances">Balances</h2>
 
-<p><api><code>GET api/v1/balances</code></api></p>
+<p><api><code>GET {URL}/my_balances</code></api></p>
 
 <p>Retrieve information for all account balances per currency.</p>
 
@@ -69,7 +69,7 @@
 
 <h2 id="balances">Balance History</h2>
 
-<p><api><code>GET api/v1/balances</code></api></p>
+<p><api><code>GET {URL}/balances</code></api></p>
 
 <p>Retrieve information for all account balances per currency.</p>
 
