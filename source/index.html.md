@@ -19,9 +19,9 @@ includes:
   - connectivity
   - discovery
   - account
-  - credit_parties
   - transfer
   - enumerations
+  - validates_bank_account
 
 search: true
 ---
