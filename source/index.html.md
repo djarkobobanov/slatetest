@@ -21,7 +21,6 @@ includes:
   - account
   - transfer
   - enumerations
-  - validates_bank_account
 
 search: true
 ---
