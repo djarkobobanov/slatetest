@@ -11,7 +11,7 @@ pipelines:
             - node -v
             - gem install bundler -v 2.0.2
             - bundle install
-            - bundle exec middleman build
+            - bundle exec middleman build --verbose
             - pipe: atlassian/ssh-run:0.1.4
               variables:
                 SSH_USER: "deploy"
