@@ -3,7 +3,7 @@
 <!-- Transactions -->
 <h2 id="transactions">Transactions</h2>
 
-<p><api><code>POST videl.rubyh.co/api/v1/transactions</code></api></p>
+<p><api><code>POST {URL}/transactions</code></api></p>
 
 <p>Create a new transaction with transfer values specified from a given <a href="#quotation">quotation</a>.</p>
 
@@ -85,7 +85,7 @@
 <p>&ndash;</p>
 
 
-<p><api><code>POST videl.rubyh.co/api/v1/transactions/10/confirm</code></api></p>
+<p><api><code>POST {URL}/transactions/{ID}/confirm</code></api></p>
 
 <p>Confirm a previously-created <a href="#transaction">transaction</a> to initiate processing.</p>
 
@@ -95,7 +95,7 @@
 
 <p>&ndash;</p>
 
-<p><api><code>POST videl.rubyh.co/api/v1/transactions/10/submit</code></api></p>
+<p><api><code>POST {URL}/transactions/{id}/submit</code></api></p>
 
 <p>Confirm a previously-created <a href="#transaction">transaction</a>, through an external ID, to initiate processing.</p>
 
@@ -105,7 +105,7 @@
 
 <p>&ndash;</p>
 
-<p><api><code>POST avidel.rubyh.co/api/v1/transactions/10/cancel</code></api></p>
+<p><api><code>POST {URL}/transactions/{id}/cancel</code></api></p>
 
 <p><a href="#transaction">transaction</a>.</p>
 
@@ -115,7 +115,7 @@
 
 <p>&ndash;</p>
 
-<p><api><code>GET videl.rubyh.co/api/v1/transactions/10</code></api></p>
+<p><api><code>GET {URL}/transactions/{id}</code></api></p>
 
 <p>Retrieve information for a given <a href="#transaction">transaction</a> from an external ID.</p>
 
@@ -129,7 +129,7 @@
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <h3 class="n">Transfer</h3>
 <p class="n">All Transaction</p>
-<span class="nf">GET</span> <span class="nn">api/v1/transactions</span>
+<span class="nf">GET</span> <span class="nn">{URL}/transactions</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
 
@@ -138,7 +138,7 @@
       <span class="err">total</span> <span class="p">:</span> <span class="err">2</span><span class="p">,</span>
       <span class="err">data</span> <span class="p">:</span> <span class="p">[</span>
         <span class="p">{</>
-            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
             <span class="nt">&#34;reference_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX124&#34;</span><span class="p">,</span>
             <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">https://sawtooth.rubyh.co/callback_transfez</span><span class="p">,</span>
             <span class="nt">&#34;payer_id&#34;</span><span class="p">:</span> <span class="mi">&#34;{id}&#34;</span><span class="p">,</span>
@@ -279,7 +279,7 @@
 <!-- End Transaction code -->
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <p class="n">Get Transaction</p>
-<span class="nf">GET</span> <span class="nn">api/v1/transactions/{<span class="s2">ID</span>}</span>
+<span class="nf">GET</span> <span class="nn">{URL}/transactions/{<span class="s2">ID</span>}</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
 
@@ -287,7 +287,7 @@
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
       <span class="err">data</span> <span class="p">:</span> <span class="p">[</span>
         <span class="p">{</>
-            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
             <span class="nt">&#34;reference_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX124&#34;</span><span class="p">,</span>
             <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">https://sawtooth.rubyh.co/callback_transfez</span><span class="p">,</span>
             <span class="nt">&#34;payer_id&#34;</span><span class="p">:</span> <span class="mi">&#34;1&#34;</span><span class="p">,</span>
@@ -364,10 +364,8 @@
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-      <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
-      <span class="err">data</span> <span class="p">:</span> <span class="p">[</span>
+      <span class="err">data-raw</span> <span class="p">:</span> 
         <span class="p">{</>
-            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
             <span class="nt">&#34;reference_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX124&#34;</span><span class="p">,</span>
             <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">https://sawtooth.rubyh.co/callback_transfez</span><span class="p">,</span>
             <span class="nt">&#34;payer_id&#34;</span><span class="p">:</span> <span class="mi">&#34;1&#34;</span><span class="p">,</span>

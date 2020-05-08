@@ -8,7 +8,7 @@
 
 <p>Welcome to the Money Transfer API reference.</p>
 
-<p>This API serves as the primary gateway to facilitate money transfers through Thunes&rsquo; platform.</p>
+<p>This API serves as the primary gateway to facilitate money transfers&rsquo; platform.</p>
 
 <p>The Money Transfer API is organized according to <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> principles and provides the following functionalities:</p>
 

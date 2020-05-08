@@ -6,7 +6,7 @@
 
 <p>During the course of a transfer, a transaction will undergo various status changes as illustrated.</p>
 
-<p>Conditions marked as &ldquo;Upon request to customer care team&rdquo; pertains to reversal and/or cancellation, which must be requested through and performed by Thunesâ€™ customer care team.</p>
+<p>Conditions marked as &ldquo;Upon request to customer care team&rdquo; pertains to reversal and/or cancellation, which must be requested through and performed by customer care team.</p>
 
 <p>As changes in transaction status occur, updates will be sent in real-time when a callback URL is provided. In conjunction, transaction status can be queried through one of two means: via the returned <code>id</code> or a provided <code>external_id</code>.</p>
 

@@ -6,7 +6,7 @@
 
 <h2 id="http-response">HTTP Response</h2>
 
-<p>Thunes uses standard HTTP response codes to indicate whether an API request is successful or not.</p>
+<p>Uses standard HTTP response codes to indicate whether an API request is successful or not.</p>
 
 <table>
 <thead>
@@ -39,7 +39,7 @@
 
 <tr>
 <td><code>500</code></td>
-<td>Server Error:<br/>Error occurred on Thunes</td>
+<td>Server Error:<br/>Error occurred</td>
 </tr>
 </tbody>
 </table>
