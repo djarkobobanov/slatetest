@@ -19,7 +19,6 @@ includes:
   - connectivity
   - discovery
   - account
-  - credit_parties
   - transfer
   - enumerations
 
