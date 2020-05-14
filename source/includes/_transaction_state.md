@@ -1,7 +1,7 @@
 <h1 id="transaction-states">Transaction states</h1>
 
 <blockquote>
-<p><img src="images/transaction_states.png" alt="transaction states" /></p>
+<!-- <p><img src="images/transaction_states.png" alt="transaction states" /></p> -->
 </blockquote>
 
 <p>During the course of a transfer, a transaction will undergo various status changes as illustrated.</p>

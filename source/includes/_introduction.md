@@ -3,7 +3,7 @@
 <h1 id="introduction">Introduction</h1>
 
 <blockquote>
-<p><img src="images/money_transfer.png" alt="money transfer" /></p>
+<!-- <p><img src="images/money_transfer.png" alt="money transfer" /></p> -->
 </blockquote>
 
 <p>Welcome to the Money Transfer API reference.</p>
