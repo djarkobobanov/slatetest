@@ -1,5 +1,6 @@
-<h1 id="bank-code">Bank Code</h1>
+<h1 id="bank-code">Testing</h1>
 
+<p>Here is a list of dummy bank account number that can be used for testing success transaction in the Sandbox Environment, please make sure that you do not use this on Production mode.</p>
 
 <h4 id="input">Input</h4>
 
