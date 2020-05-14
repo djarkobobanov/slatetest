@@ -20,6 +20,7 @@ includes:
   - discovery
   - account
   - transfer
+  - bank_code
   - enumerations
 
 search: true
