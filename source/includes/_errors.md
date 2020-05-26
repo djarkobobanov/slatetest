@@ -6,6 +6,23 @@
 
 <h2 id="http-response">HTTP Response</h2>
 
+<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">401</span> <span class="ne">Unauthorized</span><span class="p">{</span>
+    <span class="nt">&#34;errors&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;1000401&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;Unauthorized&#34;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">401</span> <span class="ne">Unauthorized</span><span class="p">{</span>
+    <span class="nt">&#34;errors&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;1000401&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;Unauthorized&#34;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span></code></pre></div>
 <p>Uses standard HTTP response codes to indicate whether an API request is successful or not.</p>
 
 <table>
@@ -45,24 +62,6 @@
 </table>
 
 <p>Details will always be contained within the HTTP body.</p>
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">401</span> <span class="ne">Unauthorized</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;errors&#34;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;1000401&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;Unauthorized&#34;</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span></code></pre></div>
-
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">401</span> <span class="ne">Unauthorized</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;errors&#34;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;1000401&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;Unauthorized&#34;</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span></code></pre></div>
-
 <!-- End HTTP Response -->
 
 <!-- API Error Codes -->

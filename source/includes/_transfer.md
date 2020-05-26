@@ -3,137 +3,14 @@
 <!-- Transactions -->
 <h2 id="transactions">Transactions</h2>
 
-<p><api><code>POST {URL}/transactions</code></api></p>
-
-<p>Create a new transaction with transfer values specified from a given <a href="#quotation">quotation</a>.</p>
-
-<h4 id="input-17">Input</h4>
-
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Required</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>reference_id</code></td>
-<td>Yes</td>
-<td>Integer</td>
-<td><a href="#reference">Reference</a> information</td>
-</tr>
-
-<tr>
-<td><code>callback_url</code></td>
-<td>Yes</td>
-<td>String</td>
-<td></td>
-</tr>
-
-<tr>
-<td><code>payer_id</code></td>
-<td>No</td>
-<td>Integer</td>
-<td><a href="#payer">Payer</a> information</td>
-</tr>
-
-<tr>
-<td><code>mode</code></td>
-<td>No</td>
-<td>String</td>
-<td>Source/Destination Amount</a></td>
-</tr>
-
-<tr>
-<td><code>source</code></td>
-<td>No</td>
-<td>Object</td>
-<td><a href="#source">Source</a> information</td>
-</tr>
-
-<tr>
-<td><code>destination</code></td>
-<td>No</td>
-<td>Object</td>
-<td><a href="#destination">Destination</a> information</td>
-</tr>
-
-<tr>
-<td><code>beneficiary</code></td>
-<td>No</td>
-<td>Object</td>
-<td><a href="#beneficiary">Beneficiary</a> information</td>
-</tr>
-
-<tr>
-<td><code>compliance</code></td>
-<td>No</td>
-<td>Object</td>
-<td><a href="#compliance">Compliance</a> information</td>
-</tr>
-</tbody>
-</table>
-
-<h4 id="output-26">Output</h4>
-
-<p><a href="#transaction">Transaction</a> object.</p>
-
-<p>&ndash;</p>
-
-
-<p><api><code>POST {URL}/transactions/{ID}/confirm</code></api></p>
-
-<p>Confirm a previously-created <a href="#transaction">transaction</a> to initiate processing.</p>
-
-<h4 id="output-28">Output</h4>
-
-<p><a href="#transaction">Transaction</a> object.</p>
-
-<p>&ndash;</p>
-
-<p><api><code>POST {URL}/transactions/{id}/submit</code></api></p>
-
-<p>Confirm a previously-created <a href="#transaction">transaction</a>, through an external ID, to initiate processing.</p>
-
-<h4 id="output-29">Output</h4>
-
-<p><a href="#transaction">Transaction</a> object.</p>
-
-<p>&ndash;</p>
-
-<p><api><code>POST {URL}/transactions/{id}/cancel</code></api></p>
-
-<p><a href="#transaction">transaction</a>.</p>
-
-<h4 id="output-30">Output</h4>
-
-<p><a href="#transaction">Transaction</a> object.</p>
-
-<p>&ndash;</p>
-
-<p><api><code>GET {URL}/transactions/{id}</code></api></p>
-
-<p>Retrieve information for a given <a href="#transaction">transaction</a> from an external ID.</p>
-
-<h4 id="output-31">Output</h4>
-
-<p><a href="#transaction">Transaction</a> object.</p>
-
-<!-- End Transaction -->
-
 <!-- Transaction code -->
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
-<h3 class="n">Transfer</h3>
 <p class="n">All Transaction</p>
 <span class="nf">GET</span> <span class="nn">{URL}/transactions</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
 
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<span class="p">{</span>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
       <span class="err">total</span> <span class="p">:</span> <span class="err">2</span><span class="p">,</span>
       <span class="err">data</span> <span class="p">:</span> <span class="p">[</span>
@@ -274,16 +151,14 @@
                     <span class="nt">&#34;fee&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span>
                 <span class="p">}
         <span class="p">}</span>
-        </code></pre></div>
 
 <!-- End Transaction code -->
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <p class="n">Get Transaction</p>
 <span class="nf">GET</span> <span class="nn">{URL}/transactions/{<span class="s2">ID</span>}</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
 
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<span class="p">{</span>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
       <span class="err">data</span> <span class="p">:</span> <span class="p">[</span>
         <span class="p">{</>
@@ -355,15 +230,12 @@
                 <span class="nt">&#34;fee&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p">,</span>
             <span class="p">}
         <span class="p">}</span>
-        </code></pre></div>
 
-
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <p class="n">Create Transaction</p>
 <span class="nf">POST</span> <span class="nn">api/v1/transactions</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<span class="p">{</span>
       <span class="err">data-raw</span> <span class="p">:</span> 
         <span class="p">{</>
             <span class="nt">&#34;reference_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX124&#34;</span><span class="p">,</span>
@@ -434,3 +306,122 @@
             <span class="p">}
         <span class="p">}</span>
         </code></pre></div> 
+<p><api><code>POST {URL}/transactions</code></api></p>
+
+<p>Create a new transaction with transfer values specified from a given <a href="#quotation">quotation</a>.</p>
+
+<h4 id="input-17">Input</h4>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>reference_id</code></td>
+<td>Yes</td>
+<td>Integer</td>
+<td><a href="#reference">Reference</a> information</td>
+</tr>
+
+<tr>
+<td><code>callback_url</code></td>
+<td>Yes</td>
+<td>String</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>payer_id</code></td>
+<td>No</td>
+<td>Integer</td>
+<td><a href="#payer">Payer</a> information</td>
+</tr>
+
+<tr>
+<td><code>mode</code></td>
+<td>No</td>
+<td>String</td>
+<td>Source/Destination Amount</a></td>
+</tr>
+
+<tr>
+<td><code>source</code></td>
+<td>No</td>
+<td>Object</td>
+<td><a href="#source">Source</a> information</td>
+</tr>
+
+<tr>
+<td><code>destination</code></td>
+<td>No</td>
+<td>Object</td>
+<td><a href="#destination">Destination</a> information</td>
+</tr>
+
+<tr>
+<td><code>beneficiary</code></td>
+<td>No</td>
+<td>Object</td>
+<td><a href="#beneficiary">Beneficiary</a> information</td>
+</tr>
+
+<tr>
+<td><code>compliance</code></td>
+<td>No</td>
+<td>Object</td>
+<td><a href="#compliance">Compliance</a> information</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="output-26">Output</h4>
+
+<p><a href="#transaction">Transaction</a> object.</p>
+
+<p>&ndash;</p>
+
+
+<p><api><code>POST {URL}/transactions/{ID}/confirm</code></api></p>
+
+<p>Confirm a previously-created <a href="#transaction">transaction</a> to initiate processing.</p>
+
+<h4 id="output-28">Output</h4>
+
+<p><a href="#transaction">Transaction</a> object.</p>
+
+<p>&ndash;</p>
+
+<p><api><code>POST {URL}/transactions/{id}/submit</code></api></p>
+
+<p>Confirm a previously-created <a href="#transaction">transaction</a>, through an external ID, to initiate processing.</p>
+
+<h4 id="output-29">Output</h4>
+
+<p><a href="#transaction">Transaction</a> object.</p>
+
+<p>&ndash;</p>
+
+<p><api><code>POST {URL}/transactions/{id}/cancel</code></api></p>
+
+<p><a href="#transaction">transaction</a>.</p>
+
+<h4 id="output-30">Output</h4>
+
+<p><a href="#transaction">Transaction</a> object.</p>
+
+<p>&ndash;</p>
+
+<p><api><code>GET {URL}/transactions/{id}</code></api></p>
+
+<p>Retrieve information for a given <a href="#transaction">transaction</a> from an external ID.</p>
+
+<h4 id="output-31">Output</h4>
+
+<p><a href="#transaction">Transaction</a> object.</p>
