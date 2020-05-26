@@ -103,6 +103,69 @@
 
 <h2 id="beneficiary-relationship">Beneficiary Relationship</h2>
 
+<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
+<p class="n">Get Beneficiary Relationship</p>
+<span class="nf">GET</span> <span class="nn">{URL}/beneficiary_relationships</span> 
+<span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
+
+<span class="p">{</>
+      <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
+      <span class="err">data</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="err">beneficiary_relationships</span> <span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
+            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Other not listed&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;OTHER&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T12:13:39.818Z&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-09T12:13:39.818Z</span>
+          <span class="p">},</span>
+            <span class="p">{</span>
+            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
+            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Wife&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;WIFE&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T12:13:39.818Z&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-09T12:13:39.818Z</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
+            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Uncle&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;UNCLE&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T12:13:39.818Z&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-09T12:13:39.818Z</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
+            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Son&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;SON&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T12:13:39.818Z&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-09T12:13:39.818Z</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
+            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Sister-in-law&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;SISTER_IN_LAW&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T12:13:39.818Z&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-09T12:13:39.818Z</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
+            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Sister&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;SISTER&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T12:13:39.818Z&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-09T12:13:39.818Z</span>
+          <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">},</span>
+ <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">Succesfully get my Beneficiary Relationship</span>
+<span class="p">}</span>
+    </code></pre></div>
 <table>
 <thead>
 <tr>
@@ -224,118 +287,7 @@
 </tbody>
 </table>
 
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
-<p class="n">Get Beneficiary Relationship</p>
-<span class="nf">GET</span> <span class="nn">{URL}/beneficiary_relationships</span> 
-<span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
-
-<span class="p">{</>
-      <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
-      <span class="err">data</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="err">beneficiary_relationships</span> <span class="p">:</span> <span class="p">[</span>
-          <span class="p">{</span>
-            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
-            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Other not listed&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-            <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;OTHER&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T12:13:39.818Z&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-09T12:13:39.818Z</span>
-          <span class="p">},</span>
-            <span class="p">{</span>
-            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
-            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Wife&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-            <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;WIFE&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T12:13:39.818Z&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-09T12:13:39.818Z</span>
-          <span class="p">},</span>
-          <span class="p">{</span>
-            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
-            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Uncle&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-            <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;UNCLE&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T12:13:39.818Z&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-09T12:13:39.818Z</span>
-          <span class="p">},</span>
-          <span class="p">{</span>
-            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
-            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Son&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-            <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;SON&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T12:13:39.818Z&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-09T12:13:39.818Z</span>
-          <span class="p">},</span>
-          <span class="p">{</span>
-            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
-            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Sister-in-law&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-            <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;SISTER_IN_LAW&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T12:13:39.818Z&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-09T12:13:39.818Z</span>
-          <span class="p">},</span>
-          <span class="p">{</span>
-            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
-            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Sister&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-            <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;SISTER&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T12:13:39.818Z&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-09T12:13:39.818Z</span>
-          <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">},</span>
- <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">Succesfully get my Beneficiary Relationship</span>
-<span class="p">}</span>
-    </code></pre></div>
-
-
 <h2 id="source-of-funds">Source of Funds</h2>
-
-<table>
-<thead>
-<tr>
-<th>Source</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>CASH</code></td>
-<td>Cash</td>
-</tr>
-
-<tr>
-<td><code>BUSINESS</code></td>
-<td>Business</td>
-</tr>
-
-<tr>
-<td><code>GIFT</code></td>
-<td>Gift</td>
-</tr>
-
-<tr>
-<td><code>SALARY</code></td>
-<td>Salary</td>
-</tr>
-
-<tr>
-<td><code>LOTTERY</code></td>
-<td>Lottery</td>
-</tr>
-
-<tr>
-<td><code>SAVINGS</code></td>
-<td>Savings</td>
-</tr>
-
-<tr>
-<td><code>OTHER</code></td>
-<td>Others not listed</td>
-</tr>
-</tbody>
-</table>
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <p class="n">Get Source of Funds</p>
@@ -418,6 +370,51 @@
  <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">Succesfully get my Source of Funds</span>
 <span class="p">}</span>
     </code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>CASH</code></td>
+<td>Cash</td>
+</tr>
+
+<tr>
+<td><code>BUSINESS</code></td>
+<td>Business</td>
+</tr>
+
+<tr>
+<td><code>GIFT</code></td>
+<td>Gift</td>
+</tr>
+
+<tr>
+<td><code>SALARY</code></td>
+<td>Salary</td>
+</tr>
+
+<tr>
+<td><code>LOTTERY</code></td>
+<td>Lottery</td>
+</tr>
+
+<tr>
+<td><code>SAVINGS</code></td>
+<td>Savings</td>
+</tr>
+
+<tr>
+<td><code>OTHER</code></td>
+<td>Others not listed</td>
+</tr>
+</tbody>
+</table>
 
 <h2 id="id-type">ID Type</h2>
 
