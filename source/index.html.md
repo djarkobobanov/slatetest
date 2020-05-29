@@ -22,6 +22,7 @@ includes:
   - transfer
   - bank_code
   - enumerations
+  - validates_bank_account
 
 search: true
 ---
