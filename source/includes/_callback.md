@@ -14,19 +14,7 @@
         <span class="nt">&#34;sender&#34;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Tiara Italyana&#34;</span><span class="p">,</span>
             <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Pribadi&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;nationality&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;date_of_birth&#34;</span><span class="p">:</span> <span class="mi">&#34;1970-01-01&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;country_of_birth&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;MALE&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;address&#34;</span><span class="p">:</span> <span class="s2">&#34;42 Rue des fleurs&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;zip_code&#34;</span><span class="p">:</span> <span class="s2">&#34;7500&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="s2">&#34;Paris&#34;</span><span class="p">,</span>
             <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;country_iso&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;{email}&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;id_type&#34;</span><span class="p">:</span> <span class="s2">&#34;SOCIAL_SECURITY&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;id_country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;null&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;id_number&#34;</span><span class="p">:</span> <span class="mi">&#34;502-42-0158&#34;</span>
         <span class="p">},</span>
         <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
@@ -40,33 +28,11 @@
         <span class="nt">&#34;beneficiary&#34;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Jane&#34;</span><span class="p">,</span>
             <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;nationality&#34;</span><span class="p">:</span> <span class="s2">&#34;IDN&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;date_of_birth&#34;</span><span class="p">:</span> <span class="s2">&#34;1971-01-01&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;country_of_birth&#34;</span><span class="p">:</span> <span class="s2">&#34;IDN&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;MALE&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;address&#34;</span><span class="p">:</span> <span class="s2">&#34;Tebet Raya&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;zipcode&#34;</span><span class="p">:</span> <span class="s2">&#34;4581&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="s2">&#34;Jakarta&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;IDN&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;country_iso&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;email@gmail.com&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;id_type&#34;</span><span class="p">:</span> <span class="s2">&#34;SOCIAL_SECURITY&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;id_country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;IDN&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;id_number&#34;</span><span class="p">:</span> <span class="mi">&#34;178027317681327&#34;</span><span class="p">,</span>
             <span class="nt">&#34;bank&#34;</span><span class="p">:</span> <span class="s2">&#34;bni&#34;</span><span class="p">,</span>
             <span class="nt">&#34;account&#34;</span><span class="p">:</span> <span class="mi">&#34;1172993826&#34;</span>
         <span class="p">}</span>
-        <span class="nt">&#34;compliance&#34;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&#34;source_of_funds&#34;</span><span class="p">:</span> <span class="s2">&#34;CASH&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;beneficiary_relationship&#34;</span><span class="p">:</span> <span class="s2">&#34;BROTHER&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;purpose_of_remittance&#34;</span><span class="p">:</span> <span class="s2">&#34;FAMILY SUPPORT&#34;</span>
-        <span class="p">}</span>
             <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:02:30.150Z&#34;</span><span class="p">,</span>
             <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T11:14:59.896Z&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;sender_id&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;beneficiary_id&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;user_id&#34;</span><span class="p">:</span> <span class="mi">&#34;1&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;disbursement_reference_id&#34;</span><span class="p">:</span> <span class="mi">&#34;0bc4ec265097897efd&#34;</span><span class="p">,</span>
             <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="s2">&#34;refunded&#34;</span><span class="p">,</span>
             <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">&#34;1018000&#34;</span><span class="p">,</span>
             <span class="nt">&#34;paid_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:52:37.000Z&#34;</span><span class="p">,</span>
