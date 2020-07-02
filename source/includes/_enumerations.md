@@ -176,38 +176,33 @@
 
 <tbody>
 <tr>
-<td><code>AUNT</code></td>
-<td>Aunt</td>
+<td><code>MYSELF</code></td>
+<td>Myself</td>
 </tr>
 
 <tr>
-<td><code>BROTHER</code></td>
-<td>Brother</td>
+<td><code>SPOUSE</code></td>
+<td>Spouse</td>
 </tr>
 
 <tr>
-<td><code>BROTHER_IN_LAW</code></td>
-<td>Brother-in-law</td>
+<td><code>CHILDREN</code></td>
+<td>Children</td>
 </tr>
 
 <tr>
-<td><code>COUSIN</code></td>
-<td>Cousin</td>
+<td><code>PARENT/GRANPARENT</code></td>
+<td>Parent/Grandparent</td>
 </tr>
 
 <tr>
-<td><code>DAUGHTER</code></td>
-<td>Daughter</td>
+<td><code>SIBLING/BROTHER/SISTER</code></td>
+<td>Sibling/brother/sister</td>
 </tr>
 
 <tr>
-<td><code>FATHER</code></td>
-<td>Father</td>
-</tr>
-
-<tr>
-<td><code>FATHER_IN_LAW</code></td>
-<td>Father-in-law</td>
+<td><code>RELATIVE/UNCLE/AUNTIE/COUSIN</code></td>
+<td>Relative/uncle/auntie/cousin</td>
 </tr>
 
 <tr>
@@ -216,68 +211,18 @@
 </tr>
 
 <tr>
-<td><code>GRAND_FATHER</code></td>
-<td>Grandfather</td>
+<td><code>BUSINESS_PARTNER</code></td>
+<td>Business partner</td>
 </tr>
 
 <tr>
-<td><code>GRAND_MOTHER</code></td>
-<td>Grandmother</td>
+<td><code>CUSTOMER</code></td>
+<td>Customer</td>
 </tr>
 
 <tr>
-<td><code>HUSBAND</code></td>
-<td>Husband</td>
-</tr>
-
-<tr>
-<td><code>MOTHER</code></td>
-<td>Mother</td>
-</tr>
-
-<tr>
-<td><code>MOTHER_IN_LAW</code></td>
-<td>Mother-in-law</td>
-</tr>
-
-<tr>
-<td><code>NEPHEW</code></td>
-<td>Nephew</td>
-</tr>
-
-<tr>
-<td><code>NIECE</code></td>
-<td>Niece</td>
-</tr>
-
-<tr>
-<td><code>SELF</code></td>
-<td>Self (i.e. the <a href="#sender">sender</a>, himself)</td>
-</tr>
-
-<tr>
-<td><code>SISTER</code></td>
-<td>Sister</td>
-</tr>
-
-<tr>
-<td><code>SISTER_IN_LAW</code></td>
-<td>Sister-in-law</td>
-</tr>
-
-<tr>
-<td><code>SON</code></td>
-<td>Son</td>
-</tr>
-
-<tr>
-<td><code>UNCLE</code></td>
-<td>Uncle</td>
-</tr>
-
-<tr>
-<td><code>WIFE</code></td>
-<td>Wife</td>
+<td><code>SUPPLIER</code></td>
+<td>Supplier</td>
 </tr>
 
 <tr>
@@ -380,28 +325,13 @@
 
 <tbody>
 <tr>
-<td><code>CASH</code></td>
-<td>Cash</td>
+<td><code>SALARY/INCOME</code></td>
+<td>Salary/Income</td>
 </tr>
 
 <tr>
-<td><code>BUSINESS</code></td>
-<td>Business</td>
-</tr>
-
-<tr>
-<td><code>GIFT</code></td>
-<td>Gift</td>
-</tr>
-
-<tr>
-<td><code>SALARY</code></td>
-<td>Salary</td>
-</tr>
-
-<tr>
-<td><code>LOTTERY</code></td>
-<td>Lottery</td>
+<td><code>BUSINESS/INVESTMENT</code></td>
+<td>Business/investment</td>
 </tr>
 
 <tr>
@@ -410,8 +340,23 @@
 </tr>
 
 <tr>
-<td><code>OTHER</code></td>
-<td>Others not listed</td>
+<td><code>GIFT</code></td>
+<td>Gift</td>
+</tr>
+
+<tr>
+<td><code>RETIREMENT_FUNDS</code></td>
+<td>Retirement Funds</td>
+</tr>
+
+<tr>
+<td><code>LOAN_FACILITY</code></td>
+<td>Loan Facility</td>
+</tr>
+
+<tr>
+<td><code>THIRD_PARTY</code></td>
+<td>Third Party</td>
 </tr>
 </tbody>
 </table>
@@ -505,7 +450,7 @@
 </table>
 
 
-<h2 id="purpose-of-remittance">Purpose of Remittance</h2>
+<h2 id="purpose-of-remittance">Purpose of Transfer</h2>
 
 <table>
 <thead>
@@ -522,133 +467,53 @@
 </tr>
 
 <tr>
-<td><code>EDUCATION</code></td>
-<td>Education</td>
+<td><code>TUITION_FEES/STUDYING_EXPENSES</code></td>
+<td>Tuition fees or studying expenses</td>
 </tr>
 
 <tr>
-<td><code>GIFT_AND_DONATION</code></td>
-<td>Gift and other donations</td>
+<td><code>CHARITABLE_DONATIONS</code></td>
+<td>Charitable donations</td>
 </tr>
 
 <tr>
-<td><code>MEDICAL_TREATMENT</code></td>
-<td>Medical treatment</td>
+<td><code>TRAVEL_EXPENSES</code></td>
+<td>Travel expenses</td>
 </tr>
 
 <tr>
-<td><code>MAINTENANCE_EXPENSES</code></td>
-<td>Maintenance or other expenses</td>
+<td><code>MEDICAL_EXPENSES</code></td>
+<td>Medical expenses</td>
 </tr>
 
 <tr>
-<td><code>TRAVEL</code></td>
-<td>Travel</td>
+<td><code>PAY_FOR_GOODS</code></td>
+<td>Pay for goods</td>
 </tr>
 
 <tr>
-<td><code>SMALL_VALUE_REMITTANCE</code></td>
-<td>Small value remittance</td>
+<td><code>PAY_FOR_SERVICES</code></td>
+<td>Pay for services</td>
 </tr>
 
 <tr>
-<td><code>LIBERALIZED_REMITTANCE</code></td>
-<td>Liberalized remittance</td>
-</tr>
-
-<tr>
-<td><code>CONSTRUCTION_EXPENSES</code></td>
-<td>Construction expenses</td>
-</tr>
-
-<tr>
-<td><code>HOTEL_ACCOMMODATION</code></td>
-<td>Hotel accommodation</td>
-</tr>
-
-<tr>
-<td><code>ADVERTISING_EXPENSES</code></td>
-<td>Advertising and/or public relations related expenses</td>
-</tr>
-
-<tr>
-<td><code>ADVISORY_FEES</code></td>
-<td>Fees for advisory or consulting service</td>
-</tr>
-
-<tr>
-<td><code>BUSINESS_INSURANCE</code></td>
-<td>Business related insurance payment</td>
-</tr>
-
-<tr>
-<td><code>INSURANCE_CLAIMS</code></td>
-<td>Insurance claims payment</td>
-</tr>
-
-<tr>
-<td><code>DELIVERY_FEES</code></td>
-<td>Delivery fees</td>
-</tr>
-
-<tr>
-<td><code>EXPORTED_GOODS</code></td>
-<td>Payments for exported goods</td>
-</tr>
-
-<tr>
-<td><code>SERVICE_CHARGES</code></td>
-<td>Payment for services</td>
-</tr>
-
-<tr>
-<td><code>LOAN_PAYMENT</code></td>
-<td>Payment of loans</td>
-</tr>
-
-<tr>
-<td><code>OFFICE_EXPENSES</code></td>
-<td>Office expenses</td>
-</tr>
-
-<tr>
-<td><code>PROPERTY_PURCHASE</code></td>
-<td>Residential property purchase</td>
+<td><code>OTHER_BUSINESS_EXPENSES</code></td>
+<td>Other business expenses</td>
 </tr>
 
 <tr>
 <td><code>PROPERTY_RENTAL</code></td>
-<td>Property rental payment</td>
+<td>Property Rental</td>
 </tr>
 
 <tr>
-<td><code>ROYALTY_FEES</code></td>
-<td>Royalty, trademark, patent and copyright fees</td>
+<td><code>PROPERTY_PURCHASE</code></td>
+<td>Property Purchase</td>
 </tr>
 
 <tr>
-<td><code>SHARES_INVESTMENT</code></td>
-<td>Investment in shares</td>
-</tr>
-
-<tr>
-<td><code>FUND_INVESTMENT</code></td>
-<td>Fund investment</td>
-</tr>
-
-<tr>
-<td><code>TAX_PAYMENT</code></td>
-<td>Tax payment</td>
-</tr>
-
-<tr>
-<td><code>TRANSPORTATION_FEES</code></td>
-<td>Transportation fees</td>
-</tr>
-
-<tr>
-<td><code>UTILITY_BILLS</code></td>
-<td>Utility bills</td>
+<td><code>GENERAL_MONTHLY_LIVING_EXPENSES</code></td>
+<td>General monthly living expenses</td>
 </tr>
 
 <tr>
@@ -657,18 +522,13 @@
 </tr>
 
 <tr>
-<td><code>SALARY_PAYMENT</code></td>
-<td>Payment of salary</td>
-</tr>
-
-<tr>
-<td><code>OTHER_FEES</code></td>
-<td>Broker, commitment, guarantee and other fees</td>
-</tr>
-
-<tr>
 <td><code>OTHER</code></td>
 <td>Other purposes</td>
+</tr>
+
+<tr>
+<td><code>CONSULTANCY/ADVISORY_FEES</code></td>
+<td>Consultancy/Advisory Fees</td>
 </tr>
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
