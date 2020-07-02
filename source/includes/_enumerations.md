@@ -191,17 +191,17 @@
 </tr>
 
 <tr>
-<td><code>PARENT/GRANPARENT</code></td>
+<td><code>PARENT_GRANPARENT</code></td>
 <td>Parent/Grandparent</td>
 </tr>
 
 <tr>
-<td><code>SIBLING/BROTHER/SISTER</code></td>
+<td><code>SIBLING_BROTHER_SISTER</code></td>
 <td>Sibling/brother/sister</td>
 </tr>
 
 <tr>
-<td><code>RELATIVE/UNCLE/AUNTIE/COUSIN</code></td>
+<td><code>RELATIVE_UNCLE_AUNTIE_COUSIN</code></td>
 <td>Relative/uncle/auntie/cousin</td>
 </tr>
 
@@ -325,12 +325,12 @@
 
 <tbody>
 <tr>
-<td><code>SALARY/INCOME</code></td>
+<td><code>SALARY_INCOME</code></td>
 <td>Salary/Income</td>
 </tr>
 
 <tr>
-<td><code>BUSINESS/INVESTMENT</code></td>
+<td><code>BUSINESS_INVESTMENT</code></td>
 <td>Business/investment</td>
 </tr>
 
@@ -467,7 +467,7 @@
 </tr>
 
 <tr>
-<td><code>TUITION_FEES/STUDYING_EXPENSES</code></td>
+<td><code>TUITION_FEES_STUDYING_EXPENSES</code></td>
 <td>Tuition fees or studying expenses</td>
 </tr>
 
@@ -527,7 +527,7 @@
 </tr>
 
 <tr>
-<td><code>CONSULTANCY/ADVISORY_FEES</code></td>
+<td><code>CONSULTANCY_ADVISORY_FEES</code></td>
 <td>Consultancy/Advisory Fees</td>
 </tr>
 
