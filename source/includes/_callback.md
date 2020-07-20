@@ -7,7 +7,7 @@
     <span class="p">{</>
         <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{{ID}}</span><span class="p">,</span>
         <span class="nt">&#34;reference_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX124&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">https://sawtooth.rubyh.co/callback_transfez</span><span class="p">,</span>
+        <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">{{CALLBACK_URL}}</span><span class="p">,</span>
         <span class="nt">&#34;payer_id&#34;</span><span class="p">:</span> <span class="mi">&#34;1&#34;</span><span class="p">,</span>
         <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="s2">&#34;DESTINATION&#34;</span><span class="p">,</span>
         <span class="nt">&#34;sender&#34;</span><span class="p">:</span> <span class="p">{</span>
@@ -19,17 +19,22 @@
             <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
             <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
             <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-        <span class="p">}</span>
+        <span class="p">},</span>
         <span class="nt">&#34;destination&#34;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">&#34;1000000&#34;</span><span class="p">,</span>
             <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;IDR&#34;</span>
-        <span class="p">}</span>
+        <span class="p">},</span>
         <span class="nt">&#34;beneficiary&#34;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Jane&#34;</span><span class="p">,</span>
             <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
             <span class="nt">&#34;bank&#34;</span><span class="p">:</span> <span class="s2">&#34;bni&#34;</span><span class="p">,</span>
             <span class="nt">&#34;account&#34;</span><span class="p">:</span> <span class="mi">&#34;1172993826&#34;</span>
-        <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nt">&#34;compliance&#34;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&#34;source_of_funds&#34;</span><span class="p">:</span> <span class="s2">&#34;SALARY_INCOME&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;beneficiary_relationship&#34;</span><span class="p">:</span> <span class="s2">&#34;PARENT_GRANDPARENT&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;purpose_of_remittance&#34;</span><span class="p">:</span> <span class="mi">&#34;FAMILY_SUPPORT&#34;</span>
+        <span class="p">}
         <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:02:30.150Z&#34;</span><span class="p">,</span>
         <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T11:14:59.896Z&#34;</span><span class="p">,</span>
         <span class="nt">&#34;state_id&#34;</span><span class="p">:</span> <span class="s2">&#34;1&#34;</span><span class="p">,</span>
@@ -38,6 +43,7 @@
         <span class="nt">&#34;paid_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:52:37.000Z&#34;</span><span class="p">,</span>
         <span class="nt">&#34;rate&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p">,</span>
         <span class="nt">&#34;fee&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p"></span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>As the transfer order is being processed, changes in status will be notified in realtime if a callback URL was provided.</p>

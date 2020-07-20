@@ -2,6 +2,8 @@
 
 <!-- Transactions -->
 <h2 id="transactions">Transactions</h2>
+<!-- Transaction code -->
+<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <p class="n">Create Transaction</p>
 <span class="nf">POST</span> <span class="nn">api/v1/transactions</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -10,7 +12,7 @@
       <span class="err">body</span> <span class="p">:</span> 
         <span class="p">{</>
             <span class="nt">&#34;reference_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX124&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">https://sawtooth.rubyh.co/callback_transfez</span><span class="p">,</span>
+            <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">{{CALLBACK_URL}}</span><span class="p">,</span>
             <span class="nt">&#34;payer_id&#34;</span><span class="p">:</span> <span class="mi">&#34;{{payer_id}}&#34;</span><span class="p">,</span>
             <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="s2">&#34;DESTINATION&#34;</span><span class="p">,</span>
             <span class="nt">&#34;sender&#34;</span><span class="p">:</span> <span class="p">{</span>
@@ -38,8 +40,6 @@
                 <span class="nt">&#34;purpose_of_remittance&#34;</span><span class="p">:</span> <span class="mi">&#34;FAMILY_SUPPORT&#34;</span>
             <span class="p">}
         <span class="p">}</span>
-<!-- Transaction code -->
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <p class="n">All Transaction</p>
 <span class="nf">GET</span> <span class="nn">{URL}/transactions</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -49,10 +49,10 @@
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
       <span class="err">total</span> <span class="p">:</span> <span class="err">2</span><span class="p">,</span>
       <span class="err">data</span> <span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</>
+        <span class="p">{</span>
             <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
             <span class="nt">&#34;reference_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX124&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">https://sawtooth.rubyh.co/callback_transfez</span><span class="p">,</span>
+            <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">{{CALLBACK_URL}}</span><span class="p">,</span>
             <span class="nt">&#34;payer_id&#34;</span><span class="p">:</span> <span class="mi">&#34;{id}&#34;</span><span class="p">,</span>
             <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="s2">&#34;DESTINATION&#34;</span><span class="p">,</span>
             <span class="nt">&#34;sender&#34;</span><span class="p">:</span> <span class="p">{</span>
@@ -64,29 +64,29 @@
                 <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-            <span class="p">}</span>
+            <span class="p">},</span>
             <span class="nt">&#34;destination&#34;</span><span class="p">:</span> <span class="p">{</span>
                 <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">&#34;1000000&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;IDR&#34;</span>
-            <span class="p">}</span>
+            <span class="p">},</span>
             <span class="nt">&#34;beneficiary&#34;</span><span class="p">:</span> <span class="p">{</span>
                 <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Jane&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;account&#34;</span><span class="p">:</span> <span class="mi">&#34;1172993826&#34;</span>
-            <span class="p">}</span>
-                <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:02:30.150Z&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T11:14:59.896Z&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;state_id&#34;</span><span class="p">:</span> <span class="s2">&#34;1&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="s2">&#34;created&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">&#34;1018000&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;paid_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:52:37.000Z&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;rate&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;fee&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:02:30.150Z&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T11:14:59.896Z&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;state_id&#34;</span><span class="p">:</span> <span class="s2">&#34;1&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="s2">&#34;created&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">&#34;1018000&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;paid_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:52:37.000Z&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;rate&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;fee&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p">,</span>
             <span class="p">},</span>
             <span class="p">{</span>
                 <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
                 <span class="nt">&#34;reference_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX123&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">sawtooth.rubyh.co</span><span class="p">,</span>
+                <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">{{CALLBACK_URL}}</span><span class="p">,</span>
                 <span class="nt">&#34;payer_id&#34;</span><span class="p">:</span> <span class="mi">&#34;1&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="s2">&#34;DESTINATION&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;sender&#34;</span><span class="p">:</span> <span class="p">{</span>
@@ -127,10 +127,10 @@
 <span class="p">{</span>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
       <span class="err">data</span> <span class="p">:</span>
-        <span class="p">{</>
+        <span class="p">{</span>
             <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
             <span class="nt">&#34;reference_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX124&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">https://sawtooth.rubyh.co/callback_transfez</span><span class="p">,</span>
+            <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">{{CALLBACK_URL}}</span><span class="p">,</span>
             <span class="nt">&#34;payer_id&#34;</span><span class="p">:</span> <span class="mi">&#34;1&#34;</span><span class="p">,</span>
             <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="s2">&#34;DESTINATION&#34;</span><span class="p">,</span>
             <span class="nt">&#34;sender&#34;</span><span class="p">:</span> <span class="p">{</span>
@@ -161,6 +161,7 @@
             <span class="nt">&#34;rate&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p">,</span>
             <span class="nt">&#34;fee&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p">,</span>
         <span class="p">}</span>
+    <span class="p">}</span>
         </code></pre></div> 
 <p><api><code>POST {URL}/transactions</code></api></p>
 

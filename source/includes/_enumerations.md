@@ -14,12 +14,12 @@
 
 <tbody>
 <tr>
-<td><code>SOURCE_AMOUNT</code></td>
+<td><code>SOURCE</code></td>
 <td><a href="#quotation">Quotation</a> created by specifying desired <a href="#source">source</a></td>
 </tr>
 
 <tr>
-<td><code>DESTINATION_AMOUNT</code></td>
+<td><code>DESTINATION</code></td>
 <td><a href="#quotation">Quotation</a> created by specifying desired <a href="#destination">destination</a></td>
 </tr>
 </tbody>
@@ -356,7 +356,7 @@
 </tbody>
 </table>
 
-<h2 id="id-type">ID Type</h2>
+<!-- <h2 id="id-type">ID Type</h2>
 
 <table>
 <thead>
@@ -443,7 +443,7 @@
 </tr>
 </tbody>
 </table>
-
+ -->
 
 <h2 id="purpose-of-remittance">Purpose of Transfer</h2>
 
