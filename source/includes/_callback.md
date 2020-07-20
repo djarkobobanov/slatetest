@@ -27,7 +27,6 @@
         <span class="nt">&#34;beneficiary&#34;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Jane&#34;</span><span class="p">,</span>
             <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;bank&#34;</span><span class="p">:</span> <span class="s2">&#34;bni&#34;</span><span class="p">,</span>
             <span class="nt">&#34;account&#34;</span><span class="p">:</span> <span class="mi">&#34;1172993826&#34;</span>
         <span class="p">},</span>
         <span class="nt">&#34;compliance&#34;</span><span class="p">:</span> <span class="p">{</span>
