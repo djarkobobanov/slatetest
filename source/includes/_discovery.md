@@ -12,19 +12,9 @@
 <span class="err">200</span> <span class="l">OK</span><span class="p">[</span>
    <span class="p">{</span>
       <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MobileWallet&#34;</span>
-      <span class="nt">&#34;is_active&#34;</span><span class="p">:</span> <span class="s2">&#34;true&#34;</span>
-   <span class="p">},</span>
-   <span class="p">{</span>
-      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;BankAccount&#34;</span>
       <span class="nt">&#34;is_active&#34;</span><span class="p">:</span> <span class="s2">&#34;true&#34;</span>
    <span class="p">},</span>
-   <span class="p">{</span>
-      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;CashPickup&#34;</span>
-      <span class="nt">&#34;is_active&#34;</span><span class="p">:</span> <span class="s2">&#34;true&#34;</span>
-   <span class="p">}</span>
 <span class="p">]</span></code></pre></div>
 <p><api><code>GET {URL}/services</code></api></p>
 
