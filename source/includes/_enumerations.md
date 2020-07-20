@@ -61,42 +61,37 @@
 <tbody>
 <tr>
 <td><code>1</code></td>
-<td>CREATED</td>
+<td>created</td>
 </tr>
 
 <tr>
 <td><code>2</code></td>
-<td>CONFIRMED</td>
+<td>confirmed</td>
 </tr>
 
 <tr>
 <td><code>3</code></td>
-<td>REJECTED</td>
+<td>submitted</td>
 </tr>
 
 <tr>
 <td><code>4</code></td>
-<td>CANCELLED</td>
+<td>canceled</td>
 </tr>
 
 <tr>
 <td><code>5</code></td>
-<td>SUBMITTED</td>
+<td>completed</td>
+</tr>
+
+<tr>
+<td><code>6</code></td>
+<td>declined</td>
 </tr>
 
 <tr>
 <td><code>7</code></td>
-<td>COMPLETED</td>
-</tr>
-
-<tr>
-<td><code>8</code></td>
-<td>REFUNDED</td>
-</tr>
-
-<tr>
-<td><code>9</code></td>
-<td>DECLINED</td>
+<td>refunded</td>
 </tr>
 </tbody>
 </table>

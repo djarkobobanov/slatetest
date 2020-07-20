@@ -2,7 +2,42 @@
 
 <!-- Transactions -->
 <h2 id="transactions">Transactions</h2>
-
+<p class="n">Create Transaction</p>
+<span class="nf">POST</span> <span class="nn">api/v1/transactions</span>
+<span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
+<span class="p">{</span>
+      <span class="err">body</span> <span class="p">:</span> 
+        <span class="p">{</>
+            <span class="nt">&#34;reference_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX124&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">https://sawtooth.rubyh.co/callback_transfez</span><span class="p">,</span>
+            <span class="nt">&#34;payer_id&#34;</span><span class="p">:</span> <span class="mi">&#34;{{payer_id}}&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="s2">&#34;DESTINATION&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;sender&#34;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Tiara Italyana&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Pribadi&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="nt">&#34;destination&#34;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">&#34;1000000&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;IDR&#34;</span>
+            <span class="p">},</span>
+            <span class="nt">&#34;beneficiary&#34;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Jane&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;account&#34;</span><span class="p">:</span> <span class="mi">&#34;1172993826&#34;</span>
+            <span class="p">},</span>
+            <span class="nt">&#34;compliance&#34;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&#34;source_of_funds&#34;</span><span class="p">:</span> <span class="s2">&#34;SALARY_INCOME&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;beneficiary_relationship&#34;</span><span class="p">:</span> <span class="s2">&#34;PARENT_GRANDPARENT&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;purpose_of_remittance&#34;</span><span class="p">:</span> <span class="mi">&#34;FAMILY_SUPPORT&#34;</span>
+            <span class="p">}
+        <span class="p">}</span>
 <!-- Transaction code -->
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <p class="n">All Transaction</p>
@@ -37,12 +72,12 @@
             <span class="nt">&#34;beneficiary&#34;</span><span class="p">:</span> <span class="p">{</span>
                 <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Jane&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;bank&#34;</span><span class="p">:</span> <span class="s2">&#34;bni&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;account&#34;</span><span class="p">:</span> <span class="mi">&#34;1172993826&#34;</span>
             <span class="p">}</span>
                 <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:02:30.150Z&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T11:14:59.896Z&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="s2">&#34;refunded&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;state_id&#34;</span><span class="p">:</span> <span class="s2">&#34;1&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="s2">&#34;created&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">&#34;1018000&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;paid_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:52:37.000Z&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;rate&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p">,</span>
@@ -63,25 +98,24 @@
                     <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
                     <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
                     <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-                <span class="p">}</span>
+                <span class="p">},</span>
                 <span class="nt">&#34;destination&#34;</span><span class="p">:</span> <span class="p">{</span>
                     <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">&#34;1000000&#34;</span><span class="p">,</span>
                     <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;IDR&#34;</span>
-                <span class="p">}</span>
+                <span class="p">},</span>
                 <span class="nt">&#34;beneficiary&#34;</span><span class="p">:</span> <span class="p">{</span>
                     <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Jane&#34;</span><span class="p">,</span>
                     <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
-                    <span class="nt">&#34;bank&#34;</span><span class="p">:</span> <span class="s2">&#34;bni&#34;</span><span class="p">,</span>
                     <span class="nt">&#34;account&#34;</span><span class="p">:</span> <span class="mi">&#34;1172993826&#34;</span>
-                <span class="p">}</span>
-                    <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-02T05:34:57.705Z&#34;</span><span class="p">,</span>
-                    <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T05:59:15.753Z&#34;</span><span class="p">,</span>
-                    <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="s2">&#34;refunded&#34;</span><span class="p">,</span>
-                    <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">&#34;1018000&#34;</span><span class="p">,</span>
-                    <span class="nt">&#34;paid_at&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
-                    <span class="nt">&#34;rate&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
-                    <span class="nt">&#34;fee&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span>
-                <span class="p">}
+                <span class="p">},</span>
+                <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-02T05:34:57.705Z&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T05:59:15.753Z&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;state_id&#34;</span><span class="p">:</span> <span class="s2">&#34;1&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="s2">&#34;created&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">&#34;1018000&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;paid_at&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;rate&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;fee&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span>
         <span class="p">}</span>
 
 <!-- End Transaction code -->
@@ -92,7 +126,7 @@
 
 <span class="p">{</span>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
-      <span class="err">data</span> <span class="p">:</span> <span class="p">[</span>
+      <span class="err">data</span> <span class="p">:</span>
         <span class="p">{</>
             <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
             <span class="nt">&#34;reference_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX124&#34;</span><span class="p">,</span>
@@ -108,71 +142,29 @@
                 <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-            <span class="p">}</span>
-            <span class="nt">&#34;destination&#34;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">&#34;1000000&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;IDR&#34;</span>
-            <span class="p">}</span>
-            <span class="nt">&#34;beneficiary&#34;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Jane&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;bank&#34;</span><span class="p">:</span> <span class="s2">&#34;bni&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;account&#34;</span><span class="p">:</span> <span class="mi">&#34;1172993826&#34;</span>
-            <span class="p">}</span>
-                <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:02:30.150Z&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T11:14:59.896Z&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="s2">&#34;refunded&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">&#34;1018000&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;paid_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:52:37.000Z&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;rate&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;fee&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p">,</span>
-            <span class="p">}
-        <span class="p">}</span>
-
-<p class="n">Create Transaction</p>
-<span class="nf">POST</span> <span class="nn">api/v1/transactions</span>
-<span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
-<span class="p">{</span>
-      <span class="err">data-raw</span> <span class="p">:</span> 
-        <span class="p">{</>
-            <span class="nt">&#34;reference_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX124&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">https://sawtooth.rubyh.co/callback_transfez</span><span class="p">,</span>
-            <span class="nt">&#34;payer_id&#34;</span><span class="p">:</span> <span class="mi">&#34;1&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="s2">&#34;DESTINATION&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;sender&#34;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Tiara Italyana&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Pribadi&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
             <span class="p">},</span>
-            <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;EUR&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
-            <span class="p">}</span>
             <span class="nt">&#34;destination&#34;</span><span class="p">:</span> <span class="p">{</span>
                 <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">&#34;1000000&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;IDR&#34;</span>
-            <span class="p">}</span>
+            <span class="p">},</span>
             <span class="nt">&#34;beneficiary&#34;</span><span class="p">:</span> <span class="p">{</span>
                 <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Jane&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;bank&#34;</span><span class="p">:</span> <span class="s2">&#34;bni&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;account&#34;</span><span class="p">:</span> <span class="mi">&#34;1172993826&#34;</span>
-            <span class="p">}</span>
-                <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:02:30.150Z&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T11:14:59.896Z&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="s2">&#34;refunded&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">&#34;1018000&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;paid_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:52:37.000Z&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;rate&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;fee&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p">,</span>
-            <span class="p">}
+            <span class="p">},</span>
+            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:02:30.150Z&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T11:14:59.896Z&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;state_id&#34;</span><span class="p">:</span> <span class="s2">&#34;1&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="s2">&#34;created&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">&#34;1018000&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;paid_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:52:37.000Z&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;rate&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;fee&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p">,</span>
         <span class="p">}</span>
         </code></pre></div> 
 <p><api><code>POST {URL}/transactions</code></api></p>
 
-<p>Create a new transaction with transfer values specified from a given <a href="#quotation">quotation</a>.</p>
+<p>Create a new transfers.</p>
 
 <h4 id="input-17">Input</h4>
 
@@ -190,8 +182,8 @@
 <tr>
 <td><code>reference_id</code></td>
 <td>Yes</td>
-<td>Integer</td>
-<td><a href="#reference">Reference</a> information</td>
+<td>String</td>
+<td><a href="#reference">External ID</a> information</td>
 </tr>
 
 <tr>
@@ -203,35 +195,42 @@
 
 <tr>
 <td><code>payer_id</code></td>
-<td>No</td>
+<td>Yes</td>
 <td>Integer</td>
 <td><a href="#payer">Payer</a> information</td>
 </tr>
 
 <tr>
 <td><code>mode</code></td>
-<td>No</td>
+<td>Yes</td>
 <td>String</td>
 <td>Source/Destination Amount</a></td>
 </tr>
 
 <tr>
 <td><code>source</code></td>
-<td>No</td>
+<td>Yes</td>
 <td>Object</td>
 <td><a href="#source">Source</a> information</td>
 </tr>
 
 <tr>
 <td><code>destination</code></td>
-<td>No</td>
+<td>Yes</td>
 <td>Object</td>
 <td><a href="#destination">Destination</a> information</td>
 </tr>
 
 <tr>
+<td><code>sender</code></td>
+<td>Yes</td>
+<td>Object</td>
+<td><a href="#sender">Sender</a> information</td>
+</tr>
+
+<tr>
 <td><code>beneficiary</code></td>
-<td>No</td>
+<td>Yes</td>
 <td>Object</td>
 <td><a href="#beneficiary">Beneficiary</a> information</td>
 </tr>
@@ -256,15 +255,6 @@
 
 <p>Confirm a previously-created <a href="#transaction">transaction</a> to initiate processing.</p>
 
-<h4 id="output-28">Output</h4>
-
-<p><a href="#transaction">Transaction</a> object.</p>
-
-<p>&ndash;</p>
-
-<p><api><code>POST {URL}/transactions/{id}/submit</code></api></p>
-
-<p>Confirm a previously-created <a href="#transaction">transaction</a>, through an external ID, to initiate processing.</p>
 
 <h4 id="output-29">Output</h4>
 
@@ -284,7 +274,7 @@
 
 <p><api><code>GET {URL}/transactions/{id}</code></api></p>
 
-<p>Retrieve information for a given <a href="#transaction">transaction</a> from an external ID.</p>
+<p>Retrieve information for a given <a href="#transaction">transaction</a> from an ID.</p>
 
 <h4 id="output-31">Output</h4>
 
