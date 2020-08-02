@@ -3,13 +3,23 @@
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <span class="nf">GET</span> <span class="nn">{{URL}}/validation_bank_account?bank_name={{BANK_NAME}}&account_number={{ACC_NUMBER}}</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
-
+<br>
+<p class="n">Success Response</p>
 <span class="p">{</span>
     <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
-    <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;account_no&#34;</span><span class="p">:</span> <span class="mi">000001137298</span><span class="p">,</span>
         <span class="nt">&#34;bank_name&#34;</span><span class="p">:</span> <span class="s2">&#34;danamon&#34;</span><span class="p">,</span>
         <span class="nt">&#34;account_name&#34;</span><span class="p">:</span> <span class="s2">Danamon Simulator A</span>
+    <span class="p">}</span>
+<span class="p">}
+<br>
+<p class="n">Error Response</p>
+<span class="p">{</span>
+    <span class="err">status</span> <span class="err">422</span><span class="p">,</span>
+    <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;error_message&#34;</span><span class="p">:</span> <span class="s2">&#34;An error occured when doing account validation&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;errors&#34;</span><span class="p">:</span> <span class="s2">&#34;Account does not exist&#34;</span>
     <span class="p">}</span>
 <span class="p">}
     </code></pre></div>

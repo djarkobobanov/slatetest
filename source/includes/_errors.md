@@ -50,6 +50,11 @@
 </tr>
 
 <tr>
+<td><code>422</code></td>
+<td>Unprocessable Entity</td>
+</tr>
+
+<tr>
 <td><code>404</code></td>
 <td>Not Found:<br/>Resource doesn&rsquo;t exist</td>
 </tr>
@@ -66,132 +71,130 @@
 
 <!-- API Error Codes -->
 
-<!-- <h2 id="api-error-codes">API Error Codes</h2>
-
+<h2 id="api-error-codes">API Error Code</h2>
+<p>In case a transaction is declined, we will send an error_code and error_message on payload callback, explaning what went wrong. Here is a list of codes/messages.</p>
 <table>
 <thead>
 <tr>
 <th>Code</th>
-<th>Description</th>
+<th>Error Message</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>1000401</code></td>
-<td>Unauthorized</td>
+<td><code>001</code></td>
+<td>Invalid beneficiary name</td>
 </tr>
 
 <tr>
-<td><code>1000404</code></td>
-<td>Resource not found</td>
+<td><code>002</code></td>
+<td>Invalid destination account number</td>
 </tr>
 
 <tr>
-<td><code>1000999</code></td>
-<td>Invalid parameter</td>
+<td><code>003</code></td>
+<td>Invalid destination account or beneficiary name</td>
 </tr>
 
 <tr>
-<td><code>1000998</code></td>
-<td>Source country not authorized</td>
+<td><code>004</code></td>
+<td>General error</td>
 </tr>
 
 <tr>
-<td><code>1003001</code></td>
-<td>Payer is inactive in your account</td>
+<td><code>005</code></td>
+<td>Timeout error by bank</td>
 </tr>
 
 <tr>
-<td><code>1003002</code></td>
-<td>Invalid payer</td>
+<td><code>006</code></td>
+<td>Unique reference number violation</td>
 </tr>
 
 <tr>
-<td><code>1003007</code></td>
-<td>Payer is currently unavailable</td>
+<td><code>007</code></td>
+<td>Identical request already processed before</td>
 </tr>
 
 <tr>
-<td><code>1003008</code></td>
-<td>Destination amount is invalid</td>
+<td><code>008</code></td>
+<td>Bank cannot authenticated request</td>
 </tr>
 
 <tr>
-<td><code>1003009</code></td>
-<td>Parameter page is outside of the page range</td>
+<td><code>009</code></td>
+<td>Bank balance disbursement validation failed</td>
 </tr>
 
 <tr>
-<td><code>1003010</code></td>
-<td>Destination currency not provided by payer</td>
+<td><code>010</code></td>
+<td>Payload validation failed</td>
 </tr>
 
 <tr>
-<td><code>1003011</code></td>
-<td>Transaction amount below minimum of the selected payer</td>
+<td><code>011</code></td>
+<td>Otp code expired / blocked</td>
 </tr>
 
 <tr>
-<td><code>1003012</code></td>
-<td>Transaction amount over maximum of the selected payer</td>
+<td><code>012</code></td>
+<td>Beneficiary account is blocked</td>
 </tr>
 
 <tr>
-<td><code>1005001</code></td>
-<td>Account is invalid</td>
+<td><code>013</code></td>
+<td>Sender and receiver account are the same</td>
 </tr>
 
 <tr>
-<td><code>1007001</code></td>
-<td>External ID has already been used</td>
+<td><code>014</code></td>
+<td>Monthly account balance limit exceeded</td>
 </tr>
 
 <tr>
-<td><code>1007002</code></td>
-<td>Transaction has already been confirmed</td>
+<td><code>015</code></td>
+<td>Account balance limit exceeded</td>
 </tr>
 
-<tr>
-<td><code>1007003</code></td>
-<td>Transaction can not be confirmed</td>
-</tr>
 
-<tr>
-<td><code>1007004</code></td>
-<td>Transaction can no longer be confirmed, quotation has expired</td>
-</tr>
-
-<tr>
-<td><code>1007100</code></td>
-<td>Method is not supported by this payer</td>
-</tr>
-
-<tr>
-<td><code>1007101</code></td>
-<td>Method is currently unavailable</td>
-</tr>
-
-<tr>
-<td><code>1008002</code></td>
-<td>Quotation not found</td>
-</tr>
-
-<tr>
-<td><code>1008003</code></td>
-<td>Quotation has expired</td>
-</tr>
-
-<tr>
-<td><code>1008004</code></td>
-<td>Transaction not found</td>
-</tr>
-
-<tr>
-<td><code>1009001</code></td>
-<td>Unexpected error, please contact our support team</td>
-</tr>
 </tbody>
-</table> -->
+</table>
 
 <!-- End API Error codes -->
+
+
+<h2 id="api-error-codes">Validation Error Message</h2>
+<p>If transaction failed to be create or confirm, we will return an message on response. Here is a list of validation messages.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Error Message</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>Create Transaction</code></td>
+<td>reference_id must be uniq</td>
+</tr>
+
+<tr>
+<td><code>Create Transaction</code></td>
+<td>Validations for all required fields (sender, beneficiary, source, destination object)</td>
+</tr>
+
+<tr>
+<td><code>Create Transaction</code></td>
+<td>Beneficiary account must be in integer</td>
+</tr>
+
+<tr>
+<td><code>Confirm Transaction</code></td>
+<td>Insufficient amount Balance</td>
+</tr>
+
+
+</tbody>
+</table>
