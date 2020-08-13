@@ -165,33 +165,92 @@
 
 
 <h2 id="api-error-codes">Validation Error Message</h2>
-<p>If transaction failed to be create or confirm, we will return an message on response. Here is a list of validation messages.</p>
+<p>If transaction failed to be create or confirm, we will return a message on response with status code 422. Here is a list of validation messages.</p>
 <table>
 <thead>
 <tr>
 <th>Method</th>
+<th>Validation</th>
 <th>Error Message</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
+<td><code>Validate Bank Account</code></td>
+<td>Bank name not found</td>
+<td>Bank is not included in the list</td>
+</tr>
+
+<tr>
+<td><code>Validate Bank Account</code></td>
+<td>Account number required</td>
+<td>Account can't be blank, is too short (minimum is 6 characters), is not a number</td>
+</tr>
+
+<tr>
+<td><code>Validate Bank Account</code></td>
+<td>Bank required</td>
+<td>Bank can't be blank</td>
+</tr>
+
+<tr>
+<td><code>Validate Bank Account</code></td>
+<td>Account number is too long</td>
+<td>Account is too long (maximum is 20 characters)</td>
+</tr>
+
+<tr>
+<td><code>Validate Bank Account</code></td>
+<td>Account number is too short</td>
+<td>Account is too short (minimum is 6 characters)</td>
+</tr>
+
+<tr>
+<td><code>Validate Bank Account</code></td>
+<td>Account number not found</td>
+<td>Account does not exist</td>
+</tr>
+
+<tr>
 <td><code>Create Transaction</code></td>
-<td>reference_id must be uniq</td>
+<td>Reference ID must be uniq</td>
+<td>reference_id has already been taken</td>
 </tr>
 
 <tr>
 <td><code>Create Transaction</code></td>
 <td>Validations for all required fields (sender, beneficiary, source, destination object)</td>
+<td>beneficiary firstname and account required / source currency and country_iso_code required / destination currency required"</td>
 </tr>
 
 <tr>
 <td><code>Create Transaction</code></td>
-<td>Beneficiary account must be in integer</td>
+<td>Beneficiary account required</td>
+<td>Beneficiary account can't be blank, Beneficiary account is too short (minimum is 6 characters), and Beneficiary account is not a number</td>
+</tr>
+
+<tr>
+<td><code>Create Transaction</code></td>
+<td>Beneficiary account must be a number</td>
+<td>Beneficiary account is too long (maximum is 20 characters) and Beneficiary account is not a number</td>
+</tr>
+
+<tr>
+<td><code>Create Transaction</code></td>
+<td>Destination amount must be a number</td>
+<td>Amount is not a number</td>
+</tr>
+
+<tr>
+<td><code>Create Transaction</code></td>
+<td>Payer required</td>
+<td>Payer must exist / payer_id not found</td>
 </tr>
 
 <tr>
 <td><code>Confirm Transaction</code></td>
+<td>Insufficient amount Balance</td>
 <td>Insufficient amount Balance</td>
 </tr>
 
