@@ -15,9 +15,10 @@
             <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">{{CALLBACK_URL}}</span><span class="p">,</span>
             <span class="nt">&#34;payer_id&#34;</span><span class="p">:</span> <span class="mi">&#34;{{payer_id}}&#34;</span><span class="p">,</span>
             <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="s2">&#34;DESTINATION&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;notes&#34;</span><span class="p">:</span> <span class="s2">&#34;lorem ipsum dolor sir amet&#34;</span><span class="p">,</span>
             <span class="nt">&#34;sender&#34;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Tiara Italyana&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Pribadi&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Bryson Small&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Deleon&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
             <span class="p">},</span>
             <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="p">{</span>
@@ -56,8 +57,8 @@
             <span class="nt">&#34;payer_id&#34;</span><span class="p">:</span> <span class="mi">&#34;{id}&#34;</span><span class="p">,</span>
             <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="s2">&#34;DESTINATION&#34;</span><span class="p">,</span>
             <span class="nt">&#34;sender&#34;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Tiara Italyana&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Pribadi&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Bryson Small&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Deleon&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
             <span class="p">},</span>
             <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="p">{</span>
@@ -90,8 +91,8 @@
                 <span class="nt">&#34;payer_id&#34;</span><span class="p">:</span> <span class="mi">&#34;1&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="s2">&#34;DESTINATION&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;sender&#34;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Tiara Italyana&#34;</span><span class="p">,</span>
-                    <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Pribadi&#34;</span><span class="p">,</span>
+                    <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Bryson Small&#34;</span><span class="p">,</span>
+                    <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Deleon&#34;</span><span class="p">,</span>
                     <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
                 <span class="p">},</span>
                 <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="p">{</span>
@@ -134,8 +135,8 @@
             <span class="nt">&#34;payer_id&#34;</span><span class="p">:</span> <span class="mi">&#34;1&#34;</span><span class="p">,</span>
             <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="s2">&#34;DESTINATION&#34;</span><span class="p">,</span>
             <span class="nt">&#34;sender&#34;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Tiara Italyana&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Pribadi&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Bryson Small&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Deleon&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
             <span class="p">},</span>
             <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="p">{</span>
@@ -206,6 +207,13 @@
 <td>Yes</td>
 <td>String</td>
 <td>Source/Destination Amount</a></td>
+</tr>
+
+<tr>
+<td><code>notes</code></td>
+<td>No</td>
+<td>String</td>
+<td>Max 100 characters (unique is encouraged)</a></td>
 </tr>
 
 <tr>

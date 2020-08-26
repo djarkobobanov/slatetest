@@ -83,58 +83,53 @@
 
 <tbody>
 <tr>
-<td><code>001</code></td>
+<td><code>1</code></td>
 <td>Invalid beneficiary name</td>
 </tr>
 
 <tr>
-<td><code>002</code></td>
+<td><code>2</code></td>
 <td>Invalid destination account number</td>
 </tr>
 
 <tr>
-<td><code>003</code></td>
+<td><code>3</code></td>
 <td>Invalid destination account or beneficiary name</td>
 </tr>
 
 <tr>
-<td><code>004</code></td>
+<td><code>4</code></td>
 <td>General error</td>
 </tr>
 
 <tr>
-<td><code>005</code></td>
+<td><code>5</code></td>
 <td>Timeout error by bank</td>
 </tr>
 
 <tr>
-<td><code>006</code></td>
+<td><code>6</code></td>
 <td>Unique reference number violation</td>
 </tr>
 
 <tr>
-<td><code>007</code></td>
+<td><code>7</code></td>
 <td>Identical request already processed before</td>
 </tr>
 
 <tr>
-<td><code>008</code></td>
+<td><code>8</code></td>
 <td>Bank cannot authenticated request</td>
 </tr>
 
 <tr>
-<td><code>009</code></td>
+<td><code>9</code></td>
 <td>Bank balance disbursement validation failed</td>
 </tr>
 
 <tr>
-<td><code>010</code></td>
+<td><code>10</code></td>
 <td>Payload validation failed</td>
-</tr>
-
-<tr>
-<td><code>011</code></td>
-<td>Otp code expired / blocked</td>
 </tr>
 
 <tr>
@@ -145,16 +140,6 @@
 <tr>
 <td><code>013</code></td>
 <td>Sender and receiver account are the same</td>
-</tr>
-
-<tr>
-<td><code>014</code></td>
-<td>Monthly account balance limit exceeded</td>
-</tr>
-
-<tr>
-<td><code>015</code></td>
-<td>Account balance limit exceeded</td>
 </tr>
 
 
@@ -246,6 +231,24 @@
 <td><code>Create Transaction</code></td>
 <td>Payer required</td>
 <td>Payer must exist / payer_id not found</td>
+</tr>
+
+<tr>
+<td><code>Create Transaction</code></td>
+<td>Minimum amount limit</td>
+<td>Minimum amount limit not reached</td>
+</tr>
+
+<tr>
+<td><code>Create Transaction</code></td>
+<td>Maximum amount limit</td>
+<td>Maximum amount limit exceeded</td>
+</tr>
+
+<tr>
+<td><code>Create Transaction</code></td>
+<td>Compliance validation</td>
+<td>Beneficiary name/account number denied compliance</td>
 </tr>
 
 <tr>
