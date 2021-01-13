@@ -20,6 +20,7 @@
                 <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Bryson Small&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Deleon&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;date_of_birth&#34;</span><span class="p">:</span> <span class="s2">&#34;24-07-1997&#34;</span>
             <span class="p">},</span>
             <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="p">{</span>
                 <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
@@ -34,6 +35,7 @@
                 <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Jane&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;account&#34;</span><span class="p">:</span> <span class="mi">&#34;1172993826&#34;</span>
+                <span class="nt">&#34;date_of_birth&#34;</span><span class="p">:</span> <span class="s2">&#34;24-07-1997&#34;</span>
             <span class="p">},</span>
             <span class="nt">&#34;compliance&#34;</span><span class="p">:</span> <span class="p">{</span>
                 <span class="nt">&#34;source_of_funds&#34;</span><span class="p">:</span> <span class="s2">&#34;SALARY_INCOME&#34;</span><span class="p">,</span>
@@ -60,6 +62,7 @@
                 <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Bryson Small&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Deleon&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;date_of_birth&#34;</span><span class="p">:</span> <span class="s2">&#34;24-07-1997&#34;</span>
             <span class="p">},</span>
             <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="p">{</span>
                 <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
@@ -74,6 +77,7 @@
                 <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Jane&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;account&#34;</span><span class="p">:</span> <span class="mi">&#34;1172993826&#34;</span>
+                <span class="nt">&#34;date_of_birth&#34;</span><span class="p">:</span> <span class="s2">&#34;24-07-1997&#34;</span>
             <span class="p">},</span>
             <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:02:30.150Z&#34;</span><span class="p">,</span>
             <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T11:14:59.896Z&#34;</span><span class="p">,</span>
@@ -94,6 +98,7 @@
                     <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Bryson Small&#34;</span><span class="p">,</span>
                     <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Deleon&#34;</span><span class="p">,</span>
                     <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
+                    <span class="nt">&#34;date_of_birth&#34;</span><span class="p">:</span> <span class="s2">&#34;24-07-1997&#34;</span>
                 <span class="p">},</span>
                 <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="p">{</span>
                     <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
@@ -108,6 +113,7 @@
                     <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Jane&#34;</span><span class="p">,</span>
                     <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
                     <span class="nt">&#34;account&#34;</span><span class="p">:</span> <span class="mi">&#34;1172993826&#34;</span>
+                    <span class="nt">&#34;date_of_birth&#34;</span><span class="p">:</span> <span class="s2">&#34;24-07-1997&#34;</span>
                 <span class="p">},</span>
                 <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-02T05:34:57.705Z&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T05:59:15.753Z&#34;</span><span class="p">,</span>
@@ -138,6 +144,7 @@
                 <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Bryson Small&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Deleon&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;country_iso_code&#34;</span><span class="p">:</span> <span class="s2">&#34;FRA&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;date_of_birth&#34;</span><span class="p">:</span> <span class="s2">&#34;24-07-1997&#34;</span>
             <span class="p">},</span>
             <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="p">{</span>
                 <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="kc">&#34;null&#34;</span><span class="p">,</span>
@@ -152,6 +159,7 @@
                 <span class="nt">&#34;firstname&#34;</span><span class="p">:</span> <span class="s2">&#34;Jane&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;lastname&#34;</span><span class="p">:</span> <span class="s2">&#34;Doe&#34;</span><span class="p">,</span>
                 <span class="nt">&#34;account&#34;</span><span class="p">:</span> <span class="mi">&#34;1172993826&#34;</span>
+                <span class="nt">&#34;date_of_birth&#34;</span><span class="p">:</span> <span class="s2">&#34;24-07-1997&#34;</span>
             <span class="p">},</span>
             <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T10:02:30.150Z&#34;</span><span class="p">,</span>
             <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">&#34;2020-04-09T11:14:59.896Z&#34;</span><span class="p">,</span>
@@ -266,6 +274,16 @@
 
 
 <h4 id="output-29">Output</h4>
+
+<p><a href="#transaction">Transaction</a> object.</p>
+
+<p>&ndash;</p>
+<p><api><code>POST {URL}/transactions/{REFERENCE_ID}/confirm_by_ref_id</code></api></p>
+
+<p>Confirm a previously-created <a href="#transaction">transaction</a>  by Reference ID to initiate processing.</p>
+
+
+<h4 id="output-32">Output</h4>
 
 <p><a href="#transaction">Transaction</a> object.</p>
 
