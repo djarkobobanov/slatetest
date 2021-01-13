@@ -21,6 +21,7 @@ includes:
   - account
   - transfer
   - bank_code
+  - bank_list
   - enumerations
   - validates_bank_account
 
