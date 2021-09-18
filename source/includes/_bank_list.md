@@ -1,6 +1,6 @@
 <h1 id="payer-list">Payer List</h1>
 
-<p>List of banks supported by TRANSFEZ</p>
+<p>List of banks supported by TRANSFEZ. We'll keep adding new banks in the future so please refer to these real-time <p>Array of <a href="payers">payers</a> objects in a <a href="#pagination">paginated</a> fashion.</p> </p>
 
 <table>
 <thead>
@@ -775,6 +775,11 @@
 <td>153</td>
 <td>jago</td>
 <td>PT. BANK JAGO TBK.</td>
+</tr>
+<tr>
+<td>154</td>
+<td>bsi</td>
+<td>PT. BANK SYARIAH INDONESIA, TBK.</td>
 </tr>
 </tbody>
 </table>
