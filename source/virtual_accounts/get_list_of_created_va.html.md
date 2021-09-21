@@ -5,7 +5,6 @@
   <span class="nf">GET</span> <span class="nn">{{URL}}/va_numbers</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
   <span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
 
-  <br>
   <p class="n">Response</p>
   <span class="p">{</span>
     <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
@@ -35,7 +34,7 @@
         <span class="nt">&#34;counter_incoming_payment&#34;</span><span class="p">:</span> <span class="kc">1</span><span class="p">,</span>
         <span class="nt">&#34;va_id&#34;</span><span class="p">:</span> <span class="s2">&#34;5d46ba5b-9af3-4960-a3fe-5bce1da7cebb&#34;</span><span class="p">,</span>
         <span class="nt">&#34;balance_id&#34;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
-        <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="s2">{{CALLBACK_URL}}</span>
+        <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="s2">&#34;https://staging.api.disbursement.transfez.com/api/v1/callback/va/test_callback&#34;</span>
       <span class="p">},</span>
       <span class="p">{</span>
         <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">39</span><span class="p">,</span>
@@ -59,7 +58,7 @@
         <span class="nt">&#34;counter_incoming_payment&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="nt">&#34;va_id&#34;</span><span class="p">:</span> <span class="s2">&#34;d33e726f-44f6-41d4-9946-2702e78ee7cf&#34;</span><span class="p">,</span>
         <span class="nt">&#34;balance_id&#34;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
-        <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="s2">{{CALLBACK_URL}}</span>
+        <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="s2">&#34;https://staging.api.disbursement.transfez.com/api/v1/callback/va/test_callback&#34;</span>
       <span class="p">}</span>
     <span class="p">]</span>
   <span class="p">}</span>
@@ -91,7 +90,7 @@
 <tr>
 <td><api><code>data</code></api></td>
 <td>Array of object</td>
-<td>List of Object <code>{id: &lt;va_id&gt;, amount: &lt;amount&gt;, va_number: &lt;va_number&gt;, bank_code: &lt;bank_code&gt;, bank_name: &lt;bank_name&gt;, is_open: &lt;is_open&gt;, is_single_user: &lt;is_single_user&gt;, expiration_time: &lt;expiration_time&gt;, va_status: &lt;va_status&gt;, username_display: &lt;username_display&gt;, amount_detected: &lt;amount_detected&gt;, partner_user_id: &lt;partner_user_id&gt;, created: &lt;created&gt;, counter_incoming_payment: &lt;counter_incoming_payment&gt;, trx_counter: &lt;trx_counter&gt;}</code></td>
+<td>List of VA <a href="#response-parameters-get-va-info">Objects</a>.</td>
 </tr>
 <tr>
 <td><api><code>status</code></api></td>

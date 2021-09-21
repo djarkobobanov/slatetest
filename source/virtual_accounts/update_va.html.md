@@ -1,12 +1,38 @@
 ## Update VA
 <p><api><code>PUT {{URL}}/va_numbers/{{VA_ID}}</code></api></p>
+<strong>Capability to update VA</strong> 
+<ul>
+<li>amount</li>
+<li>is_single_use</li>
+<li>email</li>
+<li>trx_counter</li>
+<li>expiration_time</li>
+<li>trx_expiration_time</li>
+<li>username_display</li>
+</ul>
+<p>Example:
+* A static VA with a closed amount can be updated with a new closed amount hence it can work as a bill to be paid for a particular customer
+* A static VA can be updated to a single use so it will be the last payment received from a particular customer
+* A dynamic VA with a closed amount is updated to an opened amount so that it can accept payments for any amount</p>
+<p>All of the VA information, even after they are updated, is available on the Transfez B2B dashboard or via API. Once a VA is updated, the new set of configuration will apply for that VA and the previous configuration is overridden and no longer applicable </p>
 <p>Update VA using unique VA id.</p>
 
 <div class="highlight"><pre class="highlight"><code>
   <span class="nf">PUT</span> <span class="nn">{{URL}}/va_numbers/{{VA_ID}}</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
   <span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
+  <p class="n">Request</p>
 
-  <br>
+  <span class="p">{</span>
+    <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&#34;is_single_use&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&#34;expiration_time&#34;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="nt">&#34;username_display&#34;</span><span class="p">:</span> <span class="s2">&#34;test&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;is_lifetime&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;email@domain.com&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;trx_expiration_time&#34;</span><span class="p">:</span><span class="mi"> 30</span><span class="p">,</span>
+    <span class="nt">&#34;trx_counter&#34;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+
   <p class="n">Response</p>
   <span class="p">{</span>
     <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
@@ -19,11 +45,11 @@
       <span class="nt">&#34;amount&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="nt">&#34;is_open&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
       <span class="nt">&#34;is_single_use&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="nt">&#34;expiration_time&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="nt">&#34;expiration_time&#34;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="nt">&#34;is_lifetime&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="nt">&#34;username_display&#34;</span><span class="p">:</span> <span class="s2">&#34;va name&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;email@mail.com&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;trx_expiration_time&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="nt">&#34;username_display&#34;</span><span class="p">:</span> <span class="s2">&#34;test&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;email@domain.com&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;trx_expiration_time&#34;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="nt">&#34;partner_trx_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX0001&#34;</span><span class="p">,</span>
       <span class="nt">&#34;trx_counter&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="nt">&#34;partner_id&#34;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
@@ -32,7 +58,7 @@
       <span class="nt">&#34;counter_incoming_payment&#34;</span><span class="p">:</span> <span class="kc">0</span><span class="p">,</span>
       <span class="nt">&#34;va_id&#34;</span><span class="p">:</span> <span class="s2">&#34;071b288c-01c8-495b-8669-4fbe6ea0b036&#34;</span><span class="p">,</span>
       <span class="nt">&#34;balance_id&#34;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">{{CALLBACK_URL}}</span>
+      <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">&#34;https://staging.api.disbursement.transfez.com/api/v1/callback/va/test_callback&#34;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 </span></code></pre></div>
@@ -47,7 +73,7 @@
 </tr>
 </thead><tbody>
 <tr>
-<td><api><code>ID</code></api></td>
+<td><api><code>VA_ID</code></api></td>
 <td>String(36)</td>
 <td>TRUE</td>
 <td>-</td>
@@ -94,13 +120,6 @@
 <td>Customizable VA display name that will be seen by user, If empty willl be using partner username</td>
 </tr>
 <tr>
-<td><api><code>is_lifetime</code></api></td>
-<td>Boolean</td>
-<td>FALSE</td>
-<td>-</td>
-<td>false</td>
-</tr>
-<tr>
 <td><api><code>email</code></api></td>
 <td>String(50)</td>
 <td>FALSE</td>
@@ -113,13 +132,6 @@
 <td>FALSE</td>
 <td>-</td>
 <td>Transaction expiration time in minutes, e.g If Transaction want to be expired after 5 minutes, you just have to set expiration_time to 5.</td>
-</tr>
-<tr>
-<td><api><code>partner_trx_id</code></api></td>
-<td>String(255)</td>
-<td>-</td>
-<td>Partner unique Transaction ID of a VA</td>
-<td></td>
 </tr>
 <tr>
 <td><api><code>trx_counter</code></api></td>
@@ -165,7 +177,7 @@
 <tr>
 <td><api><code>is_open</code></api></td>
 <td>Boolean</td>
-<td>True means VA number can accept any amount, False means VA number only accept the specified amount in the field amount</td>
+<td>True means VA number <b>can accept any amount</b>, False means VA number only accept the specified amount in the field amount</td>
 </tr>
 <tr>
 <td><api><code>is_single_use</code></api></td>
@@ -180,7 +192,7 @@
 <tr>
 <td><api><code>va_status</code></api></td>
 <td>String(16)</td>
-<td>Status of VA, see <a href="#static-va-status">VA Status</a></td>
+<td>Status of VA, see <a href="#available-status-for-va-aggregator-va-aggregator-status">VA Status</a></td>
 </tr>
 <tr>
 <td><api><code>username_display</code></api></td>
@@ -205,7 +217,7 @@
 <tr>
 <td><api><code>trx_counter</code></api></td>
 <td>Int</td>
-<td>Transaction counter to limit number of transaction that can be receive by va number, if empty will be use default value -1 for multiple use va, and 1 for single use va. If counter reach zero, va cannot be inquiry or accept payment.</td>
+<td>Transaction counter to limit number of transaction that can be receive by va number, if empty will be use default value -1 for multiple use va, and 1 for single use va. If counter reach zero, <b>va cannot be used for inquiry or accept payment.</b></td>
 </tr>
 <tr>
 <td><api><code>counter_incoming_payment</code></api></td>

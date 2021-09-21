@@ -6,7 +6,6 @@
   <span class="nf">GET</span> <span class="nn">{{URL}}/va_numbers/{{VA_ID}}</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
   <span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
 
-  <br>
   <p class="n">Response</p>
   <span class="p">{</span>
     <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
@@ -32,7 +31,7 @@
       <span class="nt">&#34;counter_incoming_payment&#34;</span><span class="p">:</span> <span class="kc">0</span><span class="p">,</span>
       <span class="nt">&#34;va_id&#34;</span><span class="p">:</span> <span class="s2">&#34;071b288c-01c8-495b-8669-4fbe6ea0b036&#34;</span><span class="p">,</span>
       <span class="nt">&#34;balance_id&#34;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">{{CALLBACK_URL}}</span>
+      <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">&#34;https://staging.api.disbursement.transfez.com/api/v1/callback/va/test_callback&#34;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 </span></code></pre></div>
@@ -47,7 +46,7 @@
 </tr>
 </thead><tbody>
 <tr>
-<td><api><code>ID</code></api></td>
+<td><api><code>VA_ID</code></api></td>
 <td>String(255)</td>
 <td>TRUE</td>
 <td>-</td>
@@ -110,12 +109,12 @@
 <tr>
 <td><api><code>va_status</code></api></td>
 <td>String(16)</td>
-<td>Status of VA, see <a href="#static-va-status">VA Status</a></td>
+<td>Status of VA, see <a href="#available-status-for-va-aggregator-va-aggregator-status">VA Status</a></td>
 </tr>
 <tr>
 <td><api><code>username_display</code></api></td>
 <td>String(255)</td>
-<td>Customizable VA display name that will be seen by user, If empty willl be using partner username</td>
+<td>Customizable VA display name that will be seen by user, If empty will be using partner username</td>
 </tr>
 <tr>
 <td><api><code>partner_user_id</code></api></td>
@@ -145,6 +144,6 @@
 <tr>
 <td><api><code>trx_counter</code></api></td>
 <td>Int</td>
-<td>Transaction counter to limit number of transaction that can be receive by va number, if empty will be use default value -1 for multiple use va, and 1 for single use va. If counter reach zero, va cannot be inquiry or accept payment.</td>
+<td>Transaction counter to limit number of transaction that can be receive by va number, if empty will be use default value -1 for multiple use va, and 1 for single use va. If counter reach zero, <b>va cannot be used for inquiry or accept payment.</b></td>
 </tr>
 </tbody></table>

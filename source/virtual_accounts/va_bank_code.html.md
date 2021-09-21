@@ -5,7 +5,6 @@
   <span class="nf">GET</span> <span class="nn">{{URL}}/va_numbers/available_banks</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
   <span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
 
-  <br>
   <p class="n">Response</p>
   <span class="p">{</span>
     <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
