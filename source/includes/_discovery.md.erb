@@ -1,7 +1,7 @@
 <h1 id="discovery">Discovery</h1>
 
 <!-- Services -->
-<h2 href="#service">Services</h2>
+<h2 id="services">Services</h2>
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <span class="nf">GET</span> <span class="nn">{URL}/services</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -65,7 +65,7 @@
 
 <h4 id="output-1">Output</h4>
 
-<p>Array of <a href="service">service</a> objects in a <a href="#pagination">paginated</a> fashion.</p>
+<p>Array of <a href="services">service</a> objects in a <a href="#pagination">paginated</a> fashion.</p>
 <!-- End Services -->
 
 <!-- Payers -->
@@ -74,7 +74,7 @@
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><p class="n">All Payers</p>
 <span class="nf">GET</span> <span class="nn">{URL}/payers</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span>
 
 <span class="p">{</>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
@@ -196,7 +196,7 @@
 
 <p class="n">Get Payers</p>
 <span class="nf">GET</span> <span class="nn">{URL}/payers/{<span class="s2">ID</span>}'</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span>
 
 
 <span class="p">{</>
@@ -290,7 +290,7 @@
 <td><code>service_id</code></td>
 <td>No</td>
 <td>Integer</td>
-<td><a href="#service">Service ID</a></td>
+<td><a href="#services">Service ID</a></td>
 </tr>
 
 <tr>
@@ -368,7 +368,7 @@
 <p class="n">Check Rates</p>
 <span class="nf">GET</span> <span class="nn">{URL}/rates/{<span class="s2">source_currency</span>}/{<span class="s2">destination_currency</span>}
 </span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span>
 <span class="p">{</span>
    <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
    <span class="err">data</span> <span class="p">:</span> <span class="p">{</span>
@@ -442,7 +442,7 @@
 <span class="p">]</span></code></pre></div>
 <p><api><code>GET {URL}/countries</code></api></p>
 
-<p>Retrieve list of <a href="#country">countries</a> for all money transfer <a href="#services">services</a> available for a given account.</p>
+<p>Retrieve list of <a href="#country">countries</a> for all money transfer <a href="#servicess">services</a> available for a given account.</p>
 
 <h4 id="input-2">Input</h4>
 

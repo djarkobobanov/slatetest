@@ -39,4 +39,4 @@
 </tr>
 </tbody></table>
 <h3 id="use-cases-api-va-aggregator" type="normal">Use Cases</h3>
-<p><img src="../images/va_use_case__preview_rev_1.png" alt="VA Use Cases" /></p>
+<p><img src="../images/va_usecase_diagram.png" alt="VA Use Cases" /></p>
