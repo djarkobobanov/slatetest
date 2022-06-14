@@ -7,7 +7,6 @@
 <li>email</li>
 <li>trx_counter</li>
 <li>expiration_time</li>
-<li>trx_expiration_time</li>
 <li>username_display</li>
 </ul>
 <p>Example:
@@ -29,7 +28,6 @@
     <span class="nt">&#34;username_display&#34;</span><span class="p">:</span> <span class="s2">&#34;test&#34;</span><span class="p">,</span>
     <span class="nt">&#34;is_lifetime&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
     <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;email@domain.com&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;trx_expiration_time&#34;</span><span class="p">:</span><span class="mi"> 30</span><span class="p">,</span>
     <span class="nt">&#34;trx_counter&#34;</span><span class="p">:</span> <span class="mi">1</span>
   <span class="p">}</span>
 
@@ -49,7 +47,6 @@
       <span class="nt">&#34;is_lifetime&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="nt">&#34;username_display&#34;</span><span class="p">:</span> <span class="s2">&#34;test&#34;</span><span class="p">,</span>
       <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;email@domain.com&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;trx_expiration_time&#34;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="nt">&#34;partner_trx_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX0001&#34;</span><span class="p">,</span>
       <span class="nt">&#34;trx_counter&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="nt">&#34;partner_id&#34;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
@@ -127,13 +124,6 @@
 <td>Email of user, using email standard format</td>
 </tr>
 <tr>
-<td><api><code>trx_expiration_time</code></api></td>
-<td>Long</td>
-<td>FALSE</td>
-<td>-</td>
-<td>Transaction expiration time in minutes, e.g If Transaction want to be expired after 5 minutes, you just have to set expiration_time to 5.</td>
-</tr>
-<tr>
 <td><api><code>trx_counter</code></api></td>
 <td>Int</td>
 <td>FALSE</td>
@@ -204,12 +194,6 @@
 <td>String(255)</td>
 <td>Partner unique ID for specific user</td>
 </tr>
-<tr>
-<td><api><code>trx_expiration_time</code></api></td>
-<td>Long</td>
-<td>Transaction expiration time on Unix timestamp in milliseconds, -1 means no expiration time.</td>
-</tr>
-<tr>
 <td><api><code>partner_trx_id</code></api></td>
 <td>String(255)</td>
 <td>Partner unique Transaction ID of a VA</td>

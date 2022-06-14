@@ -30,10 +30,6 @@
         <span class="nt">&#34;bank_name&#34;</span><span class="p">:</span> <span class="s2">&#34;Bank BNI&#34;</span>
       <span class="p">},</span>
       <span class="p">{</span>
-        <span class="nt">&#34;bank_code&#34;</span><span class="p">:</span> <span class="s2">&#34;014&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;bank_name&#34;</span><span class="p">:</span> <span class="s2">&#34;Bank BCA&#34;</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
         <span class="nt">&#34;bank_code&#34;</span><span class="p">:</span> <span class="s2">&#34;213&#34;</span><span class="p">,</span>
         <span class="nt">&#34;bank_name&#34;</span><span class="p">:</span> <span class="s2">&#34;Bank BTPN&#34;</span>
       <span class="p">}</span>
@@ -66,10 +62,6 @@
 <tr>
 <td>009</td>
 <td>Bank BNI</td>
-</tr>
-<tr>
-<td>014</td>
-<td>Bank BCA</td>
 </tr>
 <tr>
 <td>213</td>

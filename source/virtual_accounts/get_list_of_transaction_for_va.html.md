@@ -24,7 +24,6 @@
       <span class="nt">&#34;is_lifetime&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
       <span class="nt">&#34;username_display&#34;</span><span class="p">:</span> <span class="s2">&#34;va name&#34;</span><span class="p">,</span>
       <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;email@mail.com&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;trx_expiration_time&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="nt">&#34;partner_trx_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRXVA01&#34;</span><span class="p">,</span>
       <span class="nt">&#34;trx_counter&#34;</span><span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
       <span class="nt">&#34;partner_id&#34;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>

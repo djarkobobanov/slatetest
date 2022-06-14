@@ -22,7 +22,6 @@
       <span class="nt">&#34;is_lifetime&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="nt">&#34;username_display&#34;</span><span class="p">:</span> <span class="s2">&#34;va name&#34;</span><span class="p">,</span>
       <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;email@mail.com&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;trx_expiration_time&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="nt">&#34;partner_trx_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX0001&#34;</span><span class="p">,</span>
       <span class="nt">&#34;trx_counter&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="nt">&#34;partner_id&#34;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
@@ -130,11 +129,6 @@
 <td><api><code>counter_incoming_payment</code></api></td>
 <td>Integer</td>
 <td>Count total incoming payment of VA</td>
-</tr>
-<tr>
-<td><api><code>trx_expiration_time</code></api></td>
-<td>Long</td>
-<td>Transaction expiration time on Unix timestamp in milliseconds, -1 means no expiration time.</td>
 </tr>
 <tr>
 <td><api><code>partner_trx_id</code></api></td>

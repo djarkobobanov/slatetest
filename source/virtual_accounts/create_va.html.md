@@ -15,7 +15,6 @@
     <span class="nt">&#34;expiration_time&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
     <span class="nt">&#34;username_display&#34;</span><span class="p">:</span> <span class="s2">&#34;your va name&#34;</span><span class="p">,</span>
     <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;email@mail.com&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;trx_expiration_time&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
     <span class="nt">&#34;partner_trx_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX0001&#34;</span><span class="p">,</span>
     <span class="nt">&#34;trx_counter&#34;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="nt">&#34;callback_url&#34;</span> <span class="p">:</span> <span class="p"></span><span class="err">&#34;https://staging.api.disbursement.transfez.com/api/v1/callback/va/test_callback&#34;</span><span class="p"></span>
@@ -37,7 +36,6 @@
       <span class="nt">&#34;is_lifetime&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="nt">&#34;username_display&#34;</span><span class="p">:</span> <span class="s2">&#34;va name&#34;</span><span class="p">,</span>
       <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;email@mail.com&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;trx_expiration_time&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="nt">&#34;partner_trx_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX0001&#34;</span><span class="p">,</span>
       <span class="nt">&#34;trx_counter&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="nt">&#34;partner_id&#34;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
@@ -126,13 +124,6 @@
 <td>Email of user, using email standard format</td>
 </tr> -->
 <tr>
-<td><api><code>trx_expiration_time</code></api></td>
-<td>Long</td>
-<td>FALSE</td>
-<td>-</td>
-<td>Transaction expiration time in <b>minutes</b>, e.g If Transaction want to be expired after 5 minutes, you just have to set expiration_time to 5. If empty transaction expiration time will be the same with va expiration time</td>
-</tr>
-<tr>
 <td><api><code>partner_trx_id</code></api></td>
 <td>String(255)</td>
 <td>FALSE</td>
@@ -218,11 +209,6 @@
 <td><api><code>username_display</code></api></td>
 <td>String(255)</td>
 <td>Customizable VA display name that will be seen by user, If empty willl be using partner username</td>
-</tr>
-<tr>
-<td><api><code>trx_expiration_time</code></api></td>
-<td>Long</td>
-<td>Transaction expiration time on Unix timestamp in milliseconds, -1 means no expiration time.</td>
 </tr>
 <tr>
 <td><api><code>partner_trx_id</code></api></td>
