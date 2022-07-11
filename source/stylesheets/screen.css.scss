@@ -61,10 +61,14 @@ body {
   right: 0;
   bottom: 0;
   width: $nav-width;
-  background-color: $nav-bg;
+  height: 616px;
+  background: linear-gradient(180deg, #102C57 0%, #486896 100%);
   font-size: 13px;
   font-weight: bold;
+  margin-top: 20px;
+  margin-left: 20px;
   margin-right: 5px;
+  border-radius: 12px;
 
   // language selector for mobile devices
   .lang-selector {
@@ -81,8 +85,8 @@ body {
     display: block;
     max-width: 220px;
     margin-bottom: $logo-margin;
-    margin-top: 15px;
-    margin-left: 15px;
+    margin-top: 20px;
+    margin-left: 20px;
   }
 
   &>.search {
@@ -97,7 +101,7 @@ body {
       margin: $nav-v-padding $nav-padding;
       width: $nav-width - ($nav-padding*2);
       outline: none;
-      color: $nav-text;
+      color: #102C57;
       border-radius: 0;
       /* ios has a default border radius */
     }
@@ -267,7 +271,7 @@ body {
 ////////////////////////////////////////////////////////////////////////////////
 
 .page-wrapper {
-  margin-left: $nav-width;
+  margin-left: $nav-width + 28px;
   position: relative;
   z-index: 10;
   background-color: $main-bg;
