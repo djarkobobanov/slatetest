@@ -358,6 +358,7 @@ body {
   &>h5,
   &>h6,
   &>p,
+  &>div,
   &>table,
   &>ul,
   &>ol,
@@ -379,9 +380,6 @@ body {
   // the div is the tocify hidden div for placeholding stuff
   &>h1,
   &>h2,
-  &>div {
-    clear: both;
-  }
 
   h1 {
     @extend %header-font;
@@ -405,7 +403,7 @@ body {
     @extend %header-font;
     font-size: 19px;
     margin-top: 4em;
-    margin-bottom: 0;
+    margin-bottom: 21px;
     border-top: 1px solid #ccc;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
@@ -672,4 +670,42 @@ body {
 .highlight,
 .highlight .w {
   background-color: $code-bg;
+}
+
+
+// BADGES
+.badge {
+  background-color: #ddd;
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;  
+}
+
+.post {
+  background-color: rgb(118, 163, 118) !important;
+}
+.put {
+  background-color: orange !important;
+}
+.delete {
+  background-color: red !important;
+}
+.get {
+  background-color: lightblue !important;
+}
+
+// CARDS
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  // border: 2px, solid;
+  // border-color: rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  margin-bottom: 20px;
 }
