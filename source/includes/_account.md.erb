@@ -1,178 +1,184 @@
-<h1 id="account">Account</h1>
+# Account
+##My Account
+<a class="badge get">GET</a> /my_account 
+<br>
+Retrieve the details information of your account.
 
-<h2 id="balances">Balances</h2>
-<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
-<span class="nf">GET</span> <span class="nn">api/v1/my_balances</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span>
+```javascript
+// Response Example
+{
+    "status": 200,
+    "user": {
+        "id": 7,
+        "email": "example@email.com",
+        "created_at": "2020-07-30T13:22:28.476+07:00",
+        "updated_at": "2021-05-28T12:19:54.789+07:00",
+        "partner_id": 6,
+        "is_api_user": true,
+        "is_agreed": true,
+        "my_roles": [
+            "partner",
+            "partner_developer"
+        ],
+        "balances": [
+            {
+                "id": 7,
+                "currency": "IDR",
+                "balance": 254897585,
+                "available_balance": null,
+                "is_active": true,
+                "user_id": 7,
+                "created_at": "2020-07-30T13:23:39.900+07:00",
+                "updated_at": "2022-07-11T12:47:36.282+07:00",
+                "partner_id": 6,
+                "is_unlimited": true
+            }
+        ],
+        "partner": {
+            "id": 6,
+            "name": "Company Name",
+            "address": "Tebet",
+            "phone": "+628123123123",
+            "email_pic": "example@email.com",
+            "api_user_id": 7,
+            "created_at": "2020-07-30T13:22:28.477+07:00",
+            "updated_at": "2021-12-21T17:05:06.270+07:00",
+            "is_b2b_partner": true
+        }
+    }
+}
+```
+###Response Parameter
+|Field|Type|Description|
+|----|----|----|
+|`status`|Integer|API status|
+|`user`|Object||
+|`user[id]`|Integer|User account ID|
+|`user[email]`|String|User account email|
+|`user[created_at]`|Timestamp||
+|`user[updated_at]`|Timestamp||
+|`user[partner_id]`|Integer||
+|`user[is_api_user]`|Boolean||
+|`user[is_agreed]`|Boolean||
+|`user[my_roles]`|Array||
+|`user[balances]`|Object|Refer to [Balance](#balance) object|
+|`user[partner]`|Object|Refer to [Partner](#partner) object|
 
-<span class="p">{</span>
-    <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
-    <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;total&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&#34;balances&#34;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                <span class="nt">&#34;currency&#34;</span><span class="p">:</span> <span class="s2">&#34;IDR&#34;</span><span class="p">,</span>
-                <span class="nt">&#34;balance&#34;</span><span class="p">:</span> <span class="mi">69900000</span><span class="p">,</span>
-                <span class="nt">&#34;available_balance&#34;</span><span class="p">:</span> <span class="s2">null</span><span class="p">,</span>
-                <span class="nt">&#34;is_active&#34;</span><span class="p">:</span> <span class="s2">true</span><span class="p">,</span>
-                <span class="nt">&#34;user_id&#34;</span><span class="p">:</span> <span class="mi">1</
-                span><span class="p">,</span>
-                <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-09T09:36:45.277Z</span><span class="p">,</span>
-                <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="mi">2020-04-09T11:27:45.691Z</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span><span class="p">,</span>
-    <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">Succesfully get my balances</span>
-<span class="p">}
-    </code></pre></div>
-<p><api><code>GET {URL}/my_balances</code></api></p>
+##My Balance
+<a class="badge get">GET</a> /my_balance
+<br>
+Retrieve information for your account balance.
 
-<p>Retrieve information for all account balances per currency.</p>
-
-<h4 id="input-13">Input</h4>
-
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Required</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>page</code></td>
-<td>No</td>
-<td>Integer</td>
-<td>Page number</td>
-</tr>
-
-<tr>
-<td><code>per_page</code></td>
-<td>No</td>
-<td>Integer</td>
-<td>Number of results per page (default 50, max 100)</td>
-</tr>
-
-<tr>
-<td><code>currency</code></td>
-<td>No</td>
-<td>String</td>
-<td>Currency in <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> format</td>
-</tr>
-
-<tr>
-<td><code>balance</code></td>
-<td>No</td>
-<td>Decimal</td>
-<td></td>
-</tr>
-
-<tr>
-<td><code>available_balance</code></td>
-<td>No</td>
-<td>Decimal</td>
-<td></td>
-</tr>
-
-<tr>
-<td><code>is_active</code></td>
-<td>No</td>
-<td>Boolean</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-<h4 id="output-20">Output</h4>
-
-<p>Array of <a href="#balance">balance</a> objects.</p>
-
-<h2 id="balances">Balance History</h2>
-
-<p><api><code>GET {URL}/balances</code></api></p>
-
-<p>Retrieve information for all account balances per currency.</p>
-
-<h4 id="input-13">Input</h4>
-
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Required</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>page</code></td>
-<td>No</td>
-<td>Integer</td>
-<td>Page number</td>
-</tr>
-
-<tr>
-<td><code>per_page</code></td>
-<td>No</td>
-<td>Integer</td>
-<td>Number of results per page (default 50, max 100)</td>
-</tr>
-
-<tr>
-<td><code>credit</code></td>
-<td>No</td>
-<td>Integer</td>
-<td></td>
-</tr>
-
-<tr>
-<td><code>debit</code></td>
-<td>No</td>
-<td>Integer</td>
-<td></td>
-</tr>
-
-<tr>
-<td><code>originator</code></td>
-<td>No</td>
-<td>Polymorphic</td>
-<td></td>
-</tr>
-
-<tr>
-<td><code>notes</code></td>
-<td>No</td>
-<td>Text</td>
-<td></td>
-</tr>
-
-<tr>
-<td><code>description</code></td>
-<td>No</td>
-<td>Text</td>
-<td></td>
-</tr>
-
-<tr>
-<td><code>balance_id</code></td>
-<td>No</td>
-<td>Integer</td>
-<td> <a href="#balance">Balance</a> information </td>
-</tr>
-</tbody>
-</table>
-
-<h4 id="output-20">Output</h4>
-
-<p>Array of <a href="#balance">balance</a> objects.</p>
-
-<!-- Balances code -->
+```javascript
+// Response Example
+{
+    "status": 200,
+    "data": {
+        "total": 1,
+        "balances": [
+            {
+                "id": 7,
+                "currency": "IDR",
+                "balance": 254897585,
+                "available_balance": null,
+                "is_active": true,
+                "user_id": 7,
+                "created_at": "2020-07-30T13:23:39.900+07:00",
+                "updated_at": "2022-07-11T12:47:36.282+07:00",
+                "partner_id": 6,
+                "is_unlimited": true
+            }
+        ]
+    },
+    "message": "Succesfully get my balances"
+}
+```
+###Response Parameter
+|Field|Type|Description|
+|----|----|----|
+|`status`|Integer|API Status|
+|`data`|Object|Response object|
+|`[data][total]`|Integer|Total queried data|
+|`[data][balances]`|Object|Refer to [Balance](#balance) object|
+|`message`|String|Additional information of the response|
 
 
-<!-- End Balances code -->
+##My Balance History
+<a class="badge get">GET</a> /balances
+<br>
+Retrieve the balance history of your account
+
+
+```javascript
+// Request Example
+{
+    "page": 1,
+    "per_page": 50
+}
+```
+###Request Parameter
+|Field|Required|Type|Description|
+|----|----|----|----|
+|`page`|No|Integer|Page number|
+|`per_page`|No|Integer|Number of results per page (default 50, max 100)|
+
+```javascript
+// Response Example
+{
+    "status": 200,
+    "data": [
+        {
+            "id": 7,
+            "currency": "IDR",
+            "balance": 254897585,
+            "available_balance": null,
+            "is_active": true,
+            "user_id": 7,
+            "created_at": "2020-07-30T13:23:39.900+07:00",
+            "updated_at": "2022-07-11T12:47:36.282+07:00",
+            "partner_id": 6,
+            "is_unlimited": true,
+            "user": {
+                "id": 7,
+                "email": "example@email.com",
+                "created_at": "2020-07-30T13:22:28.476+07:00",
+                "updated_at": "2021-05-28T12:19:54.789+07:00",
+                "partner_id": 6,
+                "is_api_user": true,
+                "is_agreed": true
+            },
+            "balance_histories": [
+                {
+                    "id": 88,
+                    "credit": 150000000,
+                    "debit": 0,
+                    "originator_id": 1,
+                    "originator_type": "User",
+                    "notes": null,
+                    "description": null,
+                    "balance_id": 7,
+                    "created_at": "2020-07-30T13:23:39.904+07:00",
+                    "updated_at": "2020-07-30T13:23:39.904+07:00",
+                    "prev_balance": 0.0,
+                    "curr_balance": 0.0
+                }
+            ]
+        }
+    ]
+}
+```
+###Response Parameter
+
+|Field|Type|Description|
+|----|----|----|
+|`status`|Integer|API status|
+|`data`|Object|Refer to [balance](#balance) object|
+|`data[user]`|Object||
+|`data[user][id]`|Integer|User account ID|
+|`data[user][email]`|String|User account email|
+|`data[user][created_at]`|Timestamp||
+|`data[user][updated_at]`|Timestamp||
+|`data[user][partner_id]`|Integer||
+|`data[user][is_api_user]`|Boolean||
+|`data[user][is_agreed]`|Boolean||
+|`data[balance_histories]`|Object|Refer to [balance histories](#balance-histories) object|

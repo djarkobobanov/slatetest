@@ -1,0 +1,44 @@
+#Parameters
+
+##Partner
+|Field|Type|Description|
+|----|----|----|
+|`id`|Integer||
+|`name`|String||
+|`address`|String||
+|`phone`|String||
+|`email_pic`|String||
+|`api_user_id`|Integer||
+|`created_at`|Timestamp||
+|`updated_at`|Timestamp||
+|`is_b2b_partner`|Boolean||
+
+##Balance
+|Field|Type|Description|
+|----|----|----|
+|`id`|Integer||
+|`currency`|String||
+|`balance`|Decimal||
+|`available_balance`|Decimal||
+|`is_active`|Boolean||
+|`user_id`|Integer||
+|`created_at`|Timestamp||
+|`updated_at`|Timestamp||
+|`partner_id`|Integer||
+|`is_unlimited`|Boolean||
+
+##Balance histories
+|Field|Type|Description|
+|----|----|----|
+|`id`|Integer||
+|`credit`|Decimal||
+|`debit`|Decimal||
+|`originator_id`|Integer||
+|`originator_type`|String||
+|`notes`|String||
+|`description`|String||
+|`balance_id`|Integer||
+|`created_at`|Timestamp||
+|`updated_at`|Timestamp||
+|`prev_balance`|Decimal|Balance before this transaction is done|
+|`curr_balance`|Decimal|Final balance after this transaction is done|

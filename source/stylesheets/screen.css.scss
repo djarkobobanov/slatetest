@@ -358,7 +358,6 @@ body {
   &>h5,
   &>h6,
   &>p,
-  &>div,
   &>table,
   &>ul,
   &>ol,
@@ -380,6 +379,9 @@ body {
   // the div is the tocify hidden div for placeholding stuff
   &>h1,
   &>h2,
+  &>div{
+    clear: both;
+  }
 
   h1 {
     @extend %header-font;
@@ -678,7 +680,7 @@ body {
   background-color: #ddd;
   border: none;
   color: white;
-  padding: 8px;
+  padding: 4px 8px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
