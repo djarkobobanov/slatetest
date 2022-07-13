@@ -126,54 +126,19 @@
 ###Response Parameter
 |Field|Type|Description|
 |----|----|----|
-|`status`|Integer|API Status|
 |`page`|Integer|Page number|
 |`per_page`|Integer|Number of results per page (default 50, max 100)|
 |`total_page`|Integer|Total page fetched from the server|
-|`data`|Array of Objects||
-|`id`|Integer||
-|`reference_id`|String||
-|`callback_url`|String||
-|`payer_id`|Integer||
-|`mode`|String||
-|`sender`|Object|Refer to [sender](#sender) object|
-|`source`|Object||
-|`destination`|Object||
-|`beneficiary`|Object|Refer to [beneficiary](#beneficiary) object|
-|`compliance`|Object||
-|`created_at`|Timestamp||
-|`updated_at`|Timestamp||
-|`user_id`|Integer||
-|`state`|String||
-|`disbursement_reference_id`|String||
-|`amount`|Decimal||
-|`paid_at`|Timestamp||
-|`rate`|Decimal||
-|`fee`|Decimal||
-|`partner_id`|Integer||
-|`completion_date`|Timestamp||
-|`sent_amount`|Decimal||
-|`state_id`|Integer||
-|`error_code`|String||
-|`error_message`|String||
-|`partner_error_message`|String||
-|`notes`|String||
-|`transaction_type`|String|Refer to [transaction type](#transaction-type)|
-|`partner_rate`|Decimal||
-|`partner_fee`|Decimal||
-|`partner_fee_currency`|String||
-|`user_email`|String||
-|`payer_name`|String||
-
+<%= partial "./includes/parameters_partial/transaction.md.erb"  %>
 
 <%# ----------------------- GET TRANSACTION ----------------------- %>
 ##Get Transaction
-<a class="badge get">GET</a> /transactions/:id
+<a class="badge get">GET</a> /transactions/:transaction_id
 <br>
 
 |Path parameter|Description|
 |----|----|
-|`:id`|Id of the transaction|
+|`:transaction_id`|Index number of the transaction|
 
 ```javascript
 {
@@ -279,44 +244,7 @@
 ###Response Parameter
 |Field|Type|Description|
 |----|----|----|
-|`status`|Integer|API Status|
-|`page`|Integer|Page number|
-|`per_page`|Integer|Number of results per page (default 50, max 100)|
-|`total_page`|Integer|Total page fetched from the server|
-|`data`|Object||
-|`id`|Integer||
-|`reference_id`|String||
-|`callback_url`|String||
-|`payer_id`|Integer||
-|`mode`|String||
-|`sender`|Object|Refer to [sender](#sender) object|
-|`source`|Object||
-|`destination`|Object||
-|`beneficiary`|Object|Refer to [beneficiary](#beneficiary) object|
-|`compliance`|Object||
-|`created_at`|Timestamp||
-|`updated_at`|Timestamp||
-|`user_id`|Integer||
-|`state`|String||
-|`disbursement_reference_id`|String||
-|`amount`|Decimal||
-|`paid_at`|Timestamp||
-|`rate`|Decimal||
-|`fee`|Decimal||
-|`partner_id`|Integer||
-|`completion_date`|Timestamp||
-|`sent_amount`|Decimal||
-|`state_id`|Integer||
-|`error_code`|String||
-|`error_message`|String||
-|`partner_error_message`|String||
-|`notes`|String||
-|`transaction_type`|String|Refer to [transaction type](#transaction-type)|
-|`partner_rate`|Decimal||
-|`partner_fee`|Decimal||
-|`partner_fee_currency`|String||
-|`user_email`|String||
-|`payer_name`|String||
+<%= partial "./includes/parameters_partial/transaction.md.erb"  %>
 
 
 
@@ -331,7 +259,8 @@ Every destination country should have different requirement than the others base
 
 1. Sender form
 2. Beneficiary form
-3. Compliance
+
+You can find the required field for each destination country [here](#get-required-fields-for-a-destination-country)
 
 
 
@@ -369,3 +298,378 @@ Every destination country should have different requirement than the others base
 }
 ```
 
+###Request Parameter
+
+|Field|Required|Type|Description|
+|----|----|----|----|
+|`reference_id`|YES|Integer||
+|`callback_url`|NO|String||
+|`payer_id`|YES|String|Index number of destination country|
+|`mode`|YES|String|Choose between `DESTINATION` or `SOURCE`. Affects where the `amount` field is required|
+|`sender`|YES|Object|Content of the object is depending on the payers required attribute|
+|`source`|YES|Object||
+|`source[amount]`|NO|Decimal|Required if the mode is `SOURCE`|
+|`source[currency]`|YES|String|Source currency ISO code. Using the standard of [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)|
+|`source[country_iso_code]`|YES|String|Source country ISO-3 code. Using the standard of [ISO 3116 country code|(https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)|
+|`destination`|YES|Object||
+|`destination[amount]`|NO|Decimal|Required if the mode is `DESTINATION`|
+|`destination[currency]`|YES|String|Destination currency ISO code. Using the standard of [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)|
+|`destination[country_iso_code]`|YES|String|Source country ISO-3 code. Using the standard of [ISO 3116 country code|(https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)|
+|`beneficiary`|YES|Object|Content of the object is depending on the payers required attribute|
+|`compliance`|YES|Object|Content of the object is depending on the payers required attribute|
+
+```javascript
+{
+    "status": 200,
+    "data": {
+        "id": 6348,
+        "reference_id": "TRX-REFERENCE-002",
+        "callback_url": "",
+        "payer_id": 161,
+        "mode": "DESTINATION",
+        "sender": {
+            "firstname": "John",
+            "lastname": "Doe",
+            "date_of_birth": "14/4/1990",
+            "country_iso_code": "IDN",
+            "nationality_iso_code": "IDN",
+            "country_of_birth_iso_code": "IDN",
+            "gender": "Male",
+            "msisdn": "+6274124192387",
+            "id_type": "PASSPORT",
+            "id_number": "192873",
+            "occupation": "other",
+            "id_country_iso_code": "IDN",
+            "address": "Address of John Doe",
+            "address_country_iso_code": "IDN",
+            "postal_code": "18723",
+            "city": "City of John Doe",
+            "province_state": "Province of John Doe"
+        },
+        "source": {
+            "currency": "IDR",
+            "country_iso_code": "IDN"
+        },
+        "destination": {
+            "amount": "10000",
+            "currency": "GBP",
+            "country_iso_code": "GBR"
+        },
+        "beneficiary": {
+            "firstname": "Zofia",
+            "lastname": "Cope",
+            "country_iso_code": "GBR",
+            "account": "123456",
+            "bank_id": 1086,
+            "swift_bic_code": 198237,
+            "iban": 12938791,
+            "sort_code": 198273,
+            "bank_account_number": 87648276
+        },
+        "compliance": {
+            "source_of_funds": "CASH",
+            "beneficiary_relationship": "SIBLING_BROTHER_SISTER",
+            "purpose_of_remittance": "FAMILY_SUPPORT"
+        },
+        "created_at": "2022-07-13T09:42:31.149+07:00",
+        "updated_at": "2022-07-13T09:42:31.622+07:00",
+        "user_id": 7,
+        "state": "created",
+        "disbursement_reference_id": null,
+        "amount": 196260699,
+        "paid_at": null,
+        "rate": "19626.069949",
+        "fee": "0.0",
+        "partner_id": 6,
+        "completion_date": null,
+        "sent_amount": "10000.0",
+        "state_id": null,
+        "error_code": null,
+        "error_message": null,
+        "partner_error_message": null,
+        "notes": null,
+        "transaction_type": "C2C",
+        "partner_rate": null,
+        "partner_fee": null,
+        "partner_fee_currency": null
+    }
+}
+```
+
+###Response Parameter
+|Field|Type|Description|
+|----|----|----|
+<%= partial "./includes/parameters_partial/transaction.md.erb"  %>
+
+<%# ----------------------- CONFIRM A TRANSACTION ----------------------- %>
+##Confirm Transaction
+
+<a class="badge post">POST</a> /transactions/:transaction_id/confirm
+<br>
+
+|Path parameter|Description|
+|----|----|
+|`:transaction_id`|Index number of the transaction|
+
+After a transaction is created, you will need to confirm the transaction to process it.
+The state of transaction should be `confirmed` after you hit this endpoint.
+
+```javascript
+{
+    "status": 200,
+    "data": {
+        "id": 6348,
+        "state": "confirmed",
+        "user_id": 7,
+        "payer_id": 161,
+        "reference_id": "TRX-REFERENCE-002",
+        "notes": null,
+        "callback_url": "",
+        "mode": "DESTINATION",
+        "sender": {
+            "firstname": "John",
+            "lastname": "Doe",
+            "date_of_birth": "14/4/1990",
+            "country_iso_code": "IDN",
+            "nationality_iso_code": "IDN",
+            "country_of_birth_iso_code": "IDN",
+            "gender": "Male",
+            "msisdn": "+6274124192387",
+            "id_type": "PASSPORT",
+            "id_number": "192873",
+            "occupation": "other",
+            "id_country_iso_code": "IDN",
+            "address": "Address of John Doe",
+            "address_country_iso_code": "IDN",
+            "postal_code": "18723",
+            "city": "City of John Doe",
+            "province_state": "Province of John Doe"
+        },
+        "source": {
+            "currency": "IDR",
+            "country_iso_code": "IDN"
+        },
+        "destination": {
+            "amount": "10000",
+            "currency": "GBP",
+            "country_iso_code": "GBR"
+        },
+        "beneficiary": {
+            "firstname": "Zofia",
+            "lastname": "Cope",
+            "country_iso_code": "GBR",
+            "account": "123456",
+            "bank_id": 1086,
+            "swift_bic_code": 198237,
+            "iban": 12938791,
+            "sort_code": 198273,
+            "bank_account_number": 87648276
+        },
+        "compliance": {
+            "source_of_funds": "CASH",
+            "beneficiary_relationship": "SIBLING_BROTHER_SISTER",
+            "purpose_of_remittance": "FAMILY_SUPPORT"
+        },
+        "created_at": "2022-07-13T09:42:31.149+07:00",
+        "updated_at": "2022-07-13T10:46:58.379+07:00",
+        "disbursement_reference_id": null,
+        "amount": 196260699,
+        "paid_at": null,
+        "rate": "19626.069949",
+        "fee": "0.0",
+        "partner_id": 6,
+        "completion_date": null,
+        "sent_amount": "10000.0",
+        "state_id": 2,
+        "error_code": null,
+        "error_message": null,
+        "partner_error_message": null,
+        "transaction_type": "C2C",
+        "partner_rate": null,
+        "partner_fee": null,
+        "partner_fee_currency": null
+    }
+}
+```
+
+###Response Parameter
+|Field|Type|Description|
+|----|----|----|
+<%= partial "./includes/parameters_partial/transaction.md.erb"  %>
+
+<%# ----------------------- GET LIST OF SUPPORTED COUNTRY ----------------------- %>
+
+##Get List of Supported Country
+<a class="badge get">GET</a> /payers/cbse
+<br>
+
+```javascript
+//Response Example
+{
+    "status": 200,
+    "data": [
+        {
+            "id": 157,
+            "name": "USA",
+            "full_name": null,
+            "precision": "2",
+            "country_iso_code": "USA",
+            "currency": "USD",
+            "minimum_amount": 30.0,
+            "maximum_amount": 25000.0,
+            "required_sender_fields": [
+                "firstname"
+            ],
+            "required_beneficiary_fields": [
+                "firstname",
+                "account"
+            ],
+            "service_id": 1,
+            "alias": null,
+            "service": {
+                "id": 1,
+                "name": "Bank Account",
+                "is_active": true,
+                "created_at": "2020-03-04T22:50:38.848+07:00",
+                "updated_at": "2020-03-04T22:50:38.848+07:00"
+            }
+        },
+        {...}
+    ]
+}
+```
+
+###Response Parameter
+|Field|Type|Description|
+|----|----|----|
+|`id`|Integer|Index number of the country|
+|`name`|String|Country name|
+|`full_name`|String|Country full name|
+|`precision`|Integer||
+|`country_iso_code`|String|Country ISO-3 code. Using the standard of [ISO 3116 country code|(https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)|
+|`currency`|String|Currency ISO code. Using the standard of [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)|
+|`minimum_amount`|Decimal|Minimum transfer amount|
+|`maximum_amount`|Decimal|Maximum transfer amount|
+|`required_sender_fields`|Array|Deprecated|
+|`required_beneficiary_fields`|Array|Deprecated|
+|`service_id`|Integer||
+|`alias`|String||
+|`service`|Object||
+|`service[id]`|Integer||
+|`service[name]`|String||
+|`service[is_active]`|Boolean||
+|`service[created_at]`|Timestamp||
+|`service[updated_at]`|Timestamp||
+
+
+<%# ----------------------- GET BANK LIST OF A COUNTRY ----------------------- %>
+
+##Get Bank List of a Country
+<a class="badge get">GET</a> /payers/:payer_id/banks
+<br>
+
+|Path parameter|Description|
+|----|----|
+|`:payer_id`|Index number of the country|
+
+```javascript
+//Response Example
+{
+    "status": 200,
+    "data": [
+        {
+            "id": 1086,
+            "name": "All Banks United Kingdom / GBP / Payment System: SEPA",
+            "country_iso_3": "GBR",
+            "additional_required_fields": ""
+        }
+    ]
+}
+```
+
+###Response Parameter
+|Field|Type|Description|
+|----|----|----|
+|`data`|Object|List of banks for the country|
+|`data[id]`|Integer|Index number of a bank|
+|`data[name]`|String|Bank name|
+|`data[country_iso_3]`|String|Country code where the bank is located|
+|`data[additional_required_fields]`|Object|Deprecated|
+
+
+
+<%# ----------------------- GET REQUIRED FIELDS FOR A DESTINATION COUNTRY ----------------------- %>
+
+##Get Required Fields for a Destination Country
+<a class="badge get">GET</a> /payers/:payer_id/attribute
+<br>
+
+|Path parameter|Description|
+|----|----|
+|`:payer_id`|Index number of the destination country|
+
+```javascript
+//Response Example
+{
+    "status": 200,
+    "data": {
+        "id": 7,
+        "currency": "GBP",
+        "attr": {
+            "sender": {
+                "personal": {
+                    "details": [
+                        "firstname",
+                        "lastname",
+                        "date_of_birth",
+                        "nationality_iso_code",
+                        "country_of_birth_iso_code",
+                        "gender",
+                        "msisdn",
+                        "id_type",
+                        "id_number",
+                        "occupation",
+                        "id_country_iso_code"
+                    ],
+                    "address": [
+                        "country_iso_code",
+                        "address",
+                        "address_country_iso_code",
+                        "postal_code",
+                        "city",
+                        "province_state"
+                    ],
+                    "bank": []
+                },
+                "business": {}
+            },
+            "recipient": {
+                "personal": {
+                    "details": [
+                        "firstname",
+                        "lastname",
+                        "country_iso_code"
+                    ],
+                    "bank": [
+                        "bank_id",
+                        "swift_bic_code",
+                        "iban",
+                        "sort_code",
+                        "bank_account_number"
+                    ]
+                },
+                "business": {}
+            }
+        }
+    }
+}
+```
+
+###Response Parameter
+|Field|Type|Description|
+|----|----|----|
+|`id`|Integer|Index number of destination country|
+|`currency`|String|Currency ISO code. Using the standard of [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)|
+|`attr`|Object||
+|`attr[sender]`|Object|Required fields on sender object. Use `personal` if the sender is an individual, or use `business` if the sender is a business. Parameters detail can be seen [here](#required-fields)|
+|`attr[recipient]`|Object|Required fields on beneficiary object. Use `personal` if the beneficiary is an individual, or use `business` if the beneficiary is a business. Parameters detail can be seen [here](#required-fields)|
