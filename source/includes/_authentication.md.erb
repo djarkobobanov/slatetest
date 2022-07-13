@@ -3,6 +3,9 @@
 
 Access to all endpoints of the API requires authentication, through
 <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Auth</a>
+Your API key is the authorization key to our service, please do keep it securely.
+To store it securely, avoid writing the API key directly in your code without any encryption.
+One of the safest method to store the key is to put it in your environment variables or you can use an API secret management services.
 
 <!-- End Authentication -->
 
@@ -36,6 +39,12 @@ Access to all endpoints of the API requires authentication, through
 |Parameter|Value|
 |----|----|
 |auth_token|Token provided by Transfez for each authorized user|
-|api_key|Required for every other request made to Transfez API services|
+|api_key|Unique access key provided by Transfez for each authorized user|
+
+You will need to attach the API to the HEADER of every request made to the Transfez API service.
+###Header Parameters
+|Field|Required|Type|Description|
+`Content-Type`|YES|String|Indicates the format of sent data. Please use `application/json` as the value of this field|
+`Authorization`|YES|String|Your API key|
 
 <!-- End Basic Auth -->
