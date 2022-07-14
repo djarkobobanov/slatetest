@@ -29,7 +29,7 @@
         {
             "id": 6306,
             "reference_id": "TRX-REFERENCE-001",
-            "callback_url": "",
+            "callback_url": "https://your.business.com/webhook/endpoint",
             "payer_id": 172,
             "mode": "DESTINATION",
             "sender": {
@@ -112,7 +112,6 @@
             "state_id": 2,
             "error_code": null,
             "error_message": null,
-            "partner_error_message": null,
             "notes": "Lorem ipsum dolor sit amet",
             "transaction_type": "C2C",
             "user_email": "email@example.com",
@@ -150,7 +149,7 @@
         {
             "id": 6306,
             "reference_id": "TRX-REFERENCE-001",
-            "callback_url": "",
+            "callback_url": "https://your.business.com/webhook/endpoint",
             "payer_id": 172,
             "mode": "DESTINATION",
             "sender": {
@@ -233,7 +232,6 @@
             "state_id": 2,
             "error_code": null,
             "error_message": null,
-            "partner_error_message": null,
             "notes": "Lorem ipsum dolor sit amet",
             "transaction_type": "C2C",
             "user_email": "email@example.com",
@@ -269,7 +267,7 @@ You can find the required field for each destination country [here](#get-require
 ```javascript
 {
   "reference_id": "TRX-REFERENCE-002",
-  "callback_url": "",
+  "callback_url": "https://your.business.com/webhook/endpoint",
   "payer_id": 1,
   "mode": "DESTINATION",
   "sender": {
@@ -329,7 +327,7 @@ You can find the required field for each destination country [here](#get-require
     "data": {
         "id": 6348,
         "reference_id": "TRX-REFERENCE-002",
-        "callback_url": "",
+        "callback_url": "https://your.business.com/webhook/endpoint",
         "payer_id": 161,
         "mode": "DESTINATION",
         "sender": {
@@ -391,7 +389,6 @@ You can find the required field for each destination country [here](#get-require
         "state_id": null,
         "error_code": null,
         "error_message": null,
-        "partner_error_message": null,
         "notes": null,
         "transaction_type": "C2C"
     }
@@ -429,7 +426,7 @@ The state of transaction should be `confirmed` after you hit this endpoint.
         "payer_id": 161,
         "reference_id": "TRX-REFERENCE-002",
         "notes": null,
-        "callback_url": "",
+        "callback_url": "https://your.business.com/webhook/endpoint",
         "mode": "DESTINATION",
         "sender": {
             "firstname": "John",
@@ -488,7 +485,6 @@ The state of transaction should be `confirmed` after you hit this endpoint.
         "state_id": 2,
         "error_code": null,
         "error_message": null,
-        "partner_error_message": null,
         "transaction_type": "C2C"
     }
 }
