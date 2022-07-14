@@ -61,7 +61,7 @@ body {
   right: 0;
   bottom: 0;
   width: $nav-width;
-  height: 616px;
+  height: 80vh;
   background: linear-gradient(180deg, #102C57 0%, #486896 100%);
   font-size: 13px;
   font-weight: bold;
@@ -371,9 +371,13 @@ body {
     @extend %left-col;
   }
 
+  &>p {
+    padding-left: $main-padding+10px; 
+  }
+
   &>ul,
   &>ol {
-    padding-left: $main-padding + 15px;
+    padding-left: $main-padding + 25px;
   }
 
   // the div is the tocify hidden div for placeholding stuff
@@ -684,13 +688,13 @@ body {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin: 4px 2px;
+  margin: 4px 8px 4px 2px;
   cursor: pointer;
   border-radius: 4px;  
 }
 
 .post {
-  background-color: rgb(118, 163, 118) !important;
+  background-color: #28AB7C !important;
 }
 .put {
   background-color: orange !important;
@@ -699,15 +703,24 @@ body {
   background-color: red !important;
 }
 .get {
-  background-color: lightblue !important;
+  background-color: #196E97 !important;
 }
 
 // CARDS
 .card {
   /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-  // border: 2px, solid;
-  // border-color: rgba(0, 0, 0, 0.5);
+  // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  // border-width: 1px;
+  // border-style: solid;
+  // border-radius: 6px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  // border-color: rgba(0, 0, 0, 0.1);
+  background-color: white;
   transition: 0.3s;
   margin-bottom: 20px;
+  margin-left: 28px;
+  width: 100%;
+  display: inline;
+  padding: 12px 10px;
 }

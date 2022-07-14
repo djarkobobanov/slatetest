@@ -2,8 +2,9 @@
 
 <%# ----------------------- GET ALL TRANSACTION ----------------------- %>
 ##Get All Transaction
-<a class="badge get">GET</a> /transactions
-<br>
+<div class="card">
+    <a class="badge get">GET</a> /transactions
+</div>
 
 ```javascript
 //Request Example
@@ -114,9 +115,6 @@
             "partner_error_message": null,
             "notes": "Lorem ipsum dolor sit amet",
             "transaction_type": "C2C",
-            "partner_rate": "0.000062",
-            "partner_fee": 2,
-            "partner_fee_currency": "USD",
             "user_email": "email@example.com",
             "payer_name": null
         }
@@ -133,7 +131,12 @@
 
 <%# ----------------------- GET TRANSACTION ----------------------- %>
 ##Get Transaction
-<a class="badge get">GET</a> /transactions/:transaction_id
+
+<div class="card">
+    <a class="badge get">GET</a> 
+    /transactions/:transaction_id
+</div>
+
 <br>
 
 |Path parameter|Description|
@@ -233,9 +236,6 @@
             "partner_error_message": null,
             "notes": "Lorem ipsum dolor sit amet",
             "transaction_type": "C2C",
-            "partner_rate": "0.000062",
-            "partner_fee": 2,
-            "partner_fee_currency": "USD",
             "user_email": "email@example.com",
             "payer_name": null
         }
@@ -251,7 +251,9 @@
 <%# ----------------------- CREATE TRANSACTION ----------------------- %>
 ##Create Transaction
 
-<a class="badge post">POST</a> /transactions
+<div class="card">
+    <a class="badge post">POST</a> /transactions
+</div>
 <br>
 
 To create a transaction there are some points needed to be taken.
@@ -317,9 +319,9 @@ You can find the required field for each destination country [here](#get-require
 |`destination[country_iso_code]`|YES|String|Source country ISO-3 code. Using the standard of [ISO 3116 country code|(https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)|
 |`beneficiary`|YES|Object|Content of the object is depending on the payers required attribute|
 |`compliance`|YES|Object|Content of the object is depending on the payers required attribute|
-|`compliance[source_of_funds]|YES|String|Refer to [source of funds](#source-of-funds) list|
-|`compliance[beneficiary_relationship]|YES|String|Refer to [beneficiary relationships](#beneficiary-relationship) list|
-|`compliance[purpose_of_remittance]|YES|String|Refer to [purpose of remittance](#purpose-of-remittances) list|
+|`compliance[source_of_funds]`|YES|String|Refer to [source of funds](#source-of-funds) list|
+|`compliance[beneficiary_relationship]`|YES|String|Refer to [beneficiary relationships](#beneficiary-relationship) list|
+|`compliance[purpose_of_remittance]`|YES|String|Refer to [purpose of remittance](#purpose-of-remittances) list|
 
 ```javascript
 {
@@ -391,10 +393,7 @@ You can find the required field for each destination country [here](#get-require
         "error_message": null,
         "partner_error_message": null,
         "notes": null,
-        "transaction_type": "C2C",
-        "partner_rate": null,
-        "partner_fee": null,
-        "partner_fee_currency": null
+        "transaction_type": "C2C"
     }
 }
 ```
@@ -407,15 +406,18 @@ You can find the required field for each destination country [here](#get-require
 <%# ----------------------- CONFIRM A TRANSACTION ----------------------- %>
 ##Confirm Transaction
 
-<a class="badge post">POST</a> /transactions/:transaction_id/confirm
+<div class="card">
+    <a class="badge post">POST</a> /transactions/:transaction_id/confirm
+</div>
+
 <br>
+
+After a transaction is created, you will need to confirm the transaction to process it.
+The state of transaction should be `confirmed` after you hit this endpoint.
 
 |Path parameter|Description|
 |----|----|
 |`:transaction_id`|Index number of the transaction|
-
-After a transaction is created, you will need to confirm the transaction to process it.
-The state of transaction should be `confirmed` after you hit this endpoint.
 
 ```javascript
 {
@@ -487,10 +489,7 @@ The state of transaction should be `confirmed` after you hit this endpoint.
         "error_code": null,
         "error_message": null,
         "partner_error_message": null,
-        "transaction_type": "C2C",
-        "partner_rate": null,
-        "partner_fee": null,
-        "partner_fee_currency": null
+        "transaction_type": "C2C"
     }
 }
 ```
@@ -503,8 +502,9 @@ The state of transaction should be `confirmed` after you hit this endpoint.
 <%# ----------------------- GET LIST OF SUPPORTED COUNTRY ----------------------- %>
 
 ##Get List of Supported Country
-<a class="badge get">GET</a> /payers/cbse
-<br>
+<div class="card">
+    <a class="badge get">GET</a> /payers/cbse
+</div>
 
 ```javascript
 //Response Example
@@ -568,7 +568,10 @@ The state of transaction should be `confirmed` after you hit this endpoint.
 <%# ----------------------- GET BANK LIST OF A COUNTRY ----------------------- %>
 
 ##Get Bank List of a Country
-<a class="badge get">GET</a> /payers/:payer_id/banks
+<div class="card">
+    <a class="badge get">GET</a> /payers/:payer_id/banks
+</div>
+
 <br>
 
 |Path parameter|Description|
@@ -597,14 +600,17 @@ The state of transaction should be `confirmed` after you hit this endpoint.
 |`data[id]`|Integer|Index number of a bank|
 |`data[name]`|String|Bank name|
 |`data[country_iso_3]`|String|Country code where the bank is located|
-|`data[additional_required_fields]`|Object|Deprecated|
+|`data[additional_required_fields]`|Object|Required fields for that particular payer|
 
 
 
 <%# ----------------------- GET REQUIRED FIELDS FOR A DESTINATION COUNTRY ----------------------- %>
 
 ##Get Required Fields for a Destination Country
-<a class="badge get">GET</a> /payers/:payer_id/attribute
+<div class="card">
+    <a class="badge get">GET</a> /payers/:payer_id/attribute
+</div>
+
 <br>
 
 |Path parameter|Description|
