@@ -2,9 +2,9 @@
 |`data`|Object||
 |`id`|Integer||
 |`reference_id`|String||
-|`callback_url`|String||
-|`payer_id`|Integer||
-|`mode`|String||
+|`callback_url`|String|Your callback URL. Refer to [here](#callback)|
+|`payer_id`|Integer|Index number of the payer|
+|`mode`|String|Mode of quotation, enumerations of `DESTINATION` or `SOURCE`|
 |`sender`|Object|Refer to [sender](#sender) object|
 |`source`|Object||
 |`destination`|Object||
@@ -16,19 +16,19 @@
 |`created_at`|Timestamp||
 |`updated_at`|Timestamp||
 |`user_id`|Integer||
-|`state`|String||
+|`state`|String|Status class of the transaction. Refer to [transaction states](#transaction-states)|
 |`disbursement_reference_id`|String||
-|`amount`|Decimal||
-|`paid_at`|Timestamp||
-|`rate`|Decimal||
-|`fee`|Decimal||
-|`partner_id`|Integer||
-|`completion_date`|Timestamp||
-|`sent_amount`|Decimal||
-|`state_id`|Integer||
-|`error_code`|String||
-|`error_message`|String||
-|`notes`|String||
+|`amount`|Decimal|Destination amount|
+|`paid_at`|Timestamp|Time when the transaction payment has been confirmed. Will only shown after the state of transaction changed to `submitted`|
+|`rate`|Decimal|Rate of transaction (`destination`/`source`)|
+|`fee`|Decimal|Fee of transaction in IDR|
+|`partner_id`|Integer|Your company index number|
+|`completion_date`|Timestamp|Time when the transaction has been completed. Will only shown after the state of transaction changed to `completed`|
+|`sent_amount`|Decimal|Source amount|
+|`state_id`|Integer|Transaction status. Refer to [transaction states](#transaction-states)|
+|`error_code`|String|API Error Code. Refer to [here](#api-error-codes)|
+|`error_message`|String|API Error message. Refer to [here](#api-error-codes)|
+|`notes`|String|Notes of the transaction|
 |`transaction_type`|String|Refer to [transaction type](#transaction-type)|
 |`user_email`|String||
-|`payer_name`|String||
+|`payer_name`|String|Name of the payer|

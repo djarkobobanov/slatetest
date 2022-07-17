@@ -1,5 +1,8 @@
 #Local Transfer
 
+As of now, basically the local transfer API and international transfer API shared some services such as `get transaction`, `create transaction` and `confirm transaction`.
+For local transfer, `payer` will refer to the destination bank whilst for international transfer, `payer` will refer to the destination country. 
+
 <%# ----------------------- GET ALL TRANSACTION ----------------------- %>
 ##Get All Transaction
 <div class="card">
@@ -150,3 +153,248 @@
 |Field|Type|Description|
 |----|----|----|
 <%= partial "./includes/parameters_partial/transaction.md.erb"  %>
+
+##Create Transaction
+
+<div class="card">
+    <a class="badge post">POST</a> /transactions
+</div>
+<br>
+
+To create a transaction there are some points needed to be taken.
+Every destination country should have different requirement than the others based on:
+
+1. Sender form
+2. Beneficiary form
+
+You can find the required field for each destination country [here](#get-required-fields-for-a-destination-country)
+
+
+
+```javascript
+{
+  "reference_id": "LOCAL-TRX-REFERENCE-001",
+  "callback_url": "https://your.business.com/webhook/endpoint",
+  "payer_id": 4,
+  "mode": "DESTINATION",
+  "sender": {
+    "firstname": "John",
+    "lastname": "Doe",
+    "country_iso_code": "IDN"
+  },
+  "source": {
+    "currency": "IDR",
+    "country_iso_code": "IDN"
+  },
+  "destination": {
+    "amount": "20000",
+    "currency": "IDR",
+    "country_iso_code": "IDN"
+  },
+  "beneficiary": {
+    "firstname": "BRI",
+    "lastname": "Simulator A",
+    "country_iso_code": "IDN",
+    "account": "111112222233333"
+  },
+  "compliance": {
+    "source_of_funds": "CASH",
+    "beneficiary_relationship": "SIBLING_BROTHER_SISTER",
+    "purpose_of_remittance": "FAMILY_SUPPORT"
+  }
+}
+```
+
+###Request Parameter
+
+|Field|Required|Type|Description|
+|----|----|----|----|
+|`reference_id`|YES|Integer||
+|`callback_url`|NO|String||
+|`payer_id`|YES|String|Index number of destination bank|
+|`mode`|YES|String|Choose between `DESTINATION` or `SOURCE`. Affects where the `amount` field is required|
+|`sender`|YES|Object|Content of the object is depending on the payers required attribute|
+|`source`|YES|Object||
+|`source[amount]`|NO|Decimal|Required if the mode is `SOURCE`|
+|`source[currency]`|YES|String|Source currency ISO code. Using the standard of [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)|
+|`source[country_iso_code]`|YES|String|Source country ISO-3 code. Using the standard of [ISO 3116 country code|(https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)|
+|`destination`|YES|Object||
+|`destination[amount]`|NO|Decimal|Required if the mode is `DESTINATION`|
+|`destination[currency]`|YES|String|Destination currency ISO code. Using the standard of [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)|
+|`destination[country_iso_code]`|YES|String|Source country ISO-3 code. Using the standard of [ISO 3116 country code|(https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)|
+|`beneficiary`|YES|Object|Content of the object is depending on the payers required attribute|
+|`compliance`|NO|Object|Content of the object is depending on the payers required attribute|
+|`compliance[source_of_funds]`|NO|String|Refer to [source of funds](#source-of-funds) list|
+|`compliance[beneficiary_relationship]`|NO|String|Refer to [beneficiary relationships](#beneficiary-relationship) list|
+|`compliance[purpose_of_remittance]`|NO|String|Refer to [purpose of remittance](#purpose-of-remittances) list|
+
+```javascript
+{
+    "status": 200,
+    "data": {
+        "id": 6248,
+        "reference_id": "LOCAL-TRX-REFERENCE-001",
+        "callback_url": "https://your.business.com/webhook/endpoint",
+        "payer_id": 4,
+        "mode": "DESTINATION",
+        "sender": {
+            "firstname": "John Doe",
+            "country_iso_code": "IDN"
+        },
+        "source": {
+            "currency": "IDR",
+            "country_iso_code": "IDN"
+        },
+        "destination": {
+            "amount": "20000.0",
+            "currency": "IDR",
+            "country_iso_code": "IDN"
+        },
+        "beneficiary": {
+            "firstname": "BRI Simulator A",
+            "country_iso_code": "IDN",
+            "account": "111112222233333",
+            "bank": "BRI"
+        },
+        "compliance": {},
+        "created_at": "2022-06-30T11:19:01.729+07:00",
+        "updated_at": "2022-06-30T11:21:08.318+07:00",
+        "user_id": 7,
+        "state": "confirmed",
+        "disbursement_reference_id": null,
+        "amount": 20000,
+        "paid_at": "2022-06-30T11:19:04.000+07:00",
+        "rate": "1.0",
+        "fee": "2500.0",
+        "partner_id": 6,
+        "completion_date": null,
+        "sent_amount": "20000.0",
+        "state_id": 2,
+        "error_code": 9,
+        "error_message": "Your error message",
+        "notes": "",
+        "transaction_type": "C2C",
+        "user_email": "example@email.com",
+        "payer_name": "PT. BANK RAKYAT INDONESIA (PERSERO)"
+        }
+}
+```
+
+###Response Parameter
+|Field|Type|Description|
+|----|----|----|
+<%= partial "./includes/parameters_partial/transaction.md.erb"  %>
+
+<%# ----------------------- CONFIRM A TRANSACTION ----------------------- %>
+##Confirm Transaction
+
+<div class="card">
+    <a class="badge post">POST</a> /transactions/:transaction_id/confirm
+</div>
+
+<br>
+
+After a transaction is created, you will need to confirm the transaction to process it.
+The state of transaction should be `confirmed` after you hit this endpoint.
+
+|Path parameter|Description|
+|----|----|
+|`:transaction_id`|Index number of the transaction|
+
+```javascript
+{
+    "status": 200,
+    "data": {
+        "id": 6248,
+        "reference_id": "LOCAL-TRX-REFERENCE-001",
+        "callback_url": "https://your.business.com/webhook/endpoint",
+        "payer_id": 4,
+        "mode": "DESTINATION",
+        "sender": {
+            "firstname": "John Doe",
+            "country_iso_code": "IDN"
+        },
+        "source": {
+            "currency": "IDR",
+            "country_iso_code": "IDN"
+        },
+        "destination": {
+            "amount": "20000.0",
+            "currency": "IDR",
+            "country_iso_code": "IDN"
+        },
+        "beneficiary": {
+            "firstname": "BRI Simulator A",
+            "country_iso_code": "IDN",
+            "account": "111112222233333",
+            "bank": "BRI"
+        },
+        "compliance": {},
+        "created_at": "2022-06-30T11:19:01.729+07:00",
+        "updated_at": "2022-06-30T11:21:08.318+07:00",
+        "user_id": 7,
+        "state": "confirmed",
+        "disbursement_reference_id": null,
+        "amount": 20000,
+        "paid_at": "2022-06-30T11:19:04.000+07:00",
+        "rate": "1.0",
+        "fee": "2500.0",
+        "partner_id": 6,
+        "completion_date": null,
+        "sent_amount": "20000.0",
+        "state_id": 2,
+        "error_code": 9,
+        "error_message": "Your error message",
+        "notes": "",
+        "transaction_type": "C2C",
+        "user_email": "example@email.com",
+        "payer_name": "PT. BANK RAKYAT INDONESIA (PERSERO)"
+        }
+}
+```
+
+<%# ----------------------- GET BANK LIST FOR LOCAL TRANSFER ----------------------- %>
+
+##Get Supported Local Banks
+<div class="card">
+    <a class="badge get">GET</a> /payers
+</div>
+
+<br>
+
+|Path parameter|Description|
+|----|----|
+|`:payer_id`|Index number of the country|
+
+```javascript
+//Response Example
+{
+    "status": 200,
+    "data": [
+        {
+            "id": 154,
+            "name": "bsi",
+            "full_name": "PT. BANK SYARIAH INDONESIA, TBK.",
+            "precision": "2",
+            "country_iso_code": "IDN",
+            "currency": "IDR",
+            "minimum_amount": 10000.0,
+            "maximum_amount": 50000000.0
+        },
+        {...}
+    ]
+}
+```
+
+###Response Parameter
+|Field|Type|Description|
+|----|----|----|
+|`id`|Integer|Index number of the country|
+|`name`|String|Country name|
+|`full_name`|String|Country full name|
+|`precision`|Integer||
+|`country_iso_code`|String|Country ISO-3 code. Using the standard of [ISO 3116 country code|(https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)|
+|`currency`|String|Currency ISO code. Using the standard of [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)|
+|`minimum_amount`|Decimal|Minimum transfer amount|
+|`maximum_amount`|Decimal|Maximum transfer amount|
+

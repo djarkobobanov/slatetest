@@ -4,9 +4,9 @@
 |Field|Type|Description|
 |----|----|----|
 |`id`|Integer||
-|`name`|String||
-|`address`|String||
-|`phone`|String||
+|`name`|String|Your company name|
+|`address`|String|Your company address|
+|`phone`|String|Your company phone number|
 |`email_pic`|String||
 |`api_user_id`|Integer||
 |`created_at`|Timestamp||
@@ -17,10 +17,10 @@
 |Field|Type|Description|
 |----|----|----|
 |`id`|Integer||
-|`currency`|String||
-|`balance`|Decimal||
+|`currency`|String|Your balance currency. Defaulted to IDR|
+|`balance`|Decimal|Your current balance|
 |`available_balance`|Decimal||
-|`is_active`|Boolean||
+|`is_active`|Boolean|Status of your company in Transfez service|
 |`user_id`|Integer||
 |`created_at`|Timestamp||
 |`updated_at`|Timestamp||
@@ -31,8 +31,8 @@
 |Field|Type|Description|
 |----|----|----|
 |`id`|Integer||
-|`credit`|Decimal||
-|`debit`|Decimal||
+|`credit`|Decimal|Filled if the transaction is credit type|
+|`debit`|Decimal|Filled if the transaction is debit type|
 |`originator_id`|Integer||
 |`originator_type`|String||
 |`notes`|String||

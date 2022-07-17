@@ -1,5 +1,8 @@
 #International Transfer
 
+As of now, basically the local transfer API and international transfer API shared some services such as `get transaction`, `create transaction` and `confirm transaction`.
+For local transfer, `payer` will refer to the destination bank whilst for international transfer, `payer` will refer to the destination country. 
+
 <%# ----------------------- GET ALL TRANSACTION ----------------------- %>
 ##Get All Transaction
 <div class="card">
@@ -515,23 +518,7 @@ The state of transaction should be `confirmed` after you hit this endpoint.
             "country_iso_code": "USA",
             "currency": "USD",
             "minimum_amount": 30.0,
-            "maximum_amount": 25000.0,
-            "required_sender_fields": [
-                "firstname"
-            ],
-            "required_beneficiary_fields": [
-                "firstname",
-                "account"
-            ],
-            "service_id": 1,
-            "alias": null,
-            "service": {
-                "id": 1,
-                "name": "Bank Account",
-                "is_active": true,
-                "created_at": "2020-03-04T22:50:38.848+07:00",
-                "updated_at": "2020-03-04T22:50:38.848+07:00"
-            }
+            "maximum_amount": 25000.0
         },
         {...}
     ]
@@ -549,16 +536,6 @@ The state of transaction should be `confirmed` after you hit this endpoint.
 |`currency`|String|Currency ISO code. Using the standard of [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)|
 |`minimum_amount`|Decimal|Minimum transfer amount|
 |`maximum_amount`|Decimal|Maximum transfer amount|
-|`required_sender_fields`|Array|Deprecated|
-|`required_beneficiary_fields`|Array|Deprecated|
-|`service_id`|Integer||
-|`alias`|String||
-|`service`|Object||
-|`service[id]`|Integer||
-|`service[name]`|String||
-|`service[is_active]`|Boolean||
-|`service[created_at]`|Timestamp||
-|`service[updated_at]`|Timestamp||
 
 
 <%# ----------------------- GET BANK LIST OF A COUNTRY ----------------------- %>
