@@ -1,5 +1,14 @@
 ## Update VA
-<p><api><code>PUT {{URL}}/va_numbers/{{VA_ID}}</code></api></p>
+
+<div class="card">
+  <a class="badge put">PUT</a> /va_numbers/:va_id
+</div>
+<br>
+
+|Path parameter|Description|
+|----|----|
+|`:va_id`|Index number of the virtual account|
+
 <strong>Capability to update VA</strong> 
 <ul>
 <li>amount</li>

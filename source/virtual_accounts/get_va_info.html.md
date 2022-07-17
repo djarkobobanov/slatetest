@@ -1,5 +1,14 @@
 ## Get VA Info
-<p><api><code>GET {{URL}}/va_numbers/{{VA_ID}}</code></api></p>
+
+<div class="card">
+  <a class="badge get">GET</a> /va_numbers/:va_id
+</div>
+<br>
+
+|Path parameter|Description|
+|----|----|
+|`:va_id`|Index number of the virtual account|
+
 <p>Get VA info using Unique VA id.</p>
 
 <div class="highlight"><pre class="highlight"><code>

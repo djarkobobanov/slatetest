@@ -1,5 +1,9 @@
 ## Create Virtual Accounts
-<p><api><code>POST {URL}/va_numbers</code></api></p>
+
+<div class="card">
+  <a class="badge post">POST</a> /va_numbers
+</div>
+<br>
 
 <div class="highlight"><pre class="highlight"><code>
   <span class="nf">POST</span> <span class="nn">{{URL}}/va_numbers</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>

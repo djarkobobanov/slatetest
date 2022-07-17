@@ -1,5 +1,10 @@
 ## VA Bank Codes
-<p><api><code>GET {{URL}}/va_numbers/available_banks</code></api></p>
+
+<div class="card">
+  <a class="badge get">GET</a> /va_numbers/available_banks
+</div>
+<br>
+
 <p>Get list of VA Bank Codes.</p>
 <div class="highlight"><pre class="highlight"><code>
   <span class="nf">GET</span> <span class="nn">{{URL}}/va_numbers/available_banks</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>

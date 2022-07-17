@@ -1,5 +1,10 @@
 ## Get List of created VA
-<p><api><code>GET {{URL}}/va_numbers</code></api></p>
+
+<div class="card">
+  <a class="badge get">GET</a> /va_numbers
+</div>
+<br>
+
 <p>Get list of created VA objects in a <a href="#pagination">paginated</a> fashion.</p>
 <div class="highlight"><pre class="highlight"><code>
   <span class="nf">GET</span> <span class="nn">{{URL}}/va_numbers</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>

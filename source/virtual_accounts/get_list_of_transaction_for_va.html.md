@@ -1,5 +1,14 @@
 ## Get List of transaction for VA
-<p><api><code>GET {{URL}}/va_numbers/{{VA_ID}}/va_transactions</code></api></p>
+
+<div class="card">
+  <a class="badge get">GET</a> /va_numbers/:va_id/va_transactions
+</div>
+<br>
+
+|Path parameter|Description|
+|----|----|
+|`:va_id`|Index number of the virtual account|
+
 <p>Get list of incoming transaction for specific va number in a <a href="#pagination">paginated</a> fashion.</p>
 
 <div class="highlight"><pre class="highlight"><code>
