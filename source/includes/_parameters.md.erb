@@ -3,40 +3,40 @@
 ##Partner
 |Field|Type|Description|
 |----|----|----|
-|`id`|Integer||
+|`id`|Integer|Partner ID|
 |`name`|String|Your company name|
 |`address`|String|Your company address|
 |`phone`|String|Your company phone number|
-|`email_pic`|String||
-|`api_user_id`|Integer||
+|`email_pic`|String|Your company email's CC for email notifications.|
+|`api_user_id`|Integer|Your main API user's ID|
 |`created_at`|Timestamp|Creation date in HTTP format|
 |`updated_at`|Timestamp|Last updated date in HTTP format|
-|`is_b2b_partner`|Boolean||
+|`is_b2b_partner`|Boolean|`true` if you're a b2b partner|
 
 ##Balance
 |Field|Type|Description|
 |----|----|----|
-|`id`|Integer||
+|`id`|Integer|Balance ID|
 |`currency`|String|Your balance currency. Defaulted to IDR|
 |`balance`|Decimal|Your current balance|
 |`available_balance`|Decimal||
 |`is_active`|Boolean|Status of your company in Transfez service|
-|`user_id`|Integer||
+|`user_id`|Integer|Index number of the user|
 |`created_at`|Timestamp|Creation date in HTTP format|
 |`updated_at`|Timestamp|Last updated date in HTTP format|
-|`partner_id`|Integer||
+|`partner_id`|Integer|Index number of the partner|
 
 ##Balance histories
 |Field|Type|Description|
 |----|----|----|
-|`id`|Integer||
+|`id`|Integer|Balance History ID|
 |`credit`|Decimal|Filled if the transaction is credit type|
 |`debit`|Decimal|Filled if the transaction is debit type|
-|`originator_id`|Integer||
-|`originator_type`|String||
-|`notes`|String||
-|`description`|String||
-|`balance_id`|Integer||
+|`originator_id`|Integer|The ID of data that originates the balance history|
+|`originator_type`|String|The type of data that originates the balance history|
+|`notes`|String|Notes of the balance history|
+|`description`|String|Description of the balance history|
+|`balance_id`|Integer|Index number of the balance|
 |`created_at`|Timestamp|Creation date in HTTP format|
 |`updated_at`|Timestamp|Last updated date in HTTP format|
 
