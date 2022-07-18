@@ -1,25 +1,25 @@
 `status`|Integer|API Status|
 |`data`|Object||
-|`id`|Integer||
-|`reference_id`|String||
+|`id`|Integer|Transaction ID|
+|`reference_id`|String|Identifier / description of the transaction in your system (must be unique)|
 |`callback_url`|String|Your callback URL. Refer to [here](#callback)|
 |`payer_id`|Integer|Index number of the payer|
 |`mode`|String|Mode of quotation, enumerations of `DESTINATION` or `SOURCE`|
 |`sender`|Object|Refer to [sender](#sender) object|
-|`source`|Object||
-|`destination`|Object||
+|`source`|Object|Content of the object is related to the source currency and source country iso code|
+|`destination`|Object|Content of the object is related to the destination currency, destination amount, and destination country iso code|
 |`beneficiary`|Object|Refer to [beneficiary](#beneficiary) object|
 |`compliance`|Object||
 |`beneficiary_relationship`|String|Refer to [beneficiary relationship](#beneficiary-relationship) list|
 |`source_of_funds`|String|Refer to [source of funds](#source-of-funds) list|
 |`purpose_of_remittance`|String|Refer to [Purpose of remittance](#purpose-of-remittance) list|
-|`created_at`|Timestamp||
-|`updated_at`|Timestamp||
-|`user_id`|Integer||
+|`created_at`|Timestamp|Creation date in HTTP format|
+|`updated_at`|Timestamp|Last updated date in HTTP format|
+|`user_id`|Integer|Index number of the user|
 |`state`|String|Status class of the transaction. Refer to [transaction states](#transaction-states)|
 |`disbursement_reference_id`|String||
 |`amount`|Decimal|Destination amount|
-|`paid_at`|Timestamp|Time when the transaction payment has been confirmed. Will only shown after the state of transaction changed to `submitted`|
+|`paid_at`|Timestamp|Time when the transaction payment has been confirmed. Will only shown after the state of transaction changed to `confirmed` or `submitted`|
 |`rate`|Decimal|Rate of transaction (`destination`/`source`)|
 |`fee`|Decimal|Fee of transaction in IDR|
 |`partner_id`|Integer|Your company index number|
@@ -28,7 +28,7 @@
 |`state_id`|Integer|Transaction status. Refer to [transaction states](#transaction-states)|
 |`error_code`|String|API Error Code. Refer to [here](#api-error-codes)|
 |`error_message`|String|API Error message. Refer to [here](#api-error-codes)|
-|`notes`|String|Notes of the transaction|
+|`notes`|String|Notes of the transaction (max. 90 characters)|
 |`transaction_type`|String|Refer to [transaction type](#transaction-type)|
-|`user_email`|String||
+|`user_email`|String|E-mail of the user|
 |`payer_name`|String|Name of the payer|

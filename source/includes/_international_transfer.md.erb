@@ -1,7 +1,7 @@
 #International Transfer
 
 As of now, basically the local transfer API and international transfer API shared some services such as `get transaction`, `create transaction` and `confirm transaction`.
-For local transfer, `payer` will refer to the destination bank whilst for international transfer, `payer` will refer to the destination country. 
+For local transfer, `payer` will refer to the destination bank whilst for international transfer, `payer` will refer to the destination country.
 
 <%# ----------------------- GET ALL TRANSACTION ----------------------- %>
 ##Get All Transaction
@@ -135,7 +135,7 @@ For local transfer, `payer` will refer to the destination bank whilst for intern
 ##Get Transaction
 
 <div class="card">
-    <a class="badge get">GET</a> 
+    <a class="badge get">GET</a>
     /transactions/:transaction_id
 </div>
 
@@ -305,8 +305,8 @@ You can find the required field for each destination country [here](#get-require
 
 |Field|Required|Type|Description|
 |----|----|----|----|
-|`reference_id`|YES|Integer||
-|`callback_url`|NO|String||
+|`reference_id`|YES|String|Identifier / description of the transaction in your system (must be unique)|
+|`callback_url`|NO|String|Your callback URL. Refer to [here](#callback)|
 |`payer_id`|YES|String|Index number of destination country|
 |`mode`|YES|String|Choose between `DESTINATION` or `SOURCE`. Affects where the `amount` field is required|
 |`sender`|YES|Object|Content of the object is depending on the payers required attribute|
@@ -531,7 +531,7 @@ The state of transaction should be `confirmed` after you hit this endpoint.
 |`id`|Integer|Index number of the country|
 |`name`|String|Country name|
 |`full_name`|String|Country full name|
-|`precision`|Integer||
+|`precision`|Integer|Number of digits after decimal point|
 |`country_iso_code`|String|Country ISO-3 code. Using the standard of [ISO 3116 country code|(https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)|
 |`currency`|String|Currency ISO code. Using the standard of [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)|
 |`minimum_amount`|Decimal|Minimum transfer amount|

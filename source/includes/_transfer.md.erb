@@ -7,9 +7,9 @@
 <p class="n">Create Transaction</p>
 <span class="nf">POST</span> <span class="nn">api/v1/transactions</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span>
 <span class="p">{</span>
-      <span class="err">body</span> <span class="p">:</span> 
+      <span class="err">body</span> <span class="p">:</span>
         <span class="p">{</>
             <span class="nt">&#34;reference_id&#34;</span><span class="p">:</span> <span class="s2">&#34;TRX124&#34;</span><span class="p">,</span>
             <span class="nt">&#34;callback_url&#34;</span><span class="p">:</span> <span class="kc">{{CALLBACK_URL}}</span><span class="p">,</span>
@@ -46,7 +46,7 @@
 <p class="n">All Transaction</p>
 <span class="nf">GET</span> <span class="nn">{URL}/transactions</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span>
 
 <span class="p">{</span>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
@@ -129,7 +129,7 @@
 <p class="n">Get Transaction</p>
 <span class="nf">GET</span> <span class="nn">{URL}/transactions/{<span class="s2">ID</span>}</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span>
 
 <span class="p">{</span>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
@@ -171,7 +171,7 @@
             <span class="nt">&#34;fee&#34;</span><span class="p">:</span> <span class="mi">&#34;18000.0&#34;</span><span class="p">,</span>
         <span class="p">}</span>
     <span class="p">}</span>
-        </code></pre></div> 
+        </code></pre></div>
 <p><api><code>POST {URL}/transactions</code></api></p>
 
 <p>Create a new transfers.</p>

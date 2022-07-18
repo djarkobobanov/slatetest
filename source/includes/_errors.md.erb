@@ -73,6 +73,7 @@
 
 <h2 id="api-error-codes">API Error Code</h2>
 <p>In case a transaction is declined, we will send an error_code and error_message on payload callback, explaning what went wrong. Here is a list of codes/messages.</p>
+###Local Transfer
 <table>
 <thead>
 <tr>
@@ -133,19 +134,81 @@
 </tr>
 
 <tr>
-<td><code>012</code></td>
-<td>Beneficiary account is blocked</td>
+<td><code>011</code></td>
+<td>Sender and receiver account are the same</td>
 </tr>
 
 <tr>
+<td><code>012</code></td>
+<td>Beneficiary account is blocked</td>
+</tr
+
+<tr>
 <td><code>013</code></td>
-<td>Sender and receiver account are the same</td>
+<td>Rejected by Bank</td>
 </tr>
 
 
 </tbody>
 </table>
 
+###International Transfer
+
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Error Message</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>7000</code></td>
+<td>Unexpected error, please contact our support team</td>
+</tr>
+
+<tr>
+<td><code>7001</code></td>
+<td>Invalid beneficiary/sender data</td>
+</tr>
+
+<tr>
+<td><code>7002</code></td>
+<td>Rejected by partner</td>
+</tr>
+
+<tr>
+<td><code>7003</code></td>
+<td>Timeout error by Partner</td>
+</tr>
+
+<tr>
+<td><code>7004</code></td>
+<td>Payload validation failed</td>
+</tr>
+
+<tr>
+<td><code>7005</code></td>
+<td>Expired by partner</td>
+</tr>
+
+<tr>
+<td><code>7006</code></td>
+<td>Identical request already processed before</td>
+</tr>
+
+<tr>
+<td><code>7007</code></td>
+<td>Bank cannot authenticated request</td>
+</tr>
+
+<tr>
+<td><code>7008</code></td>
+<td>Declined by partner</td>
+</tr>
+</tbody>
+</table>
 <!-- End API Error codes -->
 
 

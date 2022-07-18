@@ -9,8 +9,8 @@
 |`phone`|String|Your company phone number|
 |`email_pic`|String||
 |`api_user_id`|Integer||
-|`created_at`|Timestamp||
-|`updated_at`|Timestamp||
+|`created_at`|Timestamp|Creation date in HTTP format|
+|`updated_at`|Timestamp|Last updated date in HTTP format|
 |`is_b2b_partner`|Boolean||
 
 ##Balance
@@ -22,10 +22,9 @@
 |`available_balance`|Decimal||
 |`is_active`|Boolean|Status of your company in Transfez service|
 |`user_id`|Integer||
-|`created_at`|Timestamp||
-|`updated_at`|Timestamp||
+|`created_at`|Timestamp|Creation date in HTTP format|
+|`updated_at`|Timestamp|Last updated date in HTTP format|
 |`partner_id`|Integer||
-|`is_unlimited`|Boolean||
 
 ##Balance histories
 |Field|Type|Description|
@@ -38,10 +37,8 @@
 |`notes`|String||
 |`description`|String||
 |`balance_id`|Integer||
-|`created_at`|Timestamp||
-|`updated_at`|Timestamp||
-|`prev_balance`|Decimal|Balance before this transaction is done|
-|`curr_balance`|Decimal|Final balance after this transaction is done|
+|`created_at`|Timestamp|Creation date in HTTP format|
+|`updated_at`|Timestamp|Last updated date in HTTP format|
 
 ##Required fields
 |Field|Type|Description|

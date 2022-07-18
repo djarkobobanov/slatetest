@@ -2,7 +2,7 @@
 ##My Account
 
 <div class="card">
-    <a class="badge get">GET</a> /my_account 
+    <a class="badge get">GET</a> /my_account
 </div>
 <br>
 
@@ -19,7 +19,6 @@ Retrieve the details information of your account.
         "updated_at": "2021-05-28T12:19:54.789+07:00",
         "partner_id": 6,
         "is_api_user": true,
-        "is_agreed": true,
         "my_roles": [
             "partner",
             "partner_developer"
@@ -34,8 +33,7 @@ Retrieve the details information of your account.
                 "user_id": 7,
                 "created_at": "2020-07-30T13:23:39.900+07:00",
                 "updated_at": "2022-07-11T12:47:36.282+07:00",
-                "partner_id": 6,
-                "is_unlimited": true
+                "partner_id": 6
             }
         ],
         "partner": {
@@ -59,12 +57,11 @@ Retrieve the details information of your account.
 |`user`|Object||
 |`user[id]`|Integer|User account ID|
 |`user[email]`|String|User account email|
-|`user[created_at]`|Timestamp||
-|`user[updated_at]`|Timestamp||
+|`user[created_at]`|Timestamp|Creation date in HTTP format|
+|`user[updated_at]`|Timestamp|Last updated date in HTTP format|
 |`user[partner_id]`|Integer|Your company index number|
-|`user[is_api_user]`|Boolean||
-|`user[is_agreed]`|Boolean||
-|`user[my_roles]`|Array||
+|`user[is_api_user]`|Boolean|When the value is true, it's the partner's main API user|
+|`user[my_roles]`|Array|List of roles assigned to the user|
 |`user[balances]`|Object|Refer to [Balance](#balance) object|
 |`user[partner]`|Object|Refer to [Partner](#partner) object|
 
@@ -91,8 +88,7 @@ Retrieve information for your account balance.
                 "user_id": 7,
                 "created_at": "2020-07-30T13:23:39.900+07:00",
                 "updated_at": "2022-07-11T12:47:36.282+07:00",
-                "partner_id": 6,
-                "is_unlimited": true
+                "partner_id": 6
             }
         ]
     },
@@ -145,15 +141,13 @@ Retrieve the balance history of your account
             "created_at": "2020-07-30T13:23:39.900+07:00",
             "updated_at": "2022-07-11T12:47:36.282+07:00",
             "partner_id": 6,
-            "is_unlimited": true,
             "user": {
                 "id": 7,
                 "email": "example@email.com",
                 "created_at": "2020-07-30T13:22:28.476+07:00",
                 "updated_at": "2021-05-28T12:19:54.789+07:00",
                 "partner_id": 6,
-                "is_api_user": true,
-                "is_agreed": true
+                "is_api_user": true
             },
             "balance_histories": [
                 {
@@ -166,9 +160,7 @@ Retrieve the balance history of your account
                     "description": null,
                     "balance_id": 7,
                     "created_at": "2020-07-30T13:23:39.904+07:00",
-                    "updated_at": "2020-07-30T13:23:39.904+07:00",
-                    "prev_balance": 0.0,
-                    "curr_balance": 0.0
+                    "updated_at": "2020-07-30T13:23:39.904+07:00"
                 }
             ]
         }
@@ -184,9 +176,8 @@ Retrieve the balance history of your account
 |`data[user]`|Object||
 |`data[user][id]`|Integer|User account ID|
 |`data[user][email]`|String|User account email|
-|`data[user][created_at]`|Timestamp||
-|`data[user][updated_at]`|Timestamp||
+|`data[user][created_at]`|Timestamp|Creation date in HTTP format|
+|`data[user][updated_at]`|Timestamp|Last updated date in HTTP format|
 |`data[user][partner_id]`|Integer|Your company index number|
-|`data[user][is_api_user]`|Boolean||
-|`data[user][is_agreed]`|Boolean||
+|`data[user][is_api_user]`|Boolean|When the value is true, it's the partner's main API user|
 |`data[balance_histories]`|Object|Refer to [balance histories](#balance-histories) object|
