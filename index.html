@@ -196,7 +196,7 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen-7de389d4.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-073e818b.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-bccf8c07.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-c5541673.js"></script>
     <link href="images/transfez_favicon.ico" rel="icon" type="image/ico" />
@@ -297,6 +297,17 @@
           </li>
           <li>
             <a href="#transaction-states" class="toc-h1 toc-link" data-title="Transaction states">Transaction states</a>
+          </li>
+          <li>
+            <a href="#validate_bank_account" class="toc-h1 toc-link" data-title="Bank Account Validation">Bank Account Validation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#response-parameters-create-va" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-create-va" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#virtual-accounts" class="toc-h1 toc-link" data-title="Virtual Accounts">Virtual Accounts</a>
@@ -598,8 +609,7 @@ Putting the key in your environment variables or using an API secret management 
             <span class="s2">"email_pic"</span><span class="p">:</span> <span class="s2">"example@email.com"</span><span class="p">,</span>
             <span class="s2">"api_user_id"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
             <span class="s2">"created_at"</span><span class="p">:</span> <span class="s2">"2020-07-30T13:22:28.477+07:00"</span><span class="p">,</span>
-            <span class="s2">"updated_at"</span><span class="p">:</span> <span class="s2">"2021-12-21T17:05:06.270+07:00"</span><span class="p">,</span>
-            <span class="s2">"is_b2b_partner"</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="s2">"updated_at"</span><span class="p">:</span> <span class="err">"</span><span class="mi">2021</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">21</span><span class="nx">T17</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mf">06.270</span><span class="o">+</span><span class="mi">07</span><span class="p">:</span><span class="mi">00</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -669,7 +679,7 @@ Putting the key in your environment variables or using an API secret management 
 </tbody></table>
 <h2 id='my-balance'>My Balance</h2>
 <div class="card">
-    <a class="badge get">GET</a> /my_balance
+    <a class="badge get">GET</a> /my_balances
 </div>
 
 <p><br>
@@ -1457,9 +1467,7 @@ Every destination country should have different requirement than the others base
         <span class="s2">"error_code"</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
         <span class="s2">"error_message"</span><span class="p">:</span> <span class="s2">"Your error message"</span><span class="p">,</span>
         <span class="s2">"notes"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
-        <span class="s2">"transaction_type"</span><span class="p">:</span> <span class="s2">"C2C"</span><span class="p">,</span>
-        <span class="s2">"user_email"</span><span class="p">:</span> <span class="s2">"example@email.com"</span><span class="p">,</span>
-        <span class="s2">"payer_name"</span><span class="p">:</span> <span class="s2">"PT. BANK RAKYAT INDONESIA (PERSERO)"</span>
+        <span class="s2">"transaction_type"</span><span class="p">:</span> <span class="s2">"C2C"</span>
         <span class="p">}</span>
 <span class="p">}</span>
 </code></pre><h3 id='response-parameter-3'>Response Parameter</h3>
@@ -1700,9 +1708,7 @@ The state of transaction should be <code>confirmed</code> after you hit this end
         <span class="s2">"error_code"</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
         <span class="s2">"error_message"</span><span class="p">:</span> <span class="s2">"Your error message"</span><span class="p">,</span>
         <span class="s2">"notes"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
-        <span class="s2">"transaction_type"</span><span class="p">:</span> <span class="s2">"C2C"</span><span class="p">,</span>
-        <span class="s2">"user_email"</span><span class="p">:</span> <span class="s2">"example@email.com"</span><span class="p">,</span>
-        <span class="s2">"payer_name"</span><span class="p">:</span> <span class="s2">"PT. BANK RAKYAT INDONESIA (PERSERO)"</span>
+        <span class="s2">"transaction_type"</span><span class="p">:</span> <span class="s2">"C2C"</span>
         <span class="p">}</span>
 <span class="p">}</span>
 </code></pre><h2 id='get-supported-local-banks'>Get Supported Local Banks</h2>
@@ -1710,7 +1716,35 @@ The state of transaction should be <code>confirmed</code> after you hit this end
     <a class="badge get">GET</a> /payers
 </div>
 
-<p><br></p>
+<p><br>
+Retrieve information for all payers available for a given account, optionally filtered based on specified parameters. You can also find the specific Bank by ID while adding a <code>:payer_id</code> parameter such as <code>/payers/:payer_id</code></p>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">//Request Example</span>
+<span class="p">{</span>
+    <span class="s2">"page"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"per_page"</span><span class="p">:</span> <span class="mi">10000</span>
+<span class="p">}</span>
+</code></pre><h3 id='request-parameter-3'>Request Parameter</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>page</code></td>
+<td>No</td>
+<td>Integer</td>
+<td>Page number</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>No</td>
+<td>Integer</td>
+<td>Number of results per page (ensure to max it out to get the whole list of banks)</td>
+</tr>
+</tbody></table>
 
 <table><thead>
 <tr>
@@ -1720,12 +1754,15 @@ The state of transaction should be <code>confirmed</code> after you hit this end
 </thead><tbody>
 <tr>
 <td><code>:payer_id</code></td>
-<td>Index number of the country</td>
+<td>Index number of the local bank</td>
 </tr>
 </tbody></table>
 <pre class="highlight javascript tab-javascript"><code><span class="c1">//Response Example</span>
 <span class="p">{</span>
     <span class="s2">"status"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="s2">"page"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"per_page"</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>
+    <span class="s2">"total_page"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s2">"data"</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s2">"id"</span><span class="p">:</span> <span class="mi">154</span><span class="p">,</span>
@@ -1735,7 +1772,44 @@ The state of transaction should be <code>confirmed</code> after you hit this end
             <span class="s2">"country_iso_code"</span><span class="p">:</span> <span class="s2">"IDN"</span><span class="p">,</span>
             <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
             <span class="s2">"minimum_amount"</span><span class="p">:</span> <span class="mf">10000.0</span><span class="p">,</span>
-            <span class="s2">"maximum_amount"</span><span class="p">:</span> <span class="mf">50000000.0</span>
+            <span class="s2">"maximum_amount"</span><span class="p">:</span> <span class="mf">50000000.0</span><span class="p">,</span>
+            <span class="s2">"alias"</span><span class="p">:</span> <span class="s2">"Bank Syariah Indonesia"</span><span class="p">,</span>
+            <span class="s2">"required_sender_fields"</span><span class="p">:</span> <span class="p">[</span>
+              <span class="s2">"firstname"</span><span class="p">,</span>
+              <span class="s2">"lastname"</span><span class="p">,</span>
+              <span class="s2">"nationality"</span><span class="p">,</span>
+              <span class="s2">"date_of_birth"</span><span class="p">,</span>
+              <span class="s2">"country_of_birth"</span><span class="p">,</span>
+              <span class="s2">"gender"</span><span class="p">,</span>
+              <span class="s2">"address"</span><span class="p">,</span>
+              <span class="s2">"zipcode"</span><span class="p">,</span>
+              <span class="s2">"city"</span><span class="p">,</span>
+              <span class="s2">"country_iso_code"</span><span class="p">,</span>
+              <span class="s2">"country_iso"</span><span class="p">,</span>
+              <span class="s2">"email"</span><span class="p">,</span>
+              <span class="s2">"id_type"</span><span class="p">,</span>
+              <span class="s2">"id_country_iso_code"</span><span class="p">,</span>
+              <span class="s2">"id_number"</span>
+            <span class="p">],</span>
+            <span class="s2">"required_beneficiary_fields"</span><span class="p">:</span> <span class="p">[</span>
+              <span class="s2">"firstname"</span><span class="p">,</span>
+              <span class="s2">"lastname"</span><span class="p">,</span>
+              <span class="s2">"nationality"</span><span class="p">,</span>
+              <span class="s2">"date_of_birth"</span><span class="p">,</span>
+              <span class="s2">"country_of_birth"</span><span class="p">,</span>
+              <span class="s2">"gender"</span><span class="p">,</span>
+              <span class="s2">"address"</span><span class="p">,</span>
+              <span class="s2">"zipcode"</span><span class="p">,</span>
+              <span class="s2">"city"</span><span class="p">,</span>
+              <span class="s2">"country_iso_code"</span><span class="p">,</span>
+              <span class="s2">"country_iso"</span><span class="p">,</span>
+              <span class="s2">"email"</span><span class="p">,</span>
+              <span class="s2">"id_type"</span><span class="p">,</span>
+              <span class="s2">"id_country_iso_code"</span><span class="p">,</span>
+              <span class="s2">"id_number"</span><span class="p">,</span>
+              <span class="s2">"bank"</span><span class="p">,</span>
+              <span class="s2">"account"</span>
+            <span class="p">]</span>
         <span class="p">},</span>
         <span class="p">{...}</span>
     <span class="p">]</span>
@@ -1787,6 +1861,21 @@ The state of transaction should be <code>confirmed</code> after you hit this end
 <td><code>maximum_amount</code></td>
 <td>Decimal</td>
 <td>Maximum transfer amount</td>
+</tr>
+<tr>
+<td><code>alias</code></td>
+<td>String</td>
+<td>Alias name of the current bank</td>
+</tr>
+<tr>
+<td><code>required_sender_fields</code></td>
+<td>Array</td>
+<td>Array of sender fields required for the transaction. The whole list provided in the sample response (which is just an example value) is a list of fields that are possible to be required and used in the sender object of a transaction</td>
+</tr>
+<tr>
+<td><code>required_beneficiary_fields</code></td>
+<td>Array</td>
+<td>Array of beneficiary fields required for the transaction. The whole list provided in the sample response (which is just an example value) is a list of fields that are possible to be required and used in the beneficiary object of a transaction</td>
 </tr>
 </tbody></table>
 
@@ -3076,9 +3165,39 @@ The state of transaction should be <code>confirmed</code> after you hit this end
 <div class="card">
     <a class="badge get">GET</a> /payers/cbse
 </div>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">//Request Example</span>
+<span class="p">{</span>
+    <span class="s2">"page"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"per_page"</span><span class="p">:</span> <span class="mi">10000</span>
+<span class="p">}</span>
+</code></pre><h3 id='request-parameter-3'>Request Parameter</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>page</code></td>
+<td>No</td>
+<td>Integer</td>
+<td>Page number</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>No</td>
+<td>Integer</td>
+<td>Number of results per page (ensure to max it out to get the whole list of countries)</td>
+</tr>
+</tbody></table>
 <pre class="highlight javascript tab-javascript"><code><span class="c1">//Response Example</span>
 <span class="p">{</span>
     <span class="s2">"status"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="s2">"page"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"per_page"</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>
+    <span class="s2">"total_page"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s2">"data"</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s2">"id"</span><span class="p">:</span> <span class="mi">157</span><span class="p">,</span>
@@ -3124,7 +3243,7 @@ The state of transaction should be <code>confirmed</code> after you hit this end
 <tr>
 <td><code>country_iso_code</code></td>
 <td>String</td>
-<td>Country ISO-3 code. Using the standard of [ISO 3116 country code</td>
+<td>Country ISO-3 code. Using the standard of <a href="https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes">ISO 3116 country code</a></td>
 </tr>
 <tr>
 <td><code>currency</code></td>
@@ -3329,7 +3448,93 @@ The state of transaction should be <code>confirmed</code> after you hit this end
 
 <p>The numerical values within each of the illustrated states correspond to the <a href="#transaction-status">transaction status</a>, while the labels correspond to that of the <a href="#transaction-status-class">transaction status class message</a>.</p>
 
+<h1 id="validate_bank_account">Bank Account Validation</h1>
+
+<div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
+<span class="nf">GET</span> <span class="nn">{{URL}}/validation_bank_account?bank_name={{BANK_NAME}}&account_number={{ACC_NUMBER}}</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span>
+<br>
+<p class="n">Success Response</p>
+<span class="p">{</span>
+    <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
+    <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;account_no&#34;</span><span class="p">:</span> <span class="mi">000001137298</span><span class="p">,</span>
+        <span class="nt">&#34;bank_name&#34;</span><span class="p">:</span> <span class="s2">&#34;danamon&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;account_name&#34;</span><span class="p">:</span> <span class="s2">Danamon Simulator A</span>
+    <span class="p">}</span>
+<span class="p">}
+<br>
+<p class="n">Error Response</p>
+<span class="p">{</span>
+    <span class="err">status</span> <span class="err">422</span><span class="p">,</span>
+    <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;error_message&#34;</span><span class="p">:</span> <span class="s2">&#34;An error occured when doing account validation&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;errors&#34;</span><span class="p">:</span> <span class="s2">&#34;Account does not exist&#34;</span>
+    <span class="p">}</span>
+<span class="p">}
+    </code></pre></div>
+<p>Check if an account is valid, if valid return account information</p>
+<div class="card">
+  <a class="badge get">GET</a> /validation_bank_account?bank_name=<code>BANK_NAME</code>&account_number=<code>ACC_NUMBER</code>
+</div>
+
+<p><br></p>
+
+<h3 id="response-parameters-create-va" type="normal">Request Parameters</h3>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+
+
+<tbody>
+<tr>
+<td><code>bank_name</code></td>
+<td>Bank code</td>
+</tr>
+
+<tr>
+<td><code>account_number</code></td>
+<td>Account number</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="response-parameters-create-va" type="normal">Response Parameters</h3>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+
+
+<tbody>
+<tr>
+<td><code>bank_name</code></td>
+<td>Bank name of partner's bank account</td>
+</tr>
+
+<tr>
+<td><code>account_name</code></td>
+<td>Account name of partner's bank account</td>
+</tr>
+
+<tr>
+<td><code>account_no</code></td>
+<td>Account number of partner's bank account</td>
+</tr>
+</tbody>
+</table>
+
 <h1 id='virtual-accounts'>Virtual Accounts</h1>
+
 <h2 id='va-payment-flow'>VA Payment Flow</h2>
 
 <p>Users will be able to pay into a Virtual Account through ATM, Mobile Banking, and Internet Banking.</p>
@@ -4697,9 +4902,9 @@ The state of transaction should be <code>confirmed</code> after you hit this end
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <p class="n">Get Beneficiary Relationship</p>
-<span class="nf">GET</span> <span class="nn">{URL}/beneficiary_relationships</span> 
+<span class="nf">GET</span> <span class="nn">{URL}/beneficiary_relationships</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span>
 
 <span class="p">{</>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
@@ -4755,7 +4960,6 @@ The state of transaction should be <code>confirmed</code> after you hit this end
           <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">},</span>
- <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">Succesfully get my Beneficiary Relationship</span>
 <span class="p">}</span>
     </code></pre></div>
 <table>
@@ -4835,14 +5039,13 @@ The state of transaction should be <code>confirmed</code> after you hit this end
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <p class="n">Get Source of Funds</p>
 <span class="nf">GET</span> <span class="nn">{URL}/source_of_funds
-</span> 
+</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span>
 
 <span class="p">{</>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
       <span class="err">data</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="err">total</span> <span class="p">:</span> <span class="p"></span><span class="p">,</span>
         <span class="err">source_of_funds</span> <span class="p">:</span> <span class="p">[</span>
           <span class="p">{</span>
             <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
@@ -4910,7 +5113,6 @@ The state of transaction should be <code>confirmed</code> after you hit this end
           <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">},</span>
- <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">Succesfully get my Source of Funds</span>
 <span class="p">}</span>
     </code></pre></div>
 <table>
@@ -5138,14 +5340,13 @@ The state of transaction should be <code>confirmed</code> after you hit this end
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <p class="n">Get Purpose of Remittance</p>
 <span class="nf">GET</span> <span class="nn">{URL}/purpose_of_remittances
-</span> 
+</span>
 <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span>
 
 <span class="p">{</>
       <span class="err">status</span> <span class="err">200</span><span class="p">,</span>
       <span class="err">data</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="err">total</span> <span class="p">:</span> <span class="p"></span><span class="p">,</span>
         <span class="err">source_of_funds</span> <span class="p">:</span> <span class="p">[</span>
           <span class="p">{</span>
             <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">{ID}</span><span class="p">,</span>
@@ -5213,12 +5414,10 @@ The state of transaction should be <code>confirmed</code> after you hit this end
           <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">},</span>
- <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">Succesfully get my Purpose of Remittance</span>
 <span class="p">}</span>
     </code></pre></div>
 </tbody>
 </table>
- 
 
 <h1 id='parameters'>Parameters</h1><h2 id='partner'>Partner</h2>
 <table><thead>
