@@ -270,9 +270,7 @@ You can find the required field for each destination country [here](#get-require
         "error_code": 9,
         "error_message": "Your error message",
         "notes": "",
-        "transaction_type": "C2C",
-        "user_email": "example@email.com",
-        "payer_name": "PT. BANK RAKYAT INDONESIA (PERSERO)"
+        "transaction_type": "C2C"
         }
 }
 ```
@@ -342,9 +340,7 @@ The state of transaction should be `confirmed` after you hit this endpoint.
         "error_code": 9,
         "error_message": "Your error message",
         "notes": "",
-        "transaction_type": "C2C",
-        "user_email": "example@email.com",
-        "payer_name": "PT. BANK RAKYAT INDONESIA (PERSERO)"
+        "transaction_type": "C2C"
         }
 }
 ```
@@ -357,15 +353,32 @@ The state of transaction should be `confirmed` after you hit this endpoint.
 </div>
 
 <br>
+Retrieve information for all payers available for a given account, optionally filtered based on specified parameters. You can also find the specific Bank by ID while adding a `:payer_id` parameter such as `/payers/:payer_id`
+
+```javascript
+//Request Example
+{
+    "page": 1,
+    "per_page": 10000
+}
+```
+###Request Parameter
+|Field|Required|Type|Description|
+|----|----|----|----|
+|`page`|No|Integer|Page number|
+|`per_page`|No|Integer|Number of results per page (ensure to max it out to get the whole list of banks)|
 
 |Path parameter|Description|
 |----|----|
-|`:payer_id`|Index number of the country|
+|`:payer_id`|Index number of the local bank|
 
 ```javascript
 //Response Example
 {
     "status": 200,
+    "page": 1,
+    "per_page": 10000,
+    "total_page": 1,
     "data": [
         {
             "id": 154,
@@ -375,7 +388,44 @@ The state of transaction should be `confirmed` after you hit this endpoint.
             "country_iso_code": "IDN",
             "currency": "IDR",
             "minimum_amount": 10000.0,
-            "maximum_amount": 50000000.0
+            "maximum_amount": 50000000.0,
+            "alias": "Bank Syariah Indonesia",
+            "required_sender_fields": [
+              "firstname",
+              "lastname",
+              "nationality",
+              "date_of_birth",
+              "country_of_birth",
+              "gender",
+              "address",
+              "zipcode",
+              "city",
+              "country_iso_code",
+              "country_iso",
+              "email",
+              "id_type",
+              "id_country_iso_code",
+              "id_number"
+            ],
+            "required_beneficiary_fields": [
+              "firstname",
+              "lastname",
+              "nationality",
+              "date_of_birth",
+              "country_of_birth",
+              "gender",
+              "address",
+              "zipcode",
+              "city",
+              "country_iso_code",
+              "country_iso",
+              "email",
+              "id_type",
+              "id_country_iso_code",
+              "id_number",
+              "bank",
+              "account"
+            ]
         },
         {...}
     ]
@@ -393,4 +443,7 @@ The state of transaction should be `confirmed` after you hit this endpoint.
 |`currency`|String|Currency ISO code. Using the standard of [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)|
 |`minimum_amount`|Decimal|Minimum transfer amount|
 |`maximum_amount`|Decimal|Maximum transfer amount|
+|`alias`|String|Alias name of the current bank|
+|`required_sender_fields`|Array|Array of sender fields required for the transaction. The whole list provided in the sample response (which is just an example value) is a list of fields that are possible to be required and used in the sender object of a transaction|
+|`required_beneficiary_fields`|Array|Array of beneficiary fields required for the transaction. The whole list provided in the sample response (which is just an example value) is a list of fields that are possible to be required and used in the beneficiary object of a transaction|
 

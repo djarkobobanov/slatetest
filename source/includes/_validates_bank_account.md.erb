@@ -1,8 +1,8 @@
-<h1 id="validate_bank_account">Validates Bank Account</h1>
+<h1 id="validate_bank_account">Bank Account Validation</h1>
 
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http">
 <span class="nf">GET</span> <span class="nn">{{URL}}/validation_bank_account?bank_name={{BANK_NAME}}&account_number={{ACC_NUMBER}}</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span> 
+<span class="s2">--header</span> <span class="nf">Authorization</span> <span class="s2">{{API KEY}}</span>
 <br>
 <p class="n">Success Response</p>
 <span class="p">{</span>
@@ -24,9 +24,12 @@
 <span class="p">}
     </code></pre></div>
 <p>Check if an account is valid, if valid return account information</p>
-<p><api><code>GET {{URL}}/validation_bank_account?bank_name={{BANK_NAME}}&account_number={{ACC_NUMBER}}</code></api></p>
+<div class="card">
+  <a class="badge get">GET</a> /validation_bank_account?bank_name=<code>BANK_NAME</code>&account_number=<code>ACC_NUMBER</code>
+</div>
+<br>
 
-<h4 id="input-13">Input</h4>
+<h3 id="response-parameters-create-va" type="normal">Request Parameters</h3>
 
 <table>
 <thead>
@@ -50,7 +53,7 @@
 </tbody>
 </table>
 
-<h4 id="output-20">Output</h4>
+<h3 id="response-parameters-create-va" type="normal">Response Parameters</h3>
 
 <table>
 <thead>

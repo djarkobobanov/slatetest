@@ -502,9 +502,25 @@ The state of transaction should be `confirmed` after you hit this endpoint.
 </div>
 
 ```javascript
+//Request Example
+{
+    "page": 1,
+    "per_page": 10000
+}
+```
+###Request Parameter
+|Field|Required|Type|Description|
+|----|----|----|----|
+|`page`|No|Integer|Page number|
+|`per_page`|No|Integer|Number of results per page (ensure to max it out to get the whole list of countries)|
+
+```javascript
 //Response Example
 {
     "status": 200,
+    "page": 1,
+    "per_page": 10000,
+    "total_page": 1,
     "data": [
         {
             "id": 157,
@@ -528,7 +544,7 @@ The state of transaction should be `confirmed` after you hit this endpoint.
 |`name`|String|Country name|
 |`full_name`|String|Country full name|
 |`precision`|Integer|Number of digits after decimal point|
-|`country_iso_code`|String|Country ISO-3 code. Using the standard of [ISO 3116 country code|(https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)|
+|`country_iso_code`|String|Country ISO-3 code. Using the standard of [ISO 3116 country code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)|
 |`currency`|String|Currency ISO code. Using the standard of [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)|
 |`minimum_amount`|Decimal|Minimum transfer amount|
 |`maximum_amount`|Decimal|Maximum transfer amount|
